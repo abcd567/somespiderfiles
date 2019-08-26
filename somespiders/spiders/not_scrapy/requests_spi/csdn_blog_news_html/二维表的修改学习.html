@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/weixin_44771312/article/details/98996868"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"二维表的修改学习 - weixin_44771312的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>二维表的修改学习 - weixin_44771312的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "weixin_44771312";
+        var blog_address = "https://blog.csdn.net/weixin_44771312";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_44771312/article/details/98996868"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "二维表的修改学习";
+        var articleDesc = "--二维表的维护--添加新的字段:--altertable表名add字段名类型altertablestudentaddsphonenumber(11)--在学生表中添加新的字段--修改原有字段--修改字段类型--altertable表名modify字段名新的类型...";
+        // 第四范式所需数据
+        var articleTitles = "二维表的修改学习 - weixin_44771312的博客";
+        
+        var nickName = "土妮子";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/weixin_44771312/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/weixin_44771312/article/details/98996868";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}' data-report-view='{"mod":"kp_popu_476-923","keyword":""}' data-report-click='{"mod":"kp_popu_476-923","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384140363.png',bigMoveImg:'https://img-bss.csdn.net/1564384127097.png',link:'https://kunyu.csdn.net?p=476&a=923&c=437&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:923});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">二维表的修改学习</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 21:58:19</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/weixin_44771312" target="_blank">土妮子</a>
+                    <span class="read-count">阅读数 44</span>
+                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <p>--二维表的维护<br />
+    --添加新的字段:<br />
+        --alter table 表名 add 字段名 类型<br />
+         alter table student add sphone number(11)--在学生表中添加新的字段<br />
+    --修改原有字段<br />
+         --修改字段类型<br />
+             --alter table 表名 modify 字段名 新的类型<br />
+             alter table  student modify sphone varchar2(11)<br />
+         --修改字段名<br />
+             --alter table 表名 rename column 字段名 to 新的字段名<br />
+             alter table student rename column sphone to phone<br />
+         --删除字段<br />
+             --alter table 表名 drop column 字段名<br />
+             alter table student drop column phone<br />
+    --修改表名<br />
+         --rename 原有表名 to 新的表名<br />
+         rename student to student2<br />
+         rename student2 to student<br />
+    --删除表<br />
+        --drop table 表名<br />
+        drop table student<br />
+ </p>
+                                    </div>
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/weixin_44771312/article/details/98996868","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/weixin_44771312/article/details/98996868","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-386","con":",,"}' data-track-click='{"mod":"kp_popu_58-386","con":",,"}' data-report-view='{"mod":"kp_popu_58-386","keyword":""}' data-report-click='{"mod":"kp_popu_58-386","keyword":""}'><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98996868">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/JoyceTYH/2904695","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+		<a href="https://download.csdn.net/download/JoyceTYH/2904695" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						authorware 创建<em>二维</em>表					</h4>
+					<span class="data float-right">12-13</span>
+				</div>
+				<div class="desc oneline">
+						authorware 创建二维表 authorware 创建二维表authorware 创建二维表 authorware 创建二维表				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wyqwilliam/article/details/83592253","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wyqwilliam/article/details/83592253" target="_blank" title="二维表的修改（讲义）">
+		<h4 class="text-truncate oneline">
+				<em>二维</em>表的<em>修改</em>（讲义）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					142</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wyqwilliam/article/details/83592253" target="_blank" title="二维表的修改（讲义）">
+				<span class="desc oneline">---oracle学习--oracle的管理系统学习--oracle的数据管理学习--oracle的用户管理--oracle二维表管理--二维表的创建--创建语句--约束--修改二维表--------...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wyqwilliam">来自：	<span class="blog_title"> wyqwilliam的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/smallerxuan/article/details/80702374","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/smallerxuan/article/details/80702374" target="_blank" title="《SQL Server 2012 学习日记 》——数据表的操作">
+		<h4 class="text-truncate oneline">
+				《SQL Server 2012 <em>学习</em>日记 》——数据表的操作		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					752</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/smallerxuan/article/details/80702374" target="_blank" title="《SQL Server 2012 学习日记 》——数据表的操作">
+				<span class="desc oneline">数据表的操作1SQLServer数据库对象      数据库对象是数据库的组成部分，数据表、视图、索引、存储过程以及触发器等都是数据库对象。其中最主要的对象就是数据表，数据表是由一系列二维数组的集合，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/smallerxuan">来自：	<span class="blog_title"> smallerxuan的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/z740003446/2914098","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+		<a href="https://download.csdn.net/download/z740003446/2914098" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						数据库 2维表    写法					</h4>
+					<span class="data float-right">12-16</span>
+				</div>
+				<div class="desc oneline">
+						学会写一个专业的二维表
+学会写一个专业的二维表
+学会写一个专业的二维表
+学会写一个专业的二维表
+学会写一个专业的二维表				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/ryanzhutao/198015","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+		<a href="https://download.csdn.net/download/ryanzhutao/198015" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						数据字典管理					</h4>
+					<span class="data float-right">06-22</span>
+				</div>
+				<div class="desc oneline">
+						数据字典，二维表字典管理！&lt;br/&gt;包括添加，删除，修改等功能				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/jackton/4074798","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+		<a href="https://download.csdn.net/download/jackton/4074798" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						iphone <em>二维</em>表					</h4>
+					<span class="data float-right">02-20</span>
+				</div>
+				<div class="desc oneline">
+						iphone 二维表
+一套ios 的二维表代码，功能很强悍，跟大家分享。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/wwanghx/8771731","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+		<a href="https://download.csdn.net/download/wwanghx/8771731" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>二维</em>表转化一维表					</h4>
+					<span class="data float-right">06-04</span>
+				</div>
+				<div class="desc oneline">
+						二维表转化一维表的说明				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wyqwilliam/article/details/83592266","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wyqwilliam/article/details/83592266" target="_blank" title="二维表的操作（练习）">
+		<h4 class="text-truncate oneline">
+				<em>二维</em>表的操作（练习）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					356</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wyqwilliam/article/details/83592266" target="_blank" title="二维表的操作（练习）">
+				<span class="desc oneline">--1.列出所有雇员的姓名及其直接上级的姓名selecte1.ename,e2.enamefromempe1innerjoinempe2one1.mgr=e2.empno--2.列出部门名称和这些部门...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wyqwilliam">来自：	<span class="blog_title"> wyqwilliam的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u010503822/article/details/50734385","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010503822/article/details/50734385" target="_blank" title="二维表的数据可以被封装成的数据结构（集合）">
+		<h4 class="text-truncate oneline">
+				<em>二维</em>表的数据可以被封装成的数据结构（集合）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2562</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010503822/article/details/50734385" target="_blank" title="二维表的数据可以被封装成的数据结构（集合）">
+				<span class="desc oneline">问题的解决思路有很多，网上找了资料，非常感谢，这里做个总结。【存放二维表数据的Java数据结构】   适合封装多个表中的数据   1.List   2.ArrayList&gt;做二维表存储数据   3.行...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010503822">来自：	<span class="blog_title"> 求人不如求己</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Ljm15832631631/article/details/51111724","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Ljm15832631631/article/details/51111724" target="_blank" title="数据库中的二维表—巧借Excel">
+		<h4 class="text-truncate oneline">
+				数据库中的<em>二维</em>表—巧借Excel		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6147</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Ljm15832631631/article/details/51111724" target="_blank" title="数据库中的二维表—巧借Excel">
+				<span class="desc oneline">一维表和二维表的区别    一维表也常称为流水线表格，它和二维表做出的数据透视表最大的区别在于&quot;行总计&quot;。判断数据是一维表格还是二维表格的一个最简单的办法，就是看其列的内容--每一列是否是一个独立的参...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Ljm15832631631">来自：	<span class="blog_title"> 等待着雨水,茁壮成长--李建敏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wyqwilliam/article/details/83592177","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wyqwilliam/article/details/83592177" target="_blank" title="sql99联合查询及二维表的简单操作（讲义）">
+		<h4 class="text-truncate oneline">
+				sql99联合查询及<em>二维</em>表的简单操作（讲义）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					197</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wyqwilliam/article/details/83592177" target="_blank" title="sql99联合查询及二维表的简单操作（讲义）">
+				<span class="desc oneline">---多表联合查询：--当需要获取的数据分布在多张中，考虑使用联合查询--SQL92方式--SQL99方式---------------------------------------------SQ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wyqwilliam">来自：	<span class="blog_title"> wyqwilliam的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/shuihanzhu/article/details/78619104","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/shuihanzhu/article/details/78619104" target="_blank" title="一维表转二维表（mysql）">
+		<h4 class="text-truncate oneline">
+				一维表转<em>二维</em>表（mysql）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2142</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shuihanzhu/article/details/78619104" target="_blank" title="一维表转二维表（mysql）">
+				<span class="desc oneline">例子数据DROPTABLEIFEXISTStmp0103.temp_test;CREATETABLEtmp0103.temp_test(`id`INT(11)NOTNULLAUTO_INCREMENT...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/shuihanzhu">来自：	<span class="blog_title"> 数据分析漫漫路</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hpdlzu80100/article/details/74136076","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hpdlzu80100/article/details/74136076" target="_blank" title="利用Excel将二维表转换为一维表 （Unpivot data in Excel）">
+		<h4 class="text-truncate oneline">
+				利用Excel将<em>二维</em>表转换为一维表 （Unpivot data in Excel）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1901</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hpdlzu80100/article/details/74136076" target="_blank" title="利用Excel将二维表转换为一维表 （Unpivot data in Excel）">
+				<span class="desc oneline">一维表的列标签是字段，而二维表的列表签是数据。如下表中的数据，从数据的角度来讲，2011年-2015年这些列，都属于“年份”的范畴。转换过程及结果：使用快捷键Alt+D+P打开数据透视表对话框，依次操...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/hpdlzu80100">来自：	<span class="blog_title"> 预见未来to50的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/junxinkeqingd/article/details/88237757","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/junxinkeqingd/article/details/88237757" target="_blank" title="excel2016 for mac 二维表转一维表">
+		<h4 class="text-truncate oneline">
+				excel2016 for mac <em>二维</em>表转一维表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					332</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/junxinkeqingd/article/details/88237757" target="_blank" title="excel2016 for mac 二维表转一维表">
+				<span class="desc oneline">数据分析过程中，对一维表进行数据处理比对二维表方便，因此经常需要用到二维表转一维表的操作。《谁说菜鸟不懂数据分析》一书以及网络上能查到的有两种方法：一是利用数据透视表和数据透视图向导（包括用“ALT+...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/junxinkeqingd">来自：	<span class="blog_title"> junxinkeqingd的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u010089444/article/details/80508356","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010089444/article/details/80508356" target="_blank" title="强化学习笔记(1)：Q-Learning">
+		<h4 class="text-truncate oneline">
+				强化<em>学习</em>笔记(1)：Q-Learning		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1568</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010089444/article/details/80508356" target="_blank" title="强化学习笔记(1)：Q-Learning">
+				<span class="desc oneline">考虑下面这个例子：假如我们想让一只老鼠学会走迷宫，往往会在迷宫的几个关键地点放上奶酪，老鼠每次走到关键点就会获得奖励，久而久之，老鼠就能学会快速找到迷宫出口，这就是强化学习的一个例子。强化学习的关键要...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010089444">来自：	<span class="blog_title"> Joe的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_43430744/article/details/83444906","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_43430744/article/details/83444906" target="_blank" title="mysql-二维矩阵表格sql实现">
+		<h4 class="text-truncate oneline">
+				mysql-<em>二维</em>矩阵表格sql实现		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1052</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_43430744/article/details/83444906" target="_blank" title="mysql-二维矩阵表格sql实现">
+				<span class="desc oneline">背景1、分两个维度，统计数据并形成一个二维数据展现形式2、横轴标为统计维度1，纵轴为统计维度2横轴x区分为：x&amp;amp;amp;amp;lt;=5，5&amp;amp;amp;amp;lt;x&amp;amp;amp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_43430744">来自：	<span class="blog_title"> m0_43430744的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/maple_son/article/details/53213332","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/maple_son/article/details/53213332" target="_blank" title="将任意json转二维表 不限级">
+		<h4 class="text-truncate oneline">
+				将任意json转<em>二维</em>表 不限级		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					620</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/maple_son/article/details/53213332" target="_blank" title="将任意json转二维表 不限级">
+				<span class="desc oneline">/**限制：*{}直接下级不能有{}*[]直接下级不能有[]*[]的直接下级类型一致，要么都是int,要么都是string,要么都是{}**操作方式：*1、第一步：处理json对象，保证同一级中不存在...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/maple_son">来自：	<span class="blog_title"> maple_son的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_24276421/article/details/78147302","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_24276421/article/details/78147302" target="_blank" title="C中的lua二维表遍历">
+		<h4 class="text-truncate oneline">
+				C中的lua<em>二维</em>表遍历		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					585</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_24276421/article/details/78147302" target="_blank" title="C中的lua二维表遍历">
+				<span class="desc oneline">C中的lua二维表遍历一、主要内容lua中二维表的表示CAPI的使用打开lua关闭luamainC中的遍历函数lua和C中的虚拟栈运行结果遇到的错误使用的例子二、lua中的二维表表示lua代码01.#...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_24276421">来自：	<span class="blog_title"> 吃苹果的毛毛虫</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/IOIO_/article/details/80984338","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/IOIO_/article/details/80984338" target="_blank" title="算法设计与分析: 2-13 标准二维表问题">
+		<h4 class="text-truncate oneline">
+				算法设计与分析: 2-13 标准<em>二维</em>表问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					602</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/IOIO_/article/details/80984338" target="_blank" title="算法设计与分析: 2-13 标准二维表问题">
+				<span class="desc oneline">2-13标准二维表问题问题描述设n是一个正整数。2*n的标准二维表是由正整数1,2,…,2n组成的2*n数组，该数组的每行从左到右递增，每列从上到下递增。2*n的标准二维表全体记为Tab(n)。例如，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/IOIO_">来自：	<span class="blog_title"> `!_`5 81_09</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}' data-report-view='{"mod":"kp_popu_62-556","keyword":""}' data-report-click='{"mod":"kp_popu_62-556","keyword":""}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/a1720119024/article/details/90380633","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/a1720119024/article/details/90380633" target="_blank" title="第二部分：SQL语句二维表管理">
+		<h4 class="text-truncate oneline">
+				第二部分：SQL语句<em>二维</em>表管理		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					98</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/a1720119024/article/details/90380633" target="_blank" title="第二部分：SQL语句二维表管理">
+				<span class="desc oneline">文章目录Oracle的二维表管理Oracle数据库表的字段类型说明Oracle二维表的创建Oracle数据库字段类型参考文章：ORACLE中的各种数据类型详细的介绍Oracle的二维表管理Oracle...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/a1720119024">来自：	<span class="blog_title"> a1720119024的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yongh701/article/details/53538707","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yongh701/article/details/53538707" target="_blank" title="【Java】一行代码读完记事本中的二维表">
+		<h4 class="text-truncate oneline">
+				【Java】一行代码读完记事本中的<em>二维</em>表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1355</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yongh701/article/details/53538707" target="_blank" title="【Java】一行代码读完记事本中的二维表">
+				<span class="desc oneline">对于如下图所示这种用记事本中的二维表：如果要读入Java的容器中，也就是将上述的txt转化成ArrayList&gt;，大家可能又绞尽脑汁地思考读入类、读入方法怎么写。隐约估计完成这样的工程大概需要十几行左...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yongh701">来自：	<span class="blog_title"> 编程记录，亲测有效</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33978016/article/details/87125381","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33978016/article/details/87125381" target="_blank" title="利用Excel将一维表转化成二维表">
+		<h4 class="text-truncate oneline">
+				利用Excel将一维表转化成<em>二维</em>表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					82</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33978016/article/details/87125381" target="_blank" title="利用Excel将一维表转化成二维表">
+				<span class="desc oneline">有一次遇到这样一个情况，收到一批用户帐号和密码，但是这些数据的结构是这样的。数据如果我们逐个逐个发送给学生，当然比较好操作，但是如果要将这些数据汇总成一张表，就需要进行一番数据的处理，我们最终想要的效...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33978016">来自：	<span class="blog_title"> weixin_33978016的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhongguomao/article/details/54645061","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhongguomao/article/details/54645061" target="_blank" title="47、Power Query-处理典型的中国式二维表格转一维">
+		<h4 class="text-truncate oneline">
+				47、Power Query-处理典型的中国式<em>二维</em>表格转一维		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4636</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhongguomao/article/details/54645061" target="_blank" title="47、Power Query-处理典型的中国式二维表格转一维">
+				<span class="desc oneline">本节要点：典型的中国式二维表格转一维的处理。例子：看如下图的数据源表为典型的二维表，需要将其转置成为一维表显示。直接加载到PowerQuery中进行处理。合并列1和列2。接着进行“转置”操作，姓名和部...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhongguomao">来自：	<span class="blog_title"> 少年休闲海</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/OYY_90/article/details/82785203","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/OYY_90/article/details/82785203" target="_blank" title="mysql一维转二维数据">
+		<h4 class="text-truncate oneline">
+				mysql一维转<em>二维</em>数据		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					246</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/OYY_90/article/details/82785203" target="_blank" title="mysql一维转二维数据">
+				<span class="desc oneline">例子数据DROPTABLEIFEXISTStmp0103.temp_test;CREATETABLEtmp0103.temp_test(`id`INT(11)NOTNULLAUTO_INCREMENT...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/OYY_90">来自：	<span class="blog_title"> OYY_90的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-1059","con":",,"}' data-track-click='{"mod":"kp_popu_63-1059","con":",,"}' data-report-view='{"mod":"kp_popu_63-1059","keyword":""}' data-report-click='{"mod":"kp_popu_63-1059","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/234?positionId=63&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/llwwlql/article/details/53129224","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/llwwlql/article/details/53129224" target="_blank" title="标准二维表问题 (卡特兰数)">
+		<h4 class="text-truncate oneline">
+				标准<em>二维</em>表问题 (卡特兰数)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2142</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/llwwlql/article/details/53129224" target="_blank" title="标准二维表问题 (卡特兰数)">
+				<span class="desc oneline">标准二维表问题问题描述：设n是一个正整数。2*n的标准二维表是由正整数1,2,…,2n组成的2*n数组，该数组的每行从左到右递增，每列从上到下递增。2*n的标准二维表全体记为tab(n)。例如，当n=...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/llwwlql">来自：	<span class="blog_title"> L-75的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_24499417/article/details/84315171","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_24499417/article/details/84315171" target="_blank" title="python 转Excel二维表为一维表">
+		<h4 class="text-truncate oneline">
+				python 转Excel<em>二维</em>表为一维表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					228</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_24499417/article/details/84315171" target="_blank" title="python 转Excel二维表为一维表">
+				<span class="desc oneline">今天研究一下使用python怎么把excel二维表转化为一维表。文件名为二维表.xlsx的Sheet1数据源：二维表.xlsx的Sheet2要实现的结果：importpandasaspddf=pd.r...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_24499417">来自：	<span class="blog_title"> qq_24499417的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yangyanjava/article/details/84608047","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yangyanjava/article/details/84608047" target="_blank" title="画二维表，类似课程表">
+		<h4 class="text-truncate oneline">
+				画<em>二维</em>表，类似课程表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					83</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yangyanjava/article/details/84608047" target="_blank" title="画二维表，类似课程表">
+				<span class="desc oneline">&amp;amp;lt;%@pagelanguage=&amp;quot;java&amp;quot;import=&amp;quot;java.util.*&amp;quot;pageEncoding=&amp;quot;UTF-8&amp;quot;%...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yangyanjava">来自：	<span class="blog_title"> 小花花</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/kk185800961/article/details/78936517","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kk185800961/article/details/78936517" target="_blank" title="Python Pandas 二维数据处理与 T-SQL 对应关系">
+		<h4 class="text-truncate oneline">
+				Python Pandas <em>二维</em>数据处理与 T-SQL 对应关系		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1203</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kk185800961/article/details/78936517" target="_blank" title="Python Pandas 二维数据处理与 T-SQL 对应关系">
+				<span class="desc oneline">Pandas是python的一个数据分析包，它提供了大量的数据模型型和函数库，对数据处理很方便。DataFrame是一个二维表格数据结构，可以当做数据库中的一张关系表。Pandas可以实现SQL中的语...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/kk185800961">来自：	<span class="blog_title"> KK 笔记：专注数据</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_34204057/article/details/86865909","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34204057/article/details/86865909" target="_blank" title="Excel 如何将二维表转换为一维表？ | 规范数据">
+		<h4 class="text-truncate oneline">
+				Excel 如何将<em>二维</em>表转换为一维表？ | 规范数据		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					73</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34204057/article/details/86865909" target="_blank" title="Excel 如何将二维表转换为一维表？ | 规范数据">
+				<span class="desc oneline">很多时候，我们为了数据记录和阅读方便，会把数据表设计成非结构化数据表，或者被称为二维表。这种数据表在各行各业非常普遍，例如学生成绩表、各公司季度数据、人员每日打卡情况等。如上表，语文、数学等科目虽然属...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_34204057">来自：	<span class="blog_title"> weixin_34204057的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-1060","con":",,"}' data-track-click='{"mod":"kp_popu_64-1060","con":",,"}' data-report-view='{"mod":"kp_popu_64-1060","keyword":""}' data-report-click='{"mod":"kp_popu_64-1060","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/235?positionId=64&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/q5512049/article/details/50977738","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/q5512049/article/details/50977738" target="_blank" title="C++遍历Lua二维table">
+		<h4 class="text-truncate oneline">
+				C++遍历Lua<em>二维</em>table		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					991</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/q5512049/article/details/50977738" target="_blank" title="C++遍历Lua二维table">
+				<span class="desc oneline">#include#include usingnamespacestd; #include&quot;lua.hpp&quot;lua_State*L; intgetfield(lua_State*L,intkey1,in...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/q5512049">来自：	<span class="blog_title"> q5512049的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_25264951/article/details/56679120","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_25264951/article/details/56679120" target="_blank" title="【java】使用mysql+java绘制Excel二维表格">
+		<h4 class="text-truncate oneline">
+				【java】使用mysql+java绘制Excel<em>二维</em>表格		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					611</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_25264951/article/details/56679120" target="_blank" title="【java】使用mysql+java绘制Excel二维表格">
+				<span class="desc oneline">本文是使用java语言对于后台的数据进行绘制，由于所用到的表格的长度较长，直接使用.xlsx后缀的Excel表1、首先要导入数据库的jar包，以及读取excel的jar包2、publicstaticv...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_25264951">来自：	<span class="blog_title"> 时光若宸的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_35379989/article/details/79557347","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35379989/article/details/79557347" target="_blank" title="Solidworks学习笔记（一）--二维草图绘制与零件设计">
+		<h4 class="text-truncate oneline">
+				Solidworks<em>学习</em>笔记（一）--<em>二维</em>草图绘制与零件设计		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1254</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35379989/article/details/79557347" target="_blank" title="Solidworks学习笔记（一）--二维草图绘制与零件设计">
+				<span class="desc oneline">1SolidWorks功能模块零件模块：实现实体建模、曲面建模、模具设计、钣金设计及焊件等装配：装配环境中可设计修改零件，可动态观察装配体所有运动并进行动态的干涉检查和间隙检查、通过镜像零件部件可对称...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35379989">来自：	<span class="blog_title"> 国庆的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/foreversunyao/article/details/83813367","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/foreversunyao/article/details/83813367" target="_blank" title="二维表">
+		<h4 class="text-truncate oneline">
+				<em>二维</em>表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					33</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/foreversunyao/article/details/83813367" target="_blank" title="二维表">
+				<span class="desc oneline">在关系模型中，数据结构表示为一个二维表，一个关系就是一个二维表（但不是任意一个二维表都能表示一个关系），二维表名就是关系名。表中的第一行通常称为属性名，表中的每一个元组和属性都是不可再分的，且元组的次...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/foreversunyao">来自：	<span class="blog_title"> foreversunyao的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/CABI_ZGX/article/details/80027015","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/CABI_ZGX/article/details/80027015" target="_blank" title="[BZOJ1047][HAOI2007]理想的正方形（二维ST表）">
+		<h4 class="text-truncate oneline">
+				[BZOJ1047][HAOI2007]理想的正方形（<em>二维</em>ST表）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					493</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/CABI_ZGX/article/details/80027015" target="_blank" title="[BZOJ1047][HAOI2007]理想的正方形（二维ST表）">
+				<span class="desc oneline">传送门昨晚回宿舍路上Rose_max肉老师做完了这道题问我怎么做，我这么辣鸡怎么可能会做嘛。。然后我就说：二维线段树模版题（事实上我不会写二维线段树。。）肉老师听完，淡淡的一笑：“太不优秀了。。”然后...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/CABI_ZGX">来自：	<span class="blog_title"> 私は Mocha!!</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/as326df/4907248","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+		<a href="https://download.csdn.net/download/as326df/4907248" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						asp.net 简单的 json与<em>二维</em>表的转化					</h4>
+					<span class="data float-right">12-19</span>
+				</div>
+				<div class="desc oneline">
+						json简单的解析，一个c#实现的万能解析器，数据库转化为json格式，序列化反序列化，文件信息转化json				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/SGZ_06_666666/article/details/53744020","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/SGZ_06_666666/article/details/53744020" target="_blank" title="这里遇到的一个小坑-python中的二维列表">
+		<h4 class="text-truncate oneline">
+				这里遇到的一个小坑-python中的<em>二维</em>列表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3054</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/SGZ_06_666666/article/details/53744020" target="_blank" title="这里遇到的一个小坑-python中的二维列表">
+				<span class="desc oneline">缘起于某个同学问了我一个问题（我自己学的话万万不会抠得那么深...）他的程序是这样的：listx=[]graph=[]forainrange(0,10):listx.append(99999)forb...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/SGZ_06_666666">来自：	<span class="blog_title"> 慕林溪的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/OYY_90/article/details/82793841","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/OYY_90/article/details/82793841" target="_blank" title="Excel小功能：Vlookup函数--透视表-透视图-一维二维交叉表间的转换">
+		<h4 class="text-truncate oneline">
+				Excel小功能：Vlookup函数--透视表-透视图-一维<em>二维</em>交叉表间的转换		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					240</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/OYY_90/article/details/82793841" target="_blank" title="Excel小功能：Vlookup函数--透视表-透视图-一维二维交叉表间的转换">
+				<span class="desc oneline"> 也可以直接过来   参考文献：http://blog.sina.com.cn/s/blog_63ac9eda0101bx5k.html           http://baijiahao.baid...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/OYY_90">来自：	<span class="blog_title"> OYY_90的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/liang526011569/article/details/69390496","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liang526011569/article/details/69390496" target="_blank" title="echarts二维图表举例">
+		<h4 class="text-truncate oneline">
+				echarts<em>二维</em>图表举例		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3679</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liang526011569/article/details/69390496" target="_blank" title="echarts二维图表举例">
+				<span class="desc oneline">echarts二维图表</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liang526011569">来自：	<span class="blog_title"> liang526011569的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ppppppppp2009/article/details/50676238","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ppppppppp2009/article/details/50676238" target="_blank" title="python 将一维列表转二维列表">
+		<h4 class="text-truncate oneline">
+				python 将一维列表转<em>二维</em>列表		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6648</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ppppppppp2009/article/details/50676238" target="_blank" title="python 将一维列表转二维列表">
+				<span class="desc oneline">增加并发性的需求，将一维列表转为二维列表if__name__==&quot;__main__&quot;:fd=open(&quot;domains.txt&quot;)domains=[]domains=[domain.strip()fo...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ppppppppp2009">来自：	<span class="blog_title"> ppppppppp2009的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/xmczy/1275473","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+		<a href="https://download.csdn.net/download/xmczy/1275473" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						SQL<em>二维</em>数据查询实例					</h4>
+					<span class="data float-right">05-05</span>
+				</div>
+				<div class="desc oneline">
+						sqlserver可用于二维护报表展现!				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sinat_28984567/article/details/81180424","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sinat_28984567/article/details/81180424" target="_blank" title="SQL SERVER 统计（2）——CUBE多维统计">
+		<h4 class="text-truncate oneline">
+				SQL SERVER 统计（2）——CUBE多维统计		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6720</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sinat_28984567/article/details/81180424" target="_blank" title="SQL SERVER 统计（2）——CUBE多维统计">
+				<span class="desc oneline">    上一篇博客中介绍了CUBE的基本用法，这次介绍一下CUBE的多维统计用法，测试数据：--测试数据ifnotobject_id(N'Tempdb..#T')isnull	droptable#TG...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sinat_28984567">来自：	<span class="blog_title"> 二月十六的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wowocpp/article/details/83827210","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowocpp/article/details/83827210" target="_blank" title="python创建二维列表的方法">
+		<h4 class="text-truncate oneline">
+				python创建<em>二维</em>列表的方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					183</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowocpp/article/details/83827210" target="_blank" title="python创建二维列表的方法">
+				<span class="desc oneline">使用for循环，规避浅拷贝python创建二维列表可以通过循环的方式来创建，代码如下：(稍后补充)...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowocpp">来自：	<span class="blog_title"> abc</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhaoyangjian724/article/details/79897581","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhaoyangjian724/article/details/79897581" target="_blank" title="jquery 将2维数据逐条写入表格">
+		<h4 class="text-truncate oneline">
+				jquery 将2维数据逐条写入表格		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					113</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhaoyangjian724/article/details/79897581" target="_blank" title="jquery 将2维数据逐条写入表格">
+				<span class="desc oneline">1.[esb@esbapp5sbin]$cata1.shecho'aaaaaaaaaaaaa'ppplllecho'bbbbbbbbbbbbbb'echo'cccccccccccccc'echo'dd...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhaoyangjian724">来自：	<span class="blog_title"> zhaoyangjian724的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/fansooxx/article/details/79368826","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/fansooxx/article/details/79368826" target="_blank" title="二维列表的实现">
+		<h4 class="text-truncate oneline">
+				<em>二维</em>列表的实现		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					253</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fansooxx/article/details/79368826" target="_blank" title="二维列表的实现">
+				<span class="desc oneline">前言小F我最近遇到了一个小需求，实现效果如下：当然这不是静态的，需求如下：当视图上下滑动时，左边的视图跟着上下滑动，反之亦然当视图左右滑动时，上边的视图跟着左右滑动，反之亦然当主视图在两个方向上同时滑...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/fansooxx">来自：	<span class="blog_title"> fansooxx的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-653","con":",,"}' data-track-click='{"mod":"kp_popu_67-653","con":",,"}' data-report-view='{"mod":"kp_popu_67-653","keyword":""}' data-report-click='{"mod":"kp_popu_67-653","keyword":""}'><div id="three_ad43" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : '9gAEHz',
+                placeholderId: "three_ad43",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 12,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/cavin_2017/article/details/65447671","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/cavin_2017/article/details/65447671" target="_blank" title="excel表各从二维转化成一维">
+		<h4 class="text-truncate oneline">
+				excel表各从<em>二维</em>转化成一维		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					413</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/cavin_2017/article/details/65447671" target="_blank" title="excel表各从二维转化成一维">
+				<span class="desc oneline">工作中常会遇到下表情况：假如，我们需要统计每个项目中各id的销售数据，即表格格式需要转换成：解决思路： 借用数据透视表，完成二维表像一维数据的转换。解决方法：step.1 上表数据中可得出商品id这列...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/cavin_2017">来自：	<span class="blog_title"> cavin_2017的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/starperfection/article/details/51909194","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/starperfection/article/details/51909194" target="_blank" title="[Office] 如何对Excel二维表中的所有数值进行排序">
+		<h4 class="text-truncate oneline">
+				[Office] 如何对Excel<em>二维</em>表中的所有数值进行排序		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1200</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/starperfection/article/details/51909194" target="_blank" title="[Office] 如何对Excel二维表中的所有数值进行排序">
+				<span class="desc oneline">在Excel中，如果想对一个一维的数组（只有一行或者一列的数据）进行排序的话（寻找最大值和最小值），可以直接使用Excel自带的数据筛选功能进行排序，但是如果要在二维数组（存在很多行和很多列）的数据表...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/starperfection">来自：	<span class="blog_title"> 轻舞飞扬</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37872090/article/details/80203124","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37872090/article/details/80203124" target="_blank" title="最优二叉查找树，动态规划法，二维表，填表优化，代码">
+		<h4 class="text-truncate oneline">
+				最优二叉查找树，动态规划法，<em>二维</em>表，填表优化，代码		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					879</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37872090/article/details/80203124" target="_blank" title="最优二叉查找树，动态规划法，二维表，填表优化，代码">
+				<span class="desc oneline">   笔者先介绍一下动态规划法最优二叉查找树以及填表公式（本质是想吐槽其繁琐）。   设T(i,j)是由记录{ri,…,rj}(1≤i≤j≤n)构成的二叉查找树，C(i,j)是这棵二叉查找树的平均比较...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37872090">来自：	<span class="blog_title"> VM_Alike的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_40610760/article/details/88849292","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40610760/article/details/88849292" target="_blank" title="Python--图表绘制（二维线性图，箱线图，散点图，直方图，饼图）大合集">
+		<h4 class="text-truncate oneline">
+				Python--图表绘制（<em>二维</em>线性图，箱线图，散点图，直方图，饼图）大合集		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					194</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40610760/article/details/88849292" target="_blank" title="Python--图表绘制（二维线性图，箱线图，散点图，直方图，饼图）大合集">
+				<span class="desc oneline">信息工程系实验报告实验一：python的图表绘制实验时间：2019/3/27实验地点：实训室实验步骤饼图：#-*cod......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_40610760">来自：	<span class="blog_title"> qq_40610760的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xwd18280820053/article/details/74306825","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xwd18280820053/article/details/74306825" target="_blank" title="机器学习试题">
+		<h4 class="text-truncate oneline">
+				机器<em>学习</em>试题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6655</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xwd18280820053/article/details/74306825" target="_blank" title="机器学习试题">
+				<span class="desc oneline">1．什么是监督学习和非监督学习，请说明它们的区别，并各举一个例子。说明分类和回归问题的区别，并各举一个例子。答：（1）有监督学习：对具有标记的训练样本进行学习来建立从样本特征到标记的映射。例如：支持向...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xwd18280820053">来自：	<span class="blog_title"> AI_盲的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/earthgoshawk/499848","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+		<a href="https://download.csdn.net/download/earthgoshawk/499848" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						IBMDB2XML操作					</h4>
+					<span class="data float-right">06-17</span>
+				</div>
+				<div class="desc oneline">
+						IBMDB2xml操作汇总，其中包括xml字段与二维表的提取				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/combos/o364_s7099_l0_t " target="_blank">
+                        jQuery学习                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o317_s325_l0_t " target="_blank">
+                        虚拟化技术学习                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaYg0sODItZWR1.html" target="_blank">
+                        java学习表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtTaAgzsMDItZWR1.html" target="_blank">
+                        大数据学习表</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/weixin_44771312">
+              <img src="https://avatar.csdn.net/2/0/B/3_weixin_44771312.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/0.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/weixin_44771312"  class="" id="uid">土妮子</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="74">
+                        <dt><a href="https://blog.csdn.net/weixin_44771312?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/weixin_44771312?t=1"><span class="count">74</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="1">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">1</span></dd>
+        </dl>
+        <dl class="text-center" title="3">
+            <dt>喜欢</dt>
+            <dd><span class="count">3</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="3级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-3"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="1151">
+                1151            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="713">
+                713            </dd>
+        </dl>
+        <dl title="104921">
+            <dt>排名：</dt>
+            <dd>10万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/weixin_44771312">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/weixin_44771312/article/details/99106882" target="_blank" >
+                                        oracle一些作业处理                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/weixin_44771312/article/details/99106078" target="_blank" >
+                                        oracle分页查询                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/weixin_44771312/article/details/98997081" target="_blank" >
+                                        oracle索引&amp;视图学习                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/weixin_44771312/article/details/98996976" target="_blank" >
+                                        oracle序列学习                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/weixin_44771312/article/details/98996452" target="_blank" >
+                                        oracle主键约束&amp;非空约束&amp;检查约束&amp;唯一约束&amp;外键约束                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/weixin_44771312/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">41篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/weixin_44771312/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">33篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/weixin_44771312/article/details/96018760" >
+                                                第一章Java入门                    </a>
+					<p class="read">阅读数 <span>40</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/weixin_44771312/article/details/97419809" >
+                                                List接口                    </a>
+					<p class="read">阅读数 <span>30</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/weixin_44771312/article/details/97932867" >
+                                                动态编译                    </a>
+					<p class="read">阅读数 <span>26</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/weixin_44771312/article/details/98370915" >
+                                                线程状态和终止线程                    </a>
+					<p class="read">阅读数 <span>25</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/weixin_44771312/article/details/98759321" >
+                                                oracle函数学习：单行函数，多行函数，转换函数，其他函数                    </a>
+					<p class="read">阅读数 <span>25</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/weixin_44771312/article/details/98996452" title="oracle主键约束&amp;非空约束&amp;检查约束&amp;唯一约束&amp;外键约束">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/weixin_44771312/article/details/98996976" title="oracle序列学习">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/weixin_44771312/article/details/98996452" title="oracle主键约束&amp;非空约束&amp;检查约束&amp;唯一约束&amp;外键约束">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/weixin_44771312/article/details/98996976" title="oracle序列学习">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 16;
+    var articleId = "98996868";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/weixin_44771312/article/details/98996868";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "二维表的修改学习 - weixin_44771312的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["\u4e8c\u7ef4","\u4fee\u6539","\u5b66\u4e60"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

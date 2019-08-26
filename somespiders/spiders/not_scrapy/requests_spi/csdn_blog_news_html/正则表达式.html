@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/mudearlu/article/details/98974972"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"正则表达式 - mudearlu的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>正则表达式 - mudearlu的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/mudearlu\/article\/details\/98974972","appid":"1563894916825412","title":"\u6b63\u5219\u8868\u8fbe\u5f0f - mudearlu\u7684\u535a\u5ba2","images":["https:\/\/img-blog.csdnimg.cn\/20190809182708165.png?x-oss-process=image\/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70","https:\/\/img-blog.csdnimg.cn\/20190809183218344.png","https:\/\/img-blog.csdnimg.cn\/20190809183638887.png"],"pubDate":"2019-08-11T21:31:04"}</script>
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-blackboard/skin-blackboard-1340d63bd5.min.css">
+        <script type="text/javascript">
+        var username = "mudearlu";
+        var blog_address = "https://blog.csdn.net/mudearlu";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/mudearlu/article/details/98974972"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin-blackboard";
+        // 收藏所需数据
+        var articleTitle = "正则表达式";
+        var articleDesc = "正则表达式的语法：♫♫♫字符匹配.匹配任意字符,除了\\n[…]匹配字符集\\d\\D匹配数字非数字\\s\\S匹配空白非空白.\\w\\W匹配单词字符[a-zA-Z0-9]非单词字符.匹配任意字符,除了\\n[…]匹配字符集\\d匹配数字\\D匹配非数字\\s匹配空白\\S匹配非空白字...";
+        // 第四范式所需数据
+        var articleTitles = "正则表达式 - mudearlu的博客";
+        
+        var nickName = "六小可的喵";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/mudearlu/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/mudearlu/article/details/98974972";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-845","con":",,"}' data-track-click='{"mod":"kp_popu_476-845","con":",,"}' data-report-view='{"mod":"kp_popu_476-845","keyword":""}' data-report-click='{"mod":"kp_popu_476-845","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384060213.png',bigMoveImg:'https://img-bss.csdn.net/1564384050975.png',link:'https://kunyu.csdn.net?p=476&a=845&c=394&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fpython115%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:845});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">正则表达式</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 21:29:21</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/mudearlu" target="_blank">六小可的喵</a>
+                    <span class="read-count">阅读数 32</span>
+                                                                                                <div class="tags-box space">
+                                <span class="label">个人分类：</span>
+                                                                <a class="tag-link" href="https://blog.csdn.net/mudearlu/article/category/9208698" target="_blank">Linux                                                                    </a>
+                            </div>
+                                                                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <p><strong>正则表达式的语法：</strong></p>
+<p>♫♫♫</p>
+
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配任意字符,除了\n</td>
+</tr>
+<tr>
+<td>[…]</td>
+<td>匹配字符集</td>
+</tr>
+<tr>
+<td>\d  \D</td>
+<td>匹配数字   非数字</td>
+</tr>
+<tr>
+<td>\s  \S</td>
+<td>匹配空白  非空白</td>
+</tr>
+<tr>
+<td>.\w  \W</td>
+<td>匹配单词字符[a-zA-Z0-9]    非单词字符</td>
+</tr>
+</tbody>
+</table><p>. <em>匹配任意字符,除了\n</em><br>
+<img src="https://img-blog.csdnimg.cn/20190809182708165.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+<em>[…]匹配字符集</em><br>
+<img src="https://img-blog.csdnimg.cn/20190809183218344.png" alt="在这里插入图片描述"><br>
+<em>\d  匹配数字     \D 匹配非数字<br>
+\s  匹配空白    \S 匹配非空白字符</em><br>
+<img src="https://img-blog.csdnimg.cn/20190809183638887.png" alt="在这里插入图片描述"><br>
+<em>\w   匹配单词字符[a-zA-Z0-9]    \W 匹配非单词字符</em><br>
+<img src="https://img-blog.csdnimg.cn/20190809184400811.png" alt="在这里插入图片描述"><br>
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
+
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配前一个字符0次或者无限次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前一个字符1次或者无限次</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前一个字符0次或者1次</td>
+</tr>
+<tr>
+<td>{m}   {m,n}</td>
+<td>匹配前一个字符m次或者n次</td>
+</tr>
+<tr>
+<td>*?    +?    ??</td>
+<td>匹配模式变为非贪婪</td>
+</tr>
+</tbody>
+</table><p><img src="https://img-blog.csdnimg.cn/20190809185739163.png" alt="在这里插入图片描述"><br>
+<img src="https://img-blog.csdnimg.cn/20190809190124718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>匹配字符串开头</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串结尾</td>
+</tr>
+<tr>
+<td>\A     \Z</td>
+<td>指定的字符串必须出现在开头   结尾</td>
+</tr>
+</tbody>
+</table><p><img src="https://img-blog.csdnimg.cn/20190809191024293.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190809212850710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+<img src="https://img-blog.csdnimg.cn/20190809210256800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄</p>
+<p>其它语法格式：<br>
+1：search(pattern,string,flags=0)     在一个字符串中查找匹配<br>
+2：findall(pattern,string,flag=0)    找到匹配，返回所有匹配部分的列表</p>
+<p><img src="https://img-blog.csdnimg.cn/20190809211158109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+3：sub(pattern,repl,string,count=0,flags=0)   将字符串string中匹配正则表达式pattern的部分替换为repl<br>
+4:split(pattern,string,maxsplit=0,flags=0)    根据匹配pattren分隔字符串string,返回分隔字符串组成的列表<br>
+<img src="https://img-blog.csdnimg.cn/20190809212037993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZGVhcmx1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet">
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/mudearlu/article/details/98974972","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/mudearlu/article/details/98974972","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-386","con":",,"}' data-track-click='{"mod":"kp_popu_58-386","con":",,"}' data-report-view='{"mod":"kp_popu_58-386","keyword":""}' data-report-click='{"mod":"kp_popu_58-386","keyword":""}'><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98974972">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zhangguiyang0807/2973494","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+		<a href="https://download.csdn.net/download/zhangguiyang0807/2973494" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em><em>正则表达式</em>					</h4>
+					<span class="data float-right">01-10</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/db_success/2380132","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+		<a href="https://download.csdn.net/download/db_success/2380132" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>正					</h4>
+					<span class="data float-right">05-21</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/myplay2010/3226328","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+		<a href="https://download.csdn.net/download/myplay2010/3226328" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						常用<em>正则表达式</em><em>正则表达式</em><em>正则表达式</em>					</h4>
+					<span class="data float-right">04-26</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/f_d_q/3153020","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+		<a href="https://download.csdn.net/download/f_d_q/3153020" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>入门指导.ppt					</h4>
+					<span class="data float-right">04-02</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达正...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/damodar/1124549","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+		<a href="https://download.csdn.net/download/damodar/1124549" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>总结文档集合					</h4>
+					<span class="data float-right">03-19</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/a328240784/3431010","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+		<a href="https://download.csdn.net/download/a328240784/3431010" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>简单课程学习					</h4>
+					<span class="data float-right">07-10</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zero_j01/10202105","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+		<a href="https://download.csdn.net/download/zero_j01/10202105" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						RegexTester <em>正则表达式</em>					</h4>
+					<span class="data float-right">01-12</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/huang0715165/3297336","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+		<a href="https://download.csdn.net/download/huang0715165/3297336" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						xml需求文档及<em>正则表达式</em>介绍					</h4>
+					<span class="data float-right">05-20</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/m0_37871449/10369442","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+		<a href="https://download.csdn.net/download/m0_37871449/10369442" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						正则指引书籍					</h4>
+					<span class="data float-right">04-23</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/CWK445056007/3152851","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+		<a href="https://download.csdn.net/download/CWK445056007/3152851" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						最全的<em>正则表达式</em>下载					</h4>
+					<span class="data float-right">04-02</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zhenxindeai_0526/2753782","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+		<a href="https://download.csdn.net/download/zhenxindeai_0526/2753782" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em> <em>正则表达式</em> <em>正则表达式</em>					</h4>
+					<span class="data float-right">10-13</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式，正则表达式，正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/greenandtree66/3341987","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+		<a href="https://download.csdn.net/download/greenandtree66/3341987" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						正在表达式 <em>正则表达式</em><em>正则表达式</em>					</h4>
+					<span class="data float-right">06-05</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式  正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/lxmabc/10170460","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+		<a href="https://download.csdn.net/download/lxmabc/10170460" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>详细介绍					</h4>
+					<span class="data float-right">12-23</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/taiyonghai/841153","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+		<a href="https://download.csdn.net/download/taiyonghai/841153" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						常用<em>正则表达式</em>包括最新手机...					</h4>
+					<span class="data float-right">12-05</span>
+				</div>
+				<div class="desc oneline">
+						常用的正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/axgle/1603078","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+		<a href="https://download.csdn.net/download/axgle/1603078" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						regexp<em>正则表达式</em><em>正则表达式</em><em>正则表达式</em>					</h4>
+					<span class="data float-right">08-25</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/ANGLE98/3350006","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+		<a href="https://download.csdn.net/download/ANGLE98/3350006" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>.doc <em>正则表达式</em>					</h4>
+					<span class="data float-right">06-09</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/edsionte/2762192","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+		<a href="https://download.csdn.net/download/edsionte/2762192" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>测试文本<em>正则表达式</em>测试文本					</h4>
+					<span class="data float-right">10-17</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则表达式测试文本正则...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zhangzhe1988717/2012667","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+		<a href="https://download.csdn.net/download/zhangzhe1988717/2012667" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em><em>正则表达式</em><em>正则表达式</em>					</h4>
+					<span class="data float-right">01-21</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式应用正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/ayay_870621/1839685","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+		<a href="https://download.csdn.net/download/ayay_870621/1839685" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>写法与部分表达式					</h4>
+					<span class="data float-right">11-23</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/tstcylq/10188652","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+		<a href="https://download.csdn.net/download/tstcylq/10188652" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>手册.pdf					</h4>
+					<span class="data float-right">01-04</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/stonespawn/713142","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+		<a href="https://download.csdn.net/download/stonespawn/713142" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>测试工具(rar)					</h4>
+					<span class="data float-right">10-23</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则表达式测试工具正则...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zllovesjj/1186859","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+		<a href="https://download.csdn.net/download/zllovesjj/1186859" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>II <em>正则表达式</em>					</h4>
+					<span class="data float-right">04-08</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/xczxa/2844984","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+		<a href="https://download.csdn.net/download/xczxa/2844984" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>详细教程<em>正则表达式</em>详细教程					</h4>
+					<span class="data float-right">11-19</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式详细教程正则表达式详细教程				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zxvik/3623114","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+		<a href="https://download.csdn.net/download/zxvik/3623114" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						AS<em>正则表达式</em>					</h4>
+					<span class="data float-right">09-21</span>
+				</div>
+				<div class="desc oneline">
+						AS正则表达式AS正则表达式AS正则表达式AS正则表达式AS正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}' data-report-view='{"mod":"kp_popu_63-555","keyword":""}' data-report-click='{"mod":"kp_popu_63-555","keyword":""}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/weijiaxiu_490/3340624","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+		<a href="https://download.csdn.net/download/weijiaxiu_490/3340624" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						JavaScript&amp;<em>正则表达式</em>					</h4>
+					<span class="data float-right">06-05</span>
+				</div>
+				<div class="desc oneline">
+						JavaScript&amp;正则表达式JavaScript&amp;正则表达式JavaScript&amp;正则表达式JavaScript&amp;正则表达式JavaScript&amp;正则表达式JavaScript&amp;正则表达...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/asdmorning/10042231","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+		<a href="https://download.csdn.net/download/asdmorning/10042231" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>[非原创]					</h4>
+					<span class="data float-right">10-27</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式 正则表达式 正则表达式 正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/huanghanjun88/586002","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+		<a href="https://download.csdn.net/download/huanghanjun88/586002" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						标准的<em>正则表达式</em>全集					</h4>
+					<span class="data float-right">08-25</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式.正则表达式.正则表达式.正则表达式.				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/lx707/3393639","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+		<a href="https://download.csdn.net/download/lx707/3393639" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>javatxt					</h4>
+					<span class="data float-right">06-25</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/liu_ares/9971269","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+		<a href="https://download.csdn.net/download/liu_ares/9971269" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>大全					</h4>
+					<span class="data float-right">09-09</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式大全正则表达式大全正则表达式大全正则表达式大全正则表达式大全正则表达式大全正则表达式大全正则表达式大全				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-1060","con":",,"}' data-track-click='{"mod":"kp_popu_64-1060","con":",,"}' data-report-view='{"mod":"kp_popu_64-1060","keyword":""}' data-report-click='{"mod":"kp_popu_64-1060","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/235?positionId=64&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/biptwjw/1382797","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+		<a href="https://download.csdn.net/download/biptwjw/1382797" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>.rar <em>正则表达式</em>.rar					</h4>
+					<span class="data float-right">06-04</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式.rar正则表达式.rar正则表达式.rar正则表达式.rar正则表达式.rar正则表达式.rar正则表达式.rar正则表达式.rar				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/zcl131421pww/1039593","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+		<a href="https://download.csdn.net/download/zcl131421pww/1039593" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						常用<em>正则表达式</em>常用<em>正则表达式</em>					</h4>
+					<span class="data float-right">02-24</span>
+				</div>
+				<div class="desc oneline">
+						常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/myboycsr/1039876","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+		<a href="https://download.csdn.net/download/myboycsr/1039876" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						常用<em>正则表达式</em>，很常用到验证的时候					</h4>
+					<span class="data float-right">02-24</span>
+				</div>
+				<div class="desc oneline">
+						常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式常用正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/befreedoma/2991025","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+		<a href="https://download.csdn.net/download/befreedoma/2991025" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>的语法 <em>正则表达式</em>语法					</h4>
+					<span class="data float-right">01-19</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法正则表达式语法				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/taikey/3442083","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+		<a href="https://download.csdn.net/download/taikey/3442083" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>和Java编程语言					</h4>
+					<span class="data float-right">07-14</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/guogang3411/1562950","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+		<a href="https://download.csdn.net/download/guogang3411/1562950" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						一些常用的<em>正则表达式</em>大全资料引用					</h4>
+					<span class="data float-right">08-10</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/jy00613959/2080829","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+		<a href="https://download.csdn.net/download/jy00613959/2080829" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						一些小的，<em>正则表达式</em>					</h4>
+					<span class="data float-right">02-26</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/sa2q1200421/2245204","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+		<a href="https://download.csdn.net/download/sa2q1200421/2245204" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>的正确用法					</h4>
+					<span class="data float-right">04-15</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式，正则表达式，正则表达式，正则表达式，正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/qq_40430616/10575537","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+		<a href="https://download.csdn.net/download/qq_40430616/10575537" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						c#<em>正则表达式</em>.ppt					</h4>
+					<span class="data float-right">07-31</span>
+				</div>
+				<div class="desc oneline">
+						c#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.pptc#正则表达式.ppt				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/Menger86/2973805","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+		<a href="https://download.csdn.net/download/Menger86/2973805" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>教程.<em>正则表达式</em>教程.<em>正则表达式</em>教程					</h4>
+					<span class="data float-right">01-10</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式教程正则表达式教程正则表达式教程正则表达式教程正则表达式教程正则表达式教程正则表达式教程正则表达式教程正则表达式教程				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/hdl62402/1308335","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+		<a href="https://download.csdn.net/download/hdl62402/1308335" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						常用<em>正则表达式</em> 规范化规划					</h4>
+					<span class="data float-right">05-14</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式
+正则表达式
+正则表达式
+正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/yiyexiao2003/2528429","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+		<a href="https://download.csdn.net/download/yiyexiao2003/2528429" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em> <em>正则表达式</em>					</h4>
+					<span class="data float-right">07-09</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式 正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/chehanwei/1004428","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+		<a href="https://download.csdn.net/download/chehanwei/1004428" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>的详细介绍					</h4>
+					<span class="data float-right">02-11</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_42813491/article/details/87286880","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42813491/article/details/87286880" target="_blank" title="模板引擎underscore配合Ajax读取数据">
+		<h4 class="text-truncate oneline">
+				模板引擎underscore配合Ajax读取数据		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					138</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42813491/article/details/87286880" target="_blank" title="模板引擎underscore配合Ajax读取数据">
+				<span class="desc oneline">underscore配合Ajax读取数据</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42813491">来自：	<span class="blog_title"> 冷月心的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/asdmorning/10042229","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+		<a href="https://download.csdn.net/download/asdmorning/10042229" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>（非原创）					</h4>
+					<span class="data float-right">10-27</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式正则表达式正则表达式正则表达式正则表达式正则表达式（非原创）				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/weijiaxiu_490/2622988","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+		<a href="https://download.csdn.net/download/weijiaxiu_490/2622988" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>实例_RegExp					</h4>
+					<span class="data float-right">08-16</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例正则表达式实例				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/luanliyun2008/650126","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+		<a href="https://download.csdn.net/download/luanliyun2008/650126" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em><em>正则表达式</em>.doc					</h4>
+					<span class="data float-right">09-25</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc正则表达式.doc				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/yangzx2002/609808","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+		<a href="https://download.csdn.net/download/yangzx2002/609808" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						深入浅出之<em>正则表达式</em>					</h4>
+					<span class="data float-right">09-06</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式深入浅出之正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/wslimu/1390466","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+		<a href="https://download.csdn.net/download/wslimu/1390466" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>系统   教程					</h4>
+					<span class="data float-right">06-08</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式系统正则表达式系统正则表达式系统正则表达式系统正则表达式系统正则表达式系统正则表达式系统				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/tk547514/1213643","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+		<a href="https://download.csdn.net/download/tk547514/1213643" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>正则表达式</em>入门教程<em>正则表达式</em>入门教程<em>正则表达式</em>入门教程<em>正则表达式</em>入门教程					</h4>
+					<span class="data float-right">04-15</span>
+				</div>
+				<div class="desc oneline">
+						正则表达式入门教程正则表达式入门教程正则表达式入门教程正则表达式入门教程正则表达式入门教程正则表达式入门教程正则表达式入门教程				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_614","dest":"https://download.csdn.net/download/wxxy6a/2465575","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+		<a href="https://download.csdn.net/download/wxxy6a/2465575" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						PHP常用<em>正则表达式</em>					</h4>
+					<span class="data float-right">06-18</span>
+				</div>
+				<div class="desc oneline">
+						PHP常用正则表达式PHP常用正则表达式PHP常用正则表达式PHP常用正则表达式PHP常用正则表达式PHP常用正则表达式PHP常用正则表达式				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtjaMg4sNjMtZWR1.html" target="_blank">
+                        java 正则表达式学习</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtTakg5sMi1lZHUO0O0O.html" target="_blank">
+                        python3正则表达式教程</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/mudearlu">
+              <img src="https://avatar.csdn.net/5/0/F/3_mudearlu.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/mudearlu"  class="" id="uid">六小可的喵</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="4">
+                        <dt><a href="https://blog.csdn.net/mudearlu?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/mudearlu?t=1"><span class="count">4</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>喜欢</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="1级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-1"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="68">
+                68            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="51">
+                51            </dd>
+        </dl>
+        <dl title="1867081">
+            <dt>排名：</dt>
+            <dd>186万+</dd>
+        </dl>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/mudearlu">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/mudearlu/article/details/98877880" target="_blank" >
+                                        Linux网络编程                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/mudearlu/article/details/98793518" target="_blank" >
+                                        Ubuntu下vi的使用                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/mudearlu/article/details/98750018" target="_blank" >
+                                        基于python的飞机大战游戏                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/mudearlu/article/category/9172604">
+                    <span class="title oneline">Python基础</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/mudearlu/article/category/9208698">
+                    <span class="title oneline">Linux</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/mudearlu/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/mudearlu/article/details/98877880" >
+                                                Linux网络编程                    </a>
+					<p class="read">阅读数 <span>10</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/mudearlu/article/details/98750018" >
+                                                基于python的飞机大战游戏                    </a>
+					<p class="read">阅读数 <span>7</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/mudearlu/article/details/98793518" >
+                                                Ubuntu下vi的使用                    </a>
+					<p class="read">阅读数 <span>4</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/mudearlu/article/details/98974972" >
+                                                正则表达式                    </a>
+					<p class="read">阅读数 <span>0</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/mudearlu/article/details/98877880" title="Linux网络编程">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/mudearlu/article/details/98877880" title="Linux网络编程">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+											</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 16;
+    var articleId = "98974972";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/mudearlu/article/details/98974972";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "正则表达式 - mudearlu的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = 'atom-one-dark';
+	var highlight = ["\u6b63\u5219\u8868\u8fbe\u5f0f"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-dark.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

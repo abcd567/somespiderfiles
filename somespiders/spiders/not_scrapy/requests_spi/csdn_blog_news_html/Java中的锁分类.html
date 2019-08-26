@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/Qqun954715313/article/details/98991766"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"Java中的锁分类 - Qqun954715313的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>Java中的锁分类 - Qqun954715313的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "Qqun954715313";
+        var blog_address = "https://blog.csdn.net/qqun954715313";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/Qqun954715313/article/details/98991766"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "Java中的锁分类";
+        var articleDesc = "在读很多并发文章中，会提及各种各样锁如公平锁，乐观锁等等，这篇文章介绍各种锁的分类。介绍的内容如下：公平锁/非公平锁可重入锁独享锁/共享锁互斥锁/读写锁乐观锁/悲观锁分段锁偏向锁/轻量级锁/重量级锁自旋锁上面是很多锁的名词，这些分类并不是全是指锁的状态，有的指锁的特性，有的指锁的设计，下面总结的内容是对每个锁的名词进行一定的解释。公平锁/非公平锁公平锁是指多个线程按照申请锁的...";
+        // 第四范式所需数据
+        var articleTitles = "Java中的锁分类 - Qqun954715313的博客";
+        
+        var nickName = "Qqun954715313";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qqun954715313/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/Qqun954715313/article/details/98991766";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}' data-report-view='{"mod":"kp_popu_476-923","keyword":""}' data-report-click='{"mod":"kp_popu_476-923","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384140363.png',bigMoveImg:'https://img-bss.csdn.net/1564384127097.png',link:'https://kunyu.csdn.net?p=476&a=923&c=437&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:923});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">Java中的锁分类</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 21:08:31</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/Qqun954715313" target="_blank">Qqun954715313</a>
+                    <span class="read-count">阅读数 36</span>
+                                                                        <span class="tags-box artic-tag-box">
+                <span class="label">标签：</span>
+                                                                <a data-report-click='{"mod":"popu_626","strategy":"java"}' data-report-view='{"mod":"popu_626","strategy":"java"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=java&t=blog" target="_blank">java                                                                    <a data-report-click='{"mod":"popu_626","strategy":"程序员"}' data-report-view='{"mod":"popu_626","strategy":"程序员"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=程序员&t=blog" target="_blank">程序员                                                                    <a data-report-click='{"mod":"popu_626","strategy":"架构"}' data-report-view='{"mod":"popu_626","strategy":"架构"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=架构&t=blog" target="_blank">架构                                                    </a>
+              </span>
+                                                                            <div class="tags-box space">
+                                <span class="label">个人分类：</span>
+                                                                <a class="tag-link" href="https://blog.csdn.net/Qqun954715313/article/category/9036755" target="_blank">互联网                                                                    </a>
+                            </div>
+                                                                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <p>在读很多并发文章中，会提及各种各样锁如公平锁，乐观锁等等，这篇文章介绍各种锁的分类。介绍的内容如下：</p>
+<p>公平锁/非公平锁<br>
+可重入锁<br>
+独享锁/共享锁<br>
+互斥锁/读写锁<br>
+乐观锁/悲观锁<br>
+分段锁<br>
+偏向锁/轻量级锁/重量级锁<br>
+自旋锁<br>
+上面是很多锁的名词，这些分类并不是全是指锁的状态，有的指锁的特性，有的指锁的设计，下面总结的内容是对每个锁的名词进行一定的解释。</p>
+<p>公平锁/非公平锁</p>
+<p>公平锁是指多个线程按照申请锁的顺序来获取锁。</p>
+<p>非公平锁是指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线程比先申请的线程优先获取锁。有可能，会造成优先级反转或者饥饿现象。</p>
+<p>对于Java ReentrantLock而言，通过构造函数指定该锁是否是公平锁，默认是非公平锁。非公平锁的优点在于吞吐量比公平锁大。</p>
+<p>对于Synchronized而言，也是一种非公平锁。由于其并不像ReentrantLock是通过AQS的来实现线程调度，所以并没有任何办法使其变成公平锁。</p>
+<p>可重入锁</p>
+<p>可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁。说的有点抽象，下面会有一个代码的示例。</p>
+<p>对于Java ReentrantLock而言, 他的名字就可以看出是一个可重入锁，其名字是Re entrant Lock重新进入锁。</p>
+<p>对于Synchronized而言,也是一个可重入锁。可重入锁的一个好处是可一定程度避免死锁。</p>
+<p>synchronized void setA() throws Exception{</p>
+<p>Thread.sleep(1000);</p>
+<p>setB();</p>
+<p>}</p>
+<p>synchronized void setB() throws Exception{</p>
+<p>Thread.sleep(1000);</p>
+<p>}</p>
+<p>上面的代码就是一个可重入锁的一个特点，如果不是可重入锁的话，setB可能不会被当前线程执行，可能造成死锁。</p>
+<p>独享锁/共享锁</p>
+<p>独享锁是指该锁一次只能被一个线程所持有。</p>
+<p>共享锁是指该锁可被多个线程所持有。</p>
+<p>对于Java ReentrantLock而言，其是独享锁。但是对于Lock的另一个实现类ReadWriteLock，其读锁是共享锁，其写锁是独享锁。</p>
+<p>读锁的共享锁可保证并发读是非常高效的，读写，写读 ，写写的过程是互斥的。</p>
+<p>独享锁与共享锁也是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。</p>
+<p>对于Synchronized而言，当然是独享锁。</p>
+<p>互斥锁/读写锁</p>
+<p>上面讲的独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是具体的实现。</p>
+<p>互斥锁在Java中的具体实现就是ReentrantLock</p>
+<p>读写锁在Java中的具体实现就是ReadWriteLock</p>
+<p>乐观锁/悲观锁</p>
+<p>悲观锁：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。[1]</p>
+<p>乐观锁：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。[1] 乐观锁不能解决脏读的问题</p>
+<p>乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待并发同步的角度。</p>
+<p>悲观锁认为对于同一个数据的并发操作，一定是会发生修改的，哪怕没有修改，也会认为修改。因此对于同一个数据的并发操作，悲观锁采取加锁的形式。悲观的认为，不加锁的并发操作一定会出问题。</p>
+<p>乐观锁则认为对于同一个数据的并发操作，是不会发生修改的。在更新数据的时候，会采用尝试更新，不断重新的方式更新数据。乐观的认为，不加锁的并发操作是没有事情的。</p>
+<p>从上面的描述我们可以看出，悲观锁适合写操作非常多的场景，乐观锁适合读操作非常多的场景，不加锁会带来大量的性能提升。</p>
+<p>悲观锁在Java中的使用，就是利用各种锁。</p>
+<p>乐观锁在Java中的使用，是无锁编程，常常采用的是CAS算法，典型的例子就是原子类，通过CAS自旋实现原子操作的更新。</p>
+<p>分段锁</p>
+<p>分段锁其实是一种锁的设计，并不是具体的一种锁，对于ConcurrentHashMap而言，其并发的实现就是通过分段锁的形式来实现高效的并发操作。</p>
+<p>我们以ConcurrentHashMap来说一下分段锁的含义以及设计思想，ConcurrentHashMap中的分段锁称为Segment，它即类似于HashMap（JDK7与JDK8中HashMap的实现）的结构，即内部拥有一个Entry数组，数组中的每个元素又是一个链表；同时又是一个ReentrantLock（Segment继承了ReentrantLock)。</p>
+<p>当需要put元素的时候，并不是对整个hashmap进行加锁，而是先通过hashcode来知道他要放在那一个分段中，然后对这个分段进行加锁，所以当多线程put的时候，只要不是放在一个分段中，就实现了真正的并行的插入。</p>
+<p>但是，在统计size的时候，可就是获取hashmap全局信息的时候，就需要获取所有的分段锁才能统计。</p>
+<p>分段锁的设计目的是细化锁的粒度，当操作不需要更新整个数组的时候，就仅仅针对数组中的一项进行加锁操作。</p>
+<p>偏向锁/轻量级锁/重量级锁</p>
+<p>这三种锁是指锁的状态，并且是针对Synchronized。在Java 5通过引入锁升级的机制来实现高效Synchronized。这三种锁的状态是通过对象监视器在对象头中的字段来表明的。</p>
+<p>偏向锁是指一段同步代码一直被一个线程所访问，那么该线程会自动获取锁。降低获取锁的代价。</p>
+<p>轻量级锁是指当锁是偏向锁的时候，被另一个线程所访问，偏向锁就会升级为轻量级锁，其他线程会通过自旋的形式尝试获取锁，不会阻塞，提高性能。</p>
+<p>重量级锁是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。重量级锁会让其他申请的线程进入阻塞，性能降低。</p>
+<p>自旋锁</p>
+<p>在Java中，自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</p>
+
+                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet">
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/Qqun954715313/article/details/98991766","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/Qqun954715313/article/details/98991766","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}' data-report-view='{"mod":"kp_popu_58-402","keyword":""}' data-report-click='{"mod":"kp_popu_58-402","keyword":""}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98991766">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/g1607058603/article/details/80893711","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/g1607058603/article/details/80893711" target="_blank" title="java中锁分类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>中锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					240</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/g1607058603/article/details/80893711" target="_blank" title="java中锁分类">
+				<span class="desc oneline">1、自旋锁当线程请求锁时，发现锁已经被别的线程持有，那么该线程不放弃处理器的执行时间，进行自旋，观察自旋锁保持者是否已经释放了锁。JDK1.6中引入了自适应的自旋锁。自适应意味着自旋的时间不再固定，而...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/g1607058603">来自：	<span class="blog_title"> g1607058603的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/l1394049664/article/details/81276791","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/l1394049664/article/details/81276791" target="_blank" title="java锁分类总结">
+		<h4 class="text-truncate oneline">
+				<em>java</em>锁<em>分类</em>总结		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					681</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/l1394049664/article/details/81276791" target="_blank" title="java锁分类总结">
+				<span class="desc oneline">1、可重入锁    锁的重入性：如果某个线程试图获得一个由它自己持有的锁，如果这个请求成功，那么这个锁具有重入性（内置锁具有重入性）；如果锁具备可重入性，则称作为可重入锁。像synchronized和...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/l1394049664">来自：	<span class="blog_title"> l1394049664的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_29373285/article/details/85964180","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_29373285/article/details/85964180" target="_blank" title="Java锁的种类">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>锁的种类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					330</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_29373285/article/details/85964180" target="_blank" title="Java锁的种类">
+				<span class="desc oneline">Java中的锁主要有以下几种概念：1、同步锁　　　　同一时刻，一个同步锁只能被一个线程访问。以对象为依据，通过synchronized关键字来进行同步，实现对竞争资源的互斥访问。2、独占锁（可重入的互...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_29373285">来自：	<span class="blog_title"> Linias的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_38783664/article/details/90745529","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_38783664/article/details/90745529" target="_blank" title="java面试题：锁的分类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>面试题：锁的<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					42</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_38783664/article/details/90745529" target="_blank" title="java面试题：锁的分类">
+				<span class="desc oneline">锁类型乐观锁&amp;amp;悲观锁	自旋锁&amp;amp;非自旋锁	可重入锁&amp;amp;不可重入锁	无锁&amp;amp;轻量级锁&amp;amp;偏向锁&amp;amp;重量级锁	互斥锁&amp;amp;共享锁	公平锁&amp;amp;非公平锁1.乐观...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_38783664">来自：	<span class="blog_title"> qq_38783664的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/g290095142/11341310","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+		<a href="https://download.csdn.net/download/g290095142/11341310" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>Java</em>锁.xmind					</h4>
+					<span class="data float-right">07-12</span>
+				</div>
+				<div class="desc oneline">
+						【图解版】Java锁精确分类，从JAVA各类锁进行分析和分类，精确分类Java各种锁，不可用于商业用途，如有版权问题，请联系删除！				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/developestudent/article/details/77101624","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/developestudent/article/details/77101624" target="_blank" title="Java中锁的分类">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>中锁的<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					108</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/developestudent/article/details/77101624" target="_blank" title="Java中锁的分类">
+				<span class="desc oneline">Java中的锁分类在读很多并发文章中，会提及各种各样锁如公平锁，乐观锁等等，这篇文章介绍各种锁的分类。介绍的内容如下：公平锁/非公平锁可重入锁独享锁/共享锁互斥锁/读写锁乐观锁/悲观锁分段锁偏向锁/轻...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/developestudent">来自：	<span class="blog_title"> developestudent的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wssjdysf1/article/details/80212637","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wssjdysf1/article/details/80212637" target="_blank" title="编程中的各种锁">
+		<h4 class="text-truncate oneline">
+				编程中的各种锁		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					645</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wssjdysf1/article/details/80212637" target="_blank" title="编程中的各种锁">
+				<span class="desc oneline">Java的的的的的中的锁分类https://www.cnblogs.com/qifengshi/p/6831055.html深入JVM锁机制1同步https://blog.csdn.net/chen7...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wssjdysf1">来自：	<span class="blog_title"> wssjdysf1的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/guchunchao/article/details/81629199","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/guchunchao/article/details/81629199" target="_blank" title="Java多线程并发笔记04 改变lock 对象、死锁、锁的种类">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>多线程并发笔记04 改变lock 对象、死锁、锁的种类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					260</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/guchunchao/article/details/81629199" target="_blank" title="Java多线程并发笔记04 改变lock 对象、死锁、锁的种类">
+				<span class="desc oneline">示例程序1.线程中改变lock对象/***锁对象改变的问题*变了就没用了**/publicclassChangeLock{	/**	*锁对象变了，那么锁就没有用了，但若是锁对象的属性变了则是不影响锁的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/guchunchao">来自：	<span class="blog_title"> guchunchao的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wuwuzhixiang/article/details/76847890","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wuwuzhixiang/article/details/76847890" target="_blank" title="并发编程中同步锁的分类及性质（以Java为例）">
+		<h4 class="text-truncate oneline">
+				并发编程中同步锁的<em>分类</em>及性质（以<em>Java</em>为例）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					162</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wuwuzhixiang/article/details/76847890" target="_blank" title="并发编程中同步锁的分类及性质（以Java为例）">
+				<span class="desc oneline">锁的性质根据是否公平划分公平性是锁必有的性质，任何一种锁要么是公平的要么是不公平的。公平锁（Fair）：加锁前检查是否有排队等待的线程，优先排队等待的线程，先来先得。通俗的说就是每个线程抢占锁的顺序为...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wuwuzhixiang">来自：	<span class="blog_title"> wuwuzhixiang的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_26392583/article/details/77141108","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_26392583/article/details/77141108" target="_blank" title="JVM中的锁">
+		<h4 class="text-truncate oneline">
+				JVM中的锁		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					385</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_26392583/article/details/77141108" target="_blank" title="JVM中的锁">
+				<span class="desc oneline">JVM中的锁标签：JavaJVM锁对象头MarkMarkWord，对象头的标记，32位描述对象的hash、锁信息，垃圾回收标记，年龄指向锁记录的指针指向monitor的指针GC标记偏向锁线程IDJVM...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_26392583">来自：	<span class="blog_title"> NCU的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u012834750/article/details/69398216","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012834750/article/details/69398216" target="_blank" title="多线程(十二)锁的种类及辨析">
+		<h4 class="text-truncate oneline">
+				多线程(十二)锁的种类及辨析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6401</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012834750/article/details/69398216" target="_blank" title="多线程(十二)锁的种类及辨析">
+				<span class="desc oneline">前言  锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现(如synchronized和ReentrantLock等等)。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012834750">来自：	<span class="blog_title"> 淡淡的倔强的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zsl1766189860/article/details/76448803","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zsl1766189860/article/details/76448803" target="_blank" title="JAVA并发编程--锁的分类">
+		<h4 class="text-truncate oneline">
+				<em>JAVA</em>并发编程--锁的<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					128</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zsl1766189860/article/details/76448803" target="_blank" title="JAVA并发编程--锁的分类">
+				<span class="desc oneline">在读很多并发文章中，会提及各种各样锁如公平锁，乐观锁等等，这篇文章介绍各种锁的分类。介绍的内容如下：公平锁/非公平锁可重入锁独享锁/共享锁互斥锁/读写锁乐观锁/悲观锁分段锁偏向锁/轻量级锁/重量级锁自...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zsl1766189860">来自：	<span class="blog_title"> zsl1766189860的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/aluomaidi/article/details/52460844","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/aluomaidi/article/details/52460844" target="_blank" title="数据库事务与锁详解">
+		<h4 class="text-truncate oneline">
+				数据库事务与锁详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/aluomaidi/article/details/52460844" target="_blank" title="数据库事务与锁详解">
+				<span class="desc oneline">什么是事务（Transaction）？是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。事务处理可以确保除非事务性单元内的所有操作都成功完成，否则不会永久更新面向数据的资源。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/aluomaidi">来自：	<span class="blog_title"> aluomaidi的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zdplife/article/details/48035837","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zdplife/article/details/48035837" target="_blank" title="数据库-锁（概念、分类、粒度）">
+		<h4 class="text-truncate oneline">
+				数据库-锁（概念、<em>分类</em>、粒度）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zdplife/article/details/48035837" target="_blank" title="数据库-锁（概念、分类、粒度）">
+				<span class="desc oneline">（1）概念：   数据库是一个多用户使用的共享资源。当多个用户并发地存取数据时，在数据库中就会产生多个事务同时存取同一数据的情况。若对并发操作不加控制就可能会读取和存储不正确的数据，破坏数据库的一致性...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zdplife">来自：	<span class="blog_title"> zdplife的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_23851075/article/details/74611106","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_23851075/article/details/74611106" target="_blank" title="Java多线程-线程八锁">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>多线程-线程八锁		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1499</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_23851075/article/details/74611106" target="_blank" title="Java多线程-线程八锁">
+				<span class="desc oneline">所有的非静态同步方法用的都是同一把锁，即实例对象本身，或者说this对象，如果一个实例对象的非静态同步方法获取锁后，该实例对象的其他非静态同步方法必须等待获取锁的方法释放锁后才能获取锁。如果别的对象的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_23851075">来自：	<span class="blog_title"> 超超级钢铁侠</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/w_rcss/article/details/79662188","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/w_rcss/article/details/79662188" target="_blank" title="java的锁分类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>的锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					479</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/w_rcss/article/details/79662188" target="_blank" title="java的锁分类">
+				<span class="desc oneline">主要分乐观锁和悲观锁。悲观锁：悲观思想，认为写操作频繁，所以每次读写都会上锁。sycchronized就是悲观锁的一种实现，同时也是一种重量级锁。乐观锁：乐观思想，认为读多写少（并发写的可能性低），所...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/w_rcss">来自：	<span class="blog_title"> w_rcss的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sinat_33878878/article/details/81481341","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sinat_33878878/article/details/81481341" target="_blank" title="Java中常见的锁的一些总结">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>中常见的锁的一些总结		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					923</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sinat_33878878/article/details/81481341" target="_blank" title="Java中常见的锁的一些总结">
+				<span class="desc oneline">Java中常见的锁类型常见的锁分类大致有：排它锁、共享锁、乐观锁、悲观锁、分段锁、自旋锁、公平锁、非公平锁、可重入锁等。排他锁和共享锁synchronized就是一个排他锁，ReentrantLock...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sinat_33878878">来自：	<span class="blog_title"> HB-pencil</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_26984087/article/details/89413729","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_26984087/article/details/89413729" target="_blank" title="Java锁分类">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					21</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_26984087/article/details/89413729" target="_blank" title="Java锁分类">
+				<span class="desc oneline">Java中的单从名词上来听有很多种，例如乐观锁、悲观锁、轻量级锁等等，但是其实真正的锁实现无外乎就是Lock的实现类以及Synchronized,而这些锁大部分是根据不同的状态或者功能对锁进行的划分，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_26984087">来自：	<span class="blog_title"> qq_26984087的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u010647035/article/details/82320571","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010647035/article/details/82320571" target="_blank" title="Java并发编程（三）：synchronized的实现原理及应用">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>并发编程（三）：synchronized的实现原理及应用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1161</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010647035/article/details/82320571" target="_blank" title="Java并发编程（三）：synchronized的实现原理及应用">
+				<span class="desc oneline">简述Java中每个对象都可以用来实现一个同步的锁，这些锁被称为内置锁（IntrinsicLock）或监视器锁（MonitorLock）。具体表现形式如下：1、普通同步方法，锁的是当前实例对象2、静态同...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010647035">来自：	<span class="blog_title"> 码客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_35219795/article/details/81949364","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35219795/article/details/81949364" target="_blank" title="java锁分类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					56</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35219795/article/details/81949364" target="_blank" title="java锁分类">
+				<span class="desc oneline">公平锁/非公平锁公平锁指多个线程按申请顺序来获取锁。可重入锁在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁，即线程可以进入任何一个它已经拥有的锁所同步的代码块。独享锁/共享锁独享锁指该...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35219795">来自：	<span class="blog_title"> qq_35219795的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/SonOfWind0311/article/details/79105674","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/SonOfWind0311/article/details/79105674" target="_blank" title="Java锁的几种应用">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>锁的几种应用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1123</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/SonOfWind0311/article/details/79105674" target="_blank" title="Java锁的几种应用">
+				<span class="desc oneline">Java锁常用概念：volatile/synchronized/ReentrantLock的区别</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/SonOfWind0311">来自：	<span class="blog_title"> SonOfWind0311的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/XiaoArea/article/details/87873788","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/XiaoArea/article/details/87873788" target="_blank" title="Java锁的种类: 公平锁、乐观锁、互斥锁、分段锁、偏向锁、自旋锁等">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>锁的种类: 公平锁、乐观锁、互斥锁、分段锁、偏向锁、自旋锁等		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					177</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/XiaoArea/article/details/87873788" target="_blank" title="Java锁的种类: 公平锁、乐观锁、互斥锁、分段锁、偏向锁、自旋锁等">
+				<span class="desc oneline">Java锁的种类:公平锁、乐观锁、互斥锁、分段锁、偏向锁、自旋锁等</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/XiaoArea">来自：	<span class="blog_title"> XiaoArea的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34531925/article/details/79059529","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34531925/article/details/79059529" target="_blank" title="java中锁机制的应用场景的简单理解">
+		<h4 class="text-truncate oneline">
+				<em>java</em>中锁机制的应用场景的简单理解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1591</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34531925/article/details/79059529" target="_blank" title="java中锁机制的应用场景的简单理解">
+				<span class="desc oneline">如果该实例是非单例对象,一般不会有线程安全问题.因为每个线程会分别拥有不相同地址值的该对象如果是单例对象,存在线程安全问题.多个线程对该对象的属性进行修改,产生线程安全问题对某一唯一数据同时进行修改,...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34531925">来自：	<span class="blog_title"> 愿世界和平</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wj0571/article/details/84515117","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wj0571/article/details/84515117" target="_blank" title="java 锁的介绍及使用场景">
+		<h4 class="text-truncate oneline">
+				<em>java</em> 锁的介绍及使用场景		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					114</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wj0571/article/details/84515117" target="_blank" title="java 锁的介绍及使用场景">
+				<span class="desc oneline">volatile volatile类型变量是：CPU直接读写变量所在的内存，而不是把变量copy到寄存器操作这样对变量的操作所线程都是可见的这样做的结果是减少了并发时冲突的概率但不能完全避免,并不是原...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wj0571">来自：	<span class="blog_title"> wj0571的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-1059","con":",,"}' data-track-click='{"mod":"kp_popu_63-1059","con":",,"}' data-report-view='{"mod":"kp_popu_63-1059","keyword":""}' data-report-click='{"mod":"kp_popu_63-1059","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/234?positionId=63&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/tiansheshouzuo/article/details/86185836","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/tiansheshouzuo/article/details/86185836" target="_blank" title="Java中的“互斥锁”机制">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>中的“互斥锁”机制		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					207</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/tiansheshouzuo/article/details/86185836" target="_blank" title="Java中的“互斥锁”机制">
+				<span class="desc oneline">在Java多线程运行中为了解决共享资源时存在的多并发问题，采用“互斥锁”机制。互斥锁：在访问共享资源之前对进行加锁操作，在访问完成之后进行解锁操作。用于保证不会出现某个线程总是竞争不过其它线程长时间不...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/tiansheshouzuo">来自：	<span class="blog_title"> Gxx2018的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/caowei1982/1886326","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+		<a href="https://download.csdn.net/download/caowei1982/1886326" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						Oracle锁和表分区					</h4>
+					<span class="data float-right">12-09</span>
+				</div>
+				<div class="desc oneline">
+						锁和表分区介绍
+Oracle锁分类，表分区分类				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/pengweid/article/details/85711970","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/pengweid/article/details/85711970" target="_blank" title="JAVA Synchronized对象锁和类锁区别 (牛逼)">
+		<h4 class="text-truncate oneline">
+				<em>JAVA</em> Synchronized对象锁和类锁区别 (牛逼)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1582</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/pengweid/article/details/85711970" target="_blank" title="JAVA Synchronized对象锁和类锁区别 (牛逼)">
+				<span class="desc oneline">一个类就像一个四合院，四合院的大门叫做构造方法，盖房子必须经过大门，每new一个对象，就表示在四合院里再盖一间新房子，大门上面的锁，叫做构造锁，里面每一间房子就是一个实例，每间房子里边都有一个锁叫做实...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/pengweid">来自：	<span class="blog_title">  pengweid专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/gl5773477/article/details/80712064","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/gl5773477/article/details/80712064" target="_blank" title="Mysql锁 - 类型概括（持续完善）">
+		<h4 class="text-truncate oneline">
+				Mysql锁 - 类型概括（持续完善）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					643</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/gl5773477/article/details/80712064" target="_blank" title="Mysql锁 - 类型概括（持续完善）">
+				<span class="desc oneline">环境：mysql5.6，InnoDB引擎，RR隔离级别InnoDB存储引擎支持多粒度锁定，即表级锁和行级锁“同时”存在。且行级锁的数量不影响开销，因为使用的是位图标记的算法。参考InnoDB的逻辑存储...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/gl5773477">来自：	<span class="blog_title"> 子弹头</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_43279637/article/details/84991490","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_43279637/article/details/84991490" target="_blank" title="java锁的分类和锁的内存语义">
+		<h4 class="text-truncate oneline">
+				<em>java</em>锁的<em>分类</em>和锁的内存语义		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					51</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_43279637/article/details/84991490" target="_blank" title="java锁的分类和锁的内存语义">
+				<span class="desc oneline">                   java锁的分类和锁的内存语义java锁的分类：java对象锁有两种：对象锁、类锁。对象锁：在非静态方法上加锁。声明了一个对象锁。类锁：在静态方法上加锁，声明了一...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_43279637">来自：	<span class="blog_title"> remember_rng的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-1060","con":",,"}' data-track-click='{"mod":"kp_popu_64-1060","con":",,"}' data-report-view='{"mod":"kp_popu_64-1060","keyword":""}' data-report-click='{"mod":"kp_popu_64-1060","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/235?positionId=64&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/caofeng891102/11261005","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+		<a href="https://download.csdn.net/download/caofeng891102/11261005" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>java</em>中的锁					</h4>
+					<span class="data float-right">06-27</span>
+				</div>
+				<div class="desc oneline">
+						java中的锁				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_26963433/article/details/78223084","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_26963433/article/details/78223084" target="_blank" title="oracle的锁和锁的分类">
+		<h4 class="text-truncate oneline">
+				oracle的锁和锁的<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					557</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_26963433/article/details/78223084" target="_blank" title="oracle的锁和锁的分类">
+				<span class="desc oneline">二、锁（一）什么是锁    数据库是一个多用户使用的共享资源。当多个用户并发地存取数据时，在数据库中就会产生多个事务同时存取同一数据的情况。若对并发操作不加控制就可能会读取和存储不正确的数据，破坏数据...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_26963433">来自：	<span class="blog_title"> 知也无涯</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ocp114/article/details/82812374","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ocp114/article/details/82812374" target="_blank" title="JVM 锁分类">
+		<h4 class="text-truncate oneline">
+				JVM 锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					313</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ocp114/article/details/82812374" target="_blank" title="JVM 锁分类">
+				<span class="desc oneline">首先对象的锁是怎么实现的？在这里就需要先了解一下在对象头（ObjectHeader）里面的MarkWord（标记字段），听说这个东东在32位JVM中占32bit，64位JVM中占64bit，相当小；用...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ocp114">来自：	<span class="blog_title"> 锄禾日当午，啥都不靠谱。闲来没事做，不如写博客。</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/shengqianfeng/article/details/79051458","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/shengqianfeng/article/details/79051458" target="_blank" title="软件开发中的乐观锁和悲观锁简述">
+		<h4 class="text-truncate oneline">
+				软件开发中的乐观锁和悲观锁简述		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					200</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shengqianfeng/article/details/79051458" target="_blank" title="软件开发中的乐观锁和悲观锁简述">
+				<span class="desc oneline">名词解释　　1、悲观锁：认为每次对数据库的操作（查询、修改）都是不安全的，因此每次操作都会把这条数据锁掉，直到本次操作完毕释放该锁　　2、乐观锁：查询数据的时候总是认为是安全的，不会锁数据；等到更新数...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/shengqianfeng">来自：	<span class="blog_title"> 在广？No，在深?  em,或许在专......</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013262534/article/details/81077745","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013262534/article/details/81077745" target="_blank" title="MySQL-InnoDB常用锁类型解析">
+		<h4 class="text-truncate oneline">
+				MySQL-InnoDB常用锁类型解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2014</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013262534/article/details/81077745" target="_blank" title="MySQL-InnoDB常用锁类型解析">
+				<span class="desc oneline">Shared（乐观锁）andExclusiveLocks（互斥锁）：    InnoDB有两种锁类型，Shared（s）andExclusive（x） Locks（乐观锁和互斥锁）。     Shar...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u013262534">来自：	<span class="blog_title"> 茹煜得氺的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-1061","con":",,"}' data-track-click='{"mod":"kp_popu_65-1061","con":",,"}' data-report-view='{"mod":"kp_popu_65-1061","keyword":""}' data-report-click='{"mod":"kp_popu_65-1061","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/236?positionId=65&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33842328/article/details/88295914","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33842328/article/details/88295914" target="_blank" title="java并发编程学习笔记之锁分类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>并发编程学习笔记之锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					11</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33842328/article/details/88295914" target="_blank" title="java并发编程学习笔记之锁分类">
+				<span class="desc oneline">关键词：cas:乐观锁机制，当写时数据的状态与读时数据的状态不一致时，写失败。锁的优缺点对比：偏向锁：正常场景中总是单个线程重复访问某个同步代码块，为了优化这一场景下的程序，偏向锁在线程执行完后不释放...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33842328">来自：	<span class="blog_title"> weixin_33842328的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_33449489/10723808","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+		<a href="https://download.csdn.net/download/qq_33449489/10723808" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>java</em>中synchronized的使用					</h4>
+					<span class="data float-right">10-16</span>
+				</div>
+				<div class="desc oneline">
+						java中synchronized的使用,java中的锁锁的到底是什么？是括号里的代码块吗？肯定不是的；				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/nimamamamamamama/article/details/79468667","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/nimamamamamamama/article/details/79468667" target="_blank" title="锁的分类">
+		<h4 class="text-truncate oneline">
+				锁的<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					23</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/nimamamamamamama/article/details/79468667" target="_blank" title="锁的分类">
+				<span class="desc oneline">1.公平锁(从特性上来分)	多个线程按照申请锁的顺序来获取锁2.非公平锁(从特性上来分)	多个线程获取锁的顺序是随机的，并非先申请就一定会先获取3.可重入锁(从特性上来分)4.独享锁(从特性上来分)	...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/nimamamamamamama">来自：	<span class="blog_title"> nimamamamamamama的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wxgxgp/article/details/81348555","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wxgxgp/article/details/81348555" target="_blank" title="【Spring】事物和锁及回滚异常类型">
+		<h4 class="text-truncate oneline">
+				【Spring】事物和锁及回滚异常类型		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					251</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wxgxgp/article/details/81348555" target="_blank" title="【Spring】事物和锁及回滚异常类型">
+				<span class="desc oneline">事物和锁：事务与锁是不同的。事务具有ACID（原子性、一致性、隔离性和持久性），锁是用于解决隔离性的一种机制。事务的隔离级别通过锁的机制来实现。另外锁有不同的粒度，同时事务也是有不同的隔离级别的（一般...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wxgxgp">来自：	<span class="blog_title"> 老吴</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_38110132/article/details/74571805","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_38110132/article/details/74571805" target="_blank" title="java锁机制，LOCK的实现类">
+		<h4 class="text-truncate oneline">
+				<em>java</em>锁机制，LOCK的实现类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5365</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_38110132/article/details/74571805" target="_blank" title="java锁机制，LOCK的实现类">
+				<span class="desc oneline">1.synchronized--把代码块声明为synchronized，有两个重要后果，通常是指该代码具有原子性（atomicity）和可见性（visibility）。1.1原子性--原子性意味着个时...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_38110132">来自：	<span class="blog_title"> 浮生一梦</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u014803081/article/details/88920226","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u014803081/article/details/88920226" target="_blank" title="锁分类">
+		<h4 class="text-truncate oneline">
+				锁<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u014803081/article/details/88920226" target="_blank" title="锁分类">
+				<span class="desc oneline">公平锁和非公平锁公平锁是指多个线程在等待同一个锁时，必须按照申请锁的先后顺序来一次获得锁。公平锁的好处是等待锁的线程不会饿死，但是整体效率相对低一些；非公平锁的好处是整体效率相对高一些，但是有些线程可...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u014803081">来自：	<span class="blog_title"> 红的羊</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/langgufu314/article/details/84683921","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/langgufu314/article/details/84683921" target="_blank" title="java synchronized类锁，对象锁详解（转载）">
+		<h4 class="text-truncate oneline">
+				<em>java</em> synchronized类锁，对象锁详解（转载）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					116</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/langgufu314/article/details/84683921" target="_blank" title="java synchronized类锁，对象锁详解（转载）">
+				<span class="desc oneline">觉得还不错留个记录，转载自http://zhh9106.iteye.com/blog/2151791 在java编程中，经常需要用到同步，而用得最多的也许是synchronized关键字了，下面看看这...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/langgufu314">来自：	<span class="blog_title"> 正走向大牛的菜鸟</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33982670/article/details/88721975","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33982670/article/details/88721975" target="_blank" title=" MySQL中的锁之一：锁的必要性及分类">
+		<h4 class="text-truncate oneline">
+				 MySQL中的锁之一：锁的必要性及<em>分类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33982670/article/details/88721975" target="_blank" title=" MySQL中的锁之一：锁的必要性及分类">
+				<span class="desc oneline">当用户访问量增长时，数据库往往是一个系统的性能瓶颈，但不光光是性能瓶颈，数据安全也会随之浮现，这时候锁机制就非常有必要。并发造成的数据安全问题主要分为3个方面：脏读、幻读、不可重复读一.脏读脏读就是一...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33982670">来自：	<span class="blog_title"> weixin_33982670的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ty_hf/article/details/55338097","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ty_hf/article/details/55338097" target="_blank" title="Mysql-各种锁区分与【MVCC】">
+		<h4 class="text-truncate oneline">
+				Mysql-各种锁区分与【MVCC】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5555</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ty_hf/article/details/55338097" target="_blank" title="Mysql-各种锁区分与【MVCC】">
+				<span class="desc oneline">mysql的锁貌似有很多啊，查了大部分资料，什么表锁，行锁，页锁共享锁，排他锁，意向锁，读锁，写锁悲观锁，乐观锁。。我去，真想问一句，有没有金锁？我还范冰冰呢。。。哎呀怎么感觉好乱啊。那么把它好好整理...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ty_hf">来自：	<span class="blog_title"> hann的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zcl_love_wx/article/details/82052479","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zcl_love_wx/article/details/82052479" target="_blank" title="一分钟理清Mysql的锁类型——《深究Mysql锁》">
+		<h4 class="text-truncate oneline">
+				一分钟理清Mysql的锁类型——《深究Mysql锁》		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					939</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zcl_love_wx/article/details/82052479" target="_blank" title="一分钟理清Mysql的锁类型——《深究Mysql锁》">
+				<span class="desc oneline">延伸阅读：三分钟了解Mysql的表级锁五分钟了解Mysql的行级锁一分钟深入Mysql的意向锁我们常用的存储引擎就MyISAM和InnoDB。MyISAM存储主要就简单的表级别锁，下面只说InnoDB...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zcl_love_wx">来自：	<span class="blog_title"> 爱雨轩</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhangzhetaojj/article/details/81559583","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhangzhetaojj/article/details/81559583" target="_blank" title="数据库锁整理">
+		<h4 class="text-truncate oneline">
+				数据库锁整理		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					703</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhangzhetaojj/article/details/81559583" target="_blank" title="数据库锁整理">
+				<span class="desc oneline">B+树在了解数据库索引之前，首先了解一下数据库索引的数据结构基础，B+treeB＋tree 是一个n叉树，每个节点有多个叶子节点，一颗B+树包含根节点，内部节点，叶子节点。根节点可能是一个叶子节点，也...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhangzhetaojj">来自：	<span class="blog_title"> zhangzhetaojj的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/liuyuanq123/article/details/80044775","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liuyuanq123/article/details/80044775" target="_blank" title="java里面的锁详解">
+		<h4 class="text-truncate oneline">
+				<em>java</em>里面的锁详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2113</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liuyuanq123/article/details/80044775" target="_blank" title="java里面的锁详解">
+				<span class="desc oneline">1、为什么要用锁&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;在了解为什么要用...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liuyuanq123">来自：	<span class="blog_title"> liuyuanq123的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u011955252/article/details/78633864","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011955252/article/details/78633864" target="_blank" title="java中锁的使用">
+		<h4 class="text-truncate oneline">
+				<em>java</em>中锁的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					586</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011955252/article/details/78633864" target="_blank" title="java中锁的使用">
+				<span class="desc oneline">1、悲观锁packageconcurrent;importjava.util.concurrent.TimeUnit;publicclassSynchroniedTest{publicstaticin...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u011955252">来自：	<span class="blog_title"> 红豆和绿豆的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/lzbhnr/article/details/79746972","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lzbhnr/article/details/79746972" target="_blank" title="Java中有哪些锁，区别是什么">
+		<h4 class="text-truncate oneline">
+				<em>Java</em>中有哪些锁，区别是什么		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3426</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lzbhnr/article/details/79746972" target="_blank" title="Java中有哪些锁，区别是什么">
+				<span class="desc oneline">【1】公平所和非公平所。公平锁：是指按照申请锁的顺序来获取锁，非公平所：线程获取锁的顺序不一定按照申请锁的顺序来的。//默认是不公平锁，传入true为公平锁，否则为非公平锁ReentrantLockr...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/lzbhnr">来自：	<span class="blog_title"> Andrew_lee's blog</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/renwei289443/article/details/79540809","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/renwei289443/article/details/79540809" target="_blank" title="分门别类总结Java中的各种锁，让你彻底记住">
+		<h4 class="text-truncate oneline">
+				分门别类总结<em>Java</em>中的各种锁，让你彻底记住		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5046</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/renwei289443/article/details/79540809" target="_blank" title="分门别类总结Java中的各种锁，让你彻底记住">
+				<span class="desc oneline">前言本文需要具备一定的多线程基础才能更好的理解。学习java多线程时，最头疼的知识点之一就是java中的锁了，什么互斥锁、排它锁、自旋锁、死锁、活锁等等，细分的话可以罗列出20种左右的锁，光是看着这些...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/renwei289443">来自：	<span class="blog_title"> renwei289443的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Cotria/article/details/80786518","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Cotria/article/details/80786518" target="_blank" title="java中锁的含义">
+		<h4 class="text-truncate oneline">
+				<em>java</em>中锁的含义		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					626</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Cotria/article/details/80786518" target="_blank" title="java中锁的含义">
+				<span class="desc oneline">今天做到了一个题，发现自己对java的锁理解的不太够。觉得这个问题可能有的人也会有理解上的失误。WhatistruewhileAisinasynchronized(list){...}block?–I...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Cotria">来自：	<span class="blog_title"> Cotria的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtTaYgysNzktZWR1.html" target="_blank">
+                        java 分类 机器学习</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtjaMg0sMjQtZWR1.html" target="_blank">
+                        java锁学习</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/Qqun954715313">
+              <img src="https://avatar.csdn.net/8/B/F/3_qqun954715313.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/0.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/Qqun954715313"  class="" id="uid">Qqun954715313</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="34">
+                        <dt><a href="https://blog.csdn.net/qqun954715313?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qqun954715313?t=1"><span class="count">34</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="1">
+            <dt>喜欢</dt>
+            <dd><span class="count">1</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="996">
+                996            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="367">
+                367            </dd>
+        </dl>
+        <dl title="282709">
+            <dt>排名：</dt>
+            <dd>28万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/Qqun954715313">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-703","con":",,"}' data-track-click='{"mod":"kp_popu_56-703","con":",,"}' data-report-view='{"mod":"kp_popu_56-703","keyword":""}' data-report-click='{"mod":"kp_popu_56-703","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左上视窗-20181120 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="7700527946"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/Qqun954715313/article/details/99204994" target="_blank" >
+                                        java集合类总结                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/Qqun954715313/article/details/98997615" target="_blank" >
+                                        Spring框架基础知识                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/Qqun954715313/article/details/98884478" target="_blank" >
+                                        Java中的Volatile关键字                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/Qqun954715313/article/details/98788703" target="_blank" >
+                                        Spring 中的事务传播行为                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/Qqun954715313/article/details/98784621" target="_blank" >
+                                        浅谈synchronized的实现原理                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qqun954715313/article/category/9036755">
+                    <span class="title oneline">互联网</span>
+                    <span class="count float-right">46篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qqun954715313/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">12篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qqun954715313/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">24篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qqun954715313/article/month/2019/06">
+                    2019年6月                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/Qqun954715313/article/details/92400891" >
+                                                开源配置中心和注册中心： Nacos 限流最佳实践                    </a>
+					<p class="read">阅读数 <span>129</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/Qqun954715313/article/details/95073753" >
+                                                HR 问“你目前有几个 Offer”，聪明人会怎么说？你呢！                    </a>
+					<p class="read">阅读数 <span>114</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/Qqun954715313/article/details/98665004" >
+                                                开发者如何看 Java 发展趋势？                    </a>
+					<p class="read">阅读数 <span>85</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/Qqun954715313/article/details/95377264" >
+                                                一篇文章带你了解spring框架                    </a>
+					<p class="read">阅读数 <span>54</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/Qqun954715313/article/details/93400211" >
+                                                Docker部署微服务详解                    </a>
+					<p class="read">阅读数 <span>45</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qqun954715313/article/details/98884478" title="Java中的Volatile关键字">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/qqun954715313/article/details/98997615" title="Spring框架基础知识">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qqun954715313/article/details/98884478" title="Java中的Volatile关键字">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qqun954715313/article/details/98997615" title="Spring框架基础知识">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 15;
+    var articleId = "98991766";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/Qqun954715313/article/details/98991766";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "Java中的锁分类 - Qqun954715313的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["java","\u5206\u7c7b"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_42677665/article/details/98987673"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"邮件发送工具类 - qq_42677665的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>邮件发送工具类 - qq_42677665的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "qq_42677665";
+        var blog_address = "https://blog.csdn.net/qq_42677665";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_42677665/article/details/98987673"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "邮件发送工具类";
+        var articleDesc = "1、邮件发送packagecom.wzt.bookstore.utils;importjava.util.Properties;importjavax.mail.Address;importjavax.mail.MessagingException;importjavax.mail.Session;importjavax.mail.Transport;impor...";
+        // 第四范式所需数据
+        var articleTitles = "邮件发送工具类 - qq_42677665的博客";
+        
+        var nickName = "王先森鸭";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_42677665/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_42677665/article/details/98987673";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-844","con":",,"}' data-track-click='{"mod":"kp_popu_476-844","con":",,"}' data-report-view='{"mod":"kp_popu_476-844","keyword":""}' data-report-click='{"mod":"kp_popu_476-844","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1561687436774.png',bigMoveImg:'https://img-bss.csdn.net/1561687434206.png',link:'https://kunyu.csdn.net?p=476&a=844&c=280&k=&d=1&t=3&dest=https%3A%2F%2Fh5.youzan.com%2Fv2%2Fgoods%2F3no2fsmxbmehb',trackSuperId:476,smallMove:'notMove',trackSId:844});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">邮件发送工具类</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 20:28:46</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_42677665" target="_blank">王先森鸭</a>
+                    <span class="read-count">阅读数 38</span>
+                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <h3>1、邮件发送</h3>
+
+<pre class="has">
+<code>package com.wzt.bookstore.utils;
+
+
+import java.util.Properties;
+
+import javax.mail.Address;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+/**
+ * 
+ * @author gyf 2018-02-27
+ * 
+ * SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议
+ * 》SMTP 服务器就是遵循 SMTP 协议的发送邮件服务器
+ * POP3是Post Office Protocol 3的简称，即邮局协议的第3个版本
+ * 》POP3服务器则是遵循POP3协议的接收邮件服务器
+ */
+public class SendJMail {
+	
+		public static boolean sendMail(String email, String emailMsg) {
+		
+		String from = "15989566325@163.com"; 				// 邮件发送人的邮件地址
+		String to = email; 										// 邮件接收人的邮件地址
+		final String username = "15989566325@163.com";  	//发件人的邮件帐户
+		final String password = "gyfitedu";   					//发件人的邮件密码
+
+
+		//定义Properties对象,设置环境信息
+		Properties props = System.getProperties();
+
+		//设置邮件服务器的地址
+		props.setProperty("mail.smtp.host", "smtp.163.com"); // 指定的smtp服务器
+		props.setProperty("mail.smtp.auth", "true");
+		props.setProperty("mail.transport.protocol", "smtp");//设置发送邮件使用的协议
+		//创建Session对象,session对象表示整个邮件的环境信息
+		Session session = Session.getInstance(props);
+		//设置输出调试信息
+		session.setDebug(true);
+		try {
+			//Message的实例对象表示一封电子邮件
+			MimeMessage message = new MimeMessage(session);
+			//设置发件人的地址
+			message.setFrom(new InternetAddress(from));
+			//设置主题
+			message.setSubject("用户激活");
+			//设置邮件的文本内容
+			//message.setText("Welcome to JavaMail World!");
+			message.setContent((emailMsg),"text/html;charset=utf-8");
+			
+			//设置附件
+			//message.setDataHandler(dh);
+			
+			//从session的环境中获取发送邮件的对象
+			Transport transport=session.getTransport();
+			//连接邮件服务器
+			transport.connect("smtp.163.com",25, username, password);
+			//设置收件人地址,并发送消息
+			transport.sendMessage(message,new Address[]{new InternetAddress(to)});
+			transport.close();
+			return true;
+		} catch (MessagingException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+}
+</code></pre>
+
+<p> </p>
+                                    </div>
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_42677665/article/details/98987673","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_42677665/article/details/98987673","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-386","con":",,"}' data-track-click='{"mod":"kp_popu_58-386","con":",,"}' data-report-view='{"mod":"kp_popu_58-386","keyword":""}' data-report-click='{"mod":"kp_popu_58-386","keyword":""}'><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98987673">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42035966/article/details/81332504","strategy":"BlogCommendFromQuerySearch","index":"0"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42035966/article/details/81332504","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42035966/article/details/81332504" target="_blank" title="Java发送邮件工具类">
+		<h4 class="text-truncate oneline">
+				Java发送邮件<em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					475</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42035966/article/details/81332504" target="_blank" title="Java发送邮件工具类">
+				<span class="desc oneline">目录代码主要涉及MimeMessage，Transport两个类的使用代码importjava.util.Properties;importjavax.mail.BodyPart;importjava...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42035966">来自：	<span class="blog_title"> 菜鸟程序员的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/hezheqiang/10479238","strategy":"BlogCommendFromQuerySearch","index":"1"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/hezheqiang/10479238","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+		<a href="https://download.csdn.net/download/hezheqiang/10479238" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						net 实现<em>邮件发送</em>					</h4>
+					<span class="data float-right">06-14</span>
+				</div>
+				<div class="desc oneline">
+						net 实现邮件发送工具类，封装的很简单易用。
+net 实现邮件发送工具类，封装的很简单易用。
+net 实现邮件发送工具类，封装的很简单易用。
+net 实现邮件发送工具类，封装的很简单易用。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_38669628/11118692","strategy":"BlogCommendFromQuerySearch","index":"2"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_38669628/11118692","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+		<a href="https://download.csdn.net/download/weixin_38669628/11118692" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java实现<em>邮件发送</em>功能<em>工具类</em>					</h4>
+					<span class="data float-right">04-16</span>
+				</div>
+				<div class="desc oneline">
+						NULL
+博文链接：https://javavsxiaoming.iteye.com/blog/1787803				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/q394895302/article/details/81004293","strategy":"BlogCommendFromQuerySearch","index":"3"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/q394895302/article/details/81004293","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/q394895302/article/details/81004293" target="_blank" title="java邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				java<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					451</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/q394895302/article/details/81004293" target="_blank" title="java邮件发送工具类">
+				<span class="desc oneline">项目中要用到邮箱验证功能，所有写了一个在项目中用到的邮箱工具类，主要是用在本项目中的，参数都是调用方法的时候传递的值；具体实现代码如下：packagecom.scmofit.gps.common;im...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/q394895302">来自：	<span class="blog_title"> 随波逐流的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/ChineseYoung/article/details/80291175","strategy":"BlogCommendFromQuerySearch","index":"4"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ChineseYoung/article/details/80291175","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ChineseYoung/article/details/80291175" target="_blank" title="工具类——简单的java实现发送纯文本邮件（使用springboot构建）">
+		<h4 class="text-truncate oneline">
+				<em>工具类</em>——简单的java实现发送纯文本邮件（使用springboot构建）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					345</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ChineseYoung/article/details/80291175" target="_blank" title="工具类——简单的java实现发送纯文本邮件（使用springboot构建）">
+				<span class="desc oneline">maven依赖&amp;amp;lt;dependency&amp;amp;gt;	&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;am...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ChineseYoung">来自：	<span class="blog_title"> 做一个善良的码农</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/changyj159635/article/details/89713290","strategy":"BlogCommendFromQuerySearch","index":"5"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/changyj159635/article/details/89713290","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/changyj159635/article/details/89713290" target="_blank" title="163邮件发送工具类附加测试类">
+		<h4 class="text-truncate oneline">
+				163<em>邮件发送</em><em>工具类</em>附加测试类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					44</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/changyj159635/article/details/89713290" target="_blank" title="163邮件发送工具类附加测试类">
+				<span class="desc oneline">1.此工具类为163邮箱发送邮件的工具类，可以实现发送附件、文本、抄送等基本功能。2.关键在于设置163的授权码和主机。/**Copyright(C)2000-2011THSTechnologyLim...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/changyj159635">来自：	<span class="blog_title"> changyj159635的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u013087359/article/details/82286314","strategy":"BlogCommendFromQuerySearch","index":"6"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013087359/article/details/82286314","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013087359/article/details/82286314" target="_blank" title="JavaMail邮件发送、工具类MailUtils">
+		<h4 class="text-truncate oneline">
+				JavaMail<em>邮件发送</em>、<em>工具类</em>MailUtils		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					458</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013087359/article/details/82286314" target="_blank" title="JavaMail邮件发送、工具类MailUtils">
+				<span class="desc oneline">jar包下载http://commons.apache.org/proper/commons-email/download_email.cgi工具类MailUtilspackagecom.utils;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u013087359">来自：	<span class="blog_title"> Duson</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_37121463/article/details/82698172","strategy":"BlogCommendFromQuerySearch","index":"7"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_37121463/article/details/82698172","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_37121463/article/details/82698172" target="_blank" title="SpringBoot实现邮件发送及其工具类封装">
+		<h4 class="text-truncate oneline">
+				SpringBoot实现<em>邮件发送</em>及其<em>工具类</em>封装		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2969</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_37121463/article/details/82698172" target="_blank" title="SpringBoot实现邮件发送及其工具类封装">
+				<span class="desc oneline">SpringBoot邮件发送工具类环境：JDK8、IDEA依赖：SpringBoot-1.5.10、spring-boot-starter-mail、spring-boot-starter-thyme...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_37121463">来自：	<span class="blog_title"> 晓得哪个的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_31452013/10665398","strategy":"BlogCommendFromQuerySearch","index":"8"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_31452013/10665398","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+		<a href="https://download.csdn.net/download/qq_31452013/10665398" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						springboot发送邮件					</h4>
+					<span class="data float-right">09-13</span>
+				</div>
+				<div class="desc oneline">
+						基于springboot发送邮件，包括发送简单文本邮件，发送带html的邮件，发送带有附件的邮件，和thymeleaf集成模板邮件等				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_37527048/10710848","strategy":"BlogCommendFromQuerySearch","index":"9"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_37527048/10710848","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+		<a href="https://download.csdn.net/download/qq_37527048/10710848" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java一键发送邮件，封装好的<em>工具类</em>					</h4>
+					<span class="data float-right">10-10</span>
+				</div>
+				<div class="desc oneline">
+						java邮件发送的工具类，方法都已封装好，一键调用即可发送，支持普通文本邮件，支持带有附件的邮件，支持html代码的邮件内容				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/dong0928/10791382","strategy":"BlogCommendFromQuerySearch","index":"10"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/dong0928/10791382","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+		<a href="https://download.csdn.net/download/dong0928/10791382" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>邮件发送</em>功能					</h4>
+					<span class="data float-right">11-18</span>
+				</div>
+				<div class="desc oneline">
+						邮件发送相关jar包，邮件发送工具类，邮件发送模拟服务器，邮件发送过程解析。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_31279347/article/details/82717469","strategy":"BlogCommendFromQuerySearch","index":"11"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_31279347/article/details/82717469","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_31279347/article/details/82717469" target="_blank" title="基于SSM框架实现邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				基于SSM框架实现<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8239</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_31279347/article/details/82717469" target="_blank" title="基于SSM框架实现邮件发送工具类">
+				<span class="desc oneline">要实现qq邮箱发送邮件，前提需要开启POP3/SMTP服务。如图：整体思路：实现发送邮件工具类（MailUtil.class）配置账户密码属性文件（mail.properties）spring容器管理...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_31279347">来自：	<span class="blog_title"> CSDN</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/sgpian/10193081","strategy":"BlogCommendFromQuerySearch","index":"12"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/sgpian/10193081","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+		<a href="https://download.csdn.net/download/sgpian/10193081" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						MailHelper.cs					</h4>
+					<span class="data float-right">01-07</span>
+				</div>
+				<div class="desc oneline">
+						MailHelper工具类，项目中常用 c#版； 邮件发送工具类				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u010826617/article/details/73569896","strategy":"BlogCommendFromQuerySearch","index":"13"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u010826617/article/details/73569896","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010826617/article/details/73569896" target="_blank" title="Java MailUtils邮件发送工具类 支持附件">
+		<h4 class="text-truncate oneline">
+				Java MailUtils<em>邮件发送</em><em>工具类</em> 支持附件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2835</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010826617/article/details/73569896" target="_blank" title="Java MailUtils邮件发送工具类 支持附件">
+				<span class="desc oneline">JavaMailUtils邮件发送工具类支持附件JavaMailDemo，引用的jar如下:-activation.jar-mail.jarsmtp设置参考https://www.west.cn/fa...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010826617">来自：	<span class="blog_title"> Alex Li的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/wangaobing/10687975","strategy":"BlogCommendFromQuerySearch","index":"14"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/wangaobing/10687975","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+		<a href="https://download.csdn.net/download/wangaobing/10687975" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java发送邮件<em>工具类</em>					</h4>
+					<span class="data float-right">09-26</span>
+				</div>
+				<div class="desc oneline">
+						java发送邮件工具类，支持发送文本邮件，及html格式邮件				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/l18848956739/article/details/79683067","strategy":"BlogCommendFromQuerySearch","index":"15"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/l18848956739/article/details/79683067","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/l18848956739/article/details/79683067" target="_blank" title="Java发送邮件工具类MailUtils.java">
+		<h4 class="text-truncate oneline">
+				Java发送邮件<em>工具类</em>MailUtils.java		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					331</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/l18848956739/article/details/79683067" target="_blank" title="Java发送邮件工具类MailUtils.java">
+				<span class="desc oneline">设置邮箱授权码：  importjavax.mail.*;importjavax.mail.internet.InternetAddress;importjavax.mail.internet.Mim...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/l18848956739">来自：	<span class="blog_title"> 你若盛开，清风自来</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/csdn_lqr/9692908","strategy":"BlogCommendFromQuerySearch","index":"16"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/csdn_lqr/9692908","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+		<a href="https://download.csdn.net/download/csdn_lqr/9692908" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java版发送邮件<em>工具类</em>					</h4>
+					<span class="data float-right">11-24</span>
+				</div>
+				<div class="desc oneline">
+						使用mail.jar封装的万能邮件发送工具类				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u014204541/article/details/79309040","strategy":"BlogCommendFromQuerySearch","index":"17"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u014204541/article/details/79309040","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u014204541/article/details/79309040" target="_blank" title="使用spring框架的JavaMailSender发送邮件工具类">
+		<h4 class="text-truncate oneline">
+				使用spring框架的JavaMailSender发送邮件<em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1660</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u014204541/article/details/79309040" target="_blank" title="使用spring框架的JavaMailSender发送邮件工具类">
+				<span class="desc oneline">需要用到的jar包：下面是发送工具类代码：packagecom.test.email;importorg.springframework.core.io.FileSystemResource;impo...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u014204541">来自：	<span class="blog_title"> tlimited的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_41653210/10214772","strategy":"BlogCommendFromQuerySearch","index":"18"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_41653210/10214772","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+		<a href="https://download.csdn.net/download/weixin_41653210/10214772" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						MailUtils.java					</h4>
+					<span class="data float-right">01-19</span>
+				</div>
+				<div class="desc oneline">
+						Java web 基础的email发送代码
+//发送邮件
+        /**
+         * 1.建立一个会话session
+         * 2.创建一个----代表邮件对象的Message
+         * 3.发送...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/hatsubun2/2538316","strategy":"BlogCommendFromQuerySearch","index":"19"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/hatsubun2/2538316","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+		<a href="https://download.csdn.net/download/hatsubun2/2538316" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						javamail<em>邮件发送</em><em>工具类</em>					</h4>
+					<span class="data float-right">07-13</span>
+				</div>
+				<div class="desc oneline">
+						javamail邮件发送工具类
+封装好的 可直接使用				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u013871100/article/details/52649767","strategy":"BlogCommendFromQuerySearch","index":"20"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013871100/article/details/52649767","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013871100/article/details/52649767" target="_blank" title="javaMail发送邮件（工具类开发）">
+		<h4 class="text-truncate oneline">
+				javaMail发送邮件（<em>工具类</em>开发）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9823</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013871100/article/details/52649767" target="_blank" title="javaMail发送邮件（工具类开发）">
+				<span class="desc oneline">早就听说sun提供的javaMail收发邮件工具类的好用，于是乎在网上找了很多资料，照着敲，debug，却一直无果，后来才发现，我的qq邮箱没有开启smtp/pop3协议的支持（丫的，把我给搞屎了！）...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u013871100">来自：	<span class="blog_title"> steadyjack博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32737755/article/details/87732595","strategy":"BlogCommendFromQuerySearch","index":"21"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32737755/article/details/87732595","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_32737755/article/details/87732595" target="_blank" title="PHP邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				PHP<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					225</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_32737755/article/details/87732595" target="_blank" title="PHP邮件发送工具类">
+				<span class="desc oneline">承接上一篇文章，这里放一个自己写的类文件，仅供参考！！！&amp;amp;lt;?php/***邮件发送工具类*/classMail{	constENCODING='utf-8';	/**	*发件人信息	*/...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_32737755">来自：	<span class="blog_title"> 编程不过是一门失传艺术的别名，这门艺术的名字叫做“思考”</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/mastersqq1234/10155746","strategy":"BlogCommendFromQuerySearch","index":"22"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/mastersqq1234/10155746","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+		<a href="https://download.csdn.net/download/mastersqq1234/10155746" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						JAVA<em>邮件发送</em><em>工具类</em>（支持同步和异步发送邮件以及附件信息）					</h4>
+					<span class="data float-right">12-12</span>
+				</div>
+				<div class="desc oneline">
+						JAVA邮件发送工具类（支持同步和异步发送邮件以及附件信息），支持多个抄送邮件发送。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/AsakuraNatsuhi/article/details/78282310","strategy":"BlogCommendFromQuerySearch","index":"23"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/AsakuraNatsuhi/article/details/78282310","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/AsakuraNatsuhi/article/details/78282310" target="_blank" title="javax.mail使用">
+		<h4 class="text-truncate oneline">
+				javax.mail使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1784</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/AsakuraNatsuhi/article/details/78282310" target="_blank" title="javax.mail使用">
+				<span class="desc oneline">importjava.util.Properties;importjavax.mail.Message;importjavax.mail.Session;importjavax.mail.Transp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/AsakuraNatsuhi">来自：	<span class="blog_title"> AsakuraNatsuhi的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-1059","con":",,"}' data-track-click='{"mod":"kp_popu_63-1059","con":",,"}' data-report-view='{"mod":"kp_popu_63-1059","keyword":""}' data-report-click='{"mod":"kp_popu_63-1059","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/234?positionId=63&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/liberty12345678/article/details/82108524","strategy":"BlogCommendFromQuerySearch","index":"24"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/liberty12345678/article/details/82108524","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liberty12345678/article/details/82108524" target="_blank" title="javaMail-发送邮件工具类">
+		<h4 class="text-truncate oneline">
+				javaMail-发送邮件<em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					459</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liberty12345678/article/details/82108524" target="_blank" title="javaMail-发送邮件工具类">
+				<span class="desc oneline">importjava.util.Date;importjava.util.Iterator;importjava.util.List;importjava.util.Map;importjava.ut...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liberty12345678">来自：	<span class="blog_title"> liberty12345678的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33775572/article/details/88923306","strategy":"BlogCommendFromQuerySearch","index":"25"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33775572/article/details/88923306","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33775572/article/details/88923306" target="_blank" title=" 邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				 <em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					11</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33775572/article/details/88923306" target="_blank" title=" 邮件发送工具类">
+				<span class="desc oneline">这个是自己写的一个java邮件发送工具类，已经上传到GitHub：Email_utilpackagecom.yangzinan.sms;importjava.io.UnsupportedEncodin...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33775572">来自：	<span class="blog_title"> weixin_33775572的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/feiyangtianyao/article/details/92820616","strategy":"BlogCommendFromQuerySearch","index":"26"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/feiyangtianyao/article/details/92820616","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/feiyangtianyao/article/details/92820616" target="_blank" title="SpringBoot入门建站全系列（十）邮件发送功能">
+		<h4 class="text-truncate oneline">
+				SpringBoot入门建站全系列（十）<em>邮件发送</em>功能		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					53</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/feiyangtianyao/article/details/92820616" target="_blank" title="SpringBoot入门建站全系列（十）邮件发送功能">
+				<span class="desc oneline">SpringBoot入门建站全系列（十）邮件发送功能SpringMailAPI都在org.springframework.mail及其子包org.springframework.mail.javama...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/feiyangtianyao">来自：	<span class="blog_title"> feiyangtianyao的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/t07060239/10507966","strategy":"BlogCommendFromQuerySearch","index":"27"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/t07060239/10507966","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+		<a href="https://download.csdn.net/download/t07060239/10507966" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java 发送带模板的邮件<em>工具类</em>					</h4>
+					<span class="data float-right">06-29</span>
+				</div>
+				<div class="desc oneline">
+						1、实测，代码是可运行的！
+2、根据html模板，替换其中的内容 实现定制化发送邮件。
+3、内附readme.txt，有详细说明。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/zmh458/article/details/78834120","strategy":"BlogCommendFromQuerySearch","index":"28"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zmh458/article/details/78834120","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zmh458/article/details/78834120" target="_blank" title="【SSH网上商城】实现邮件发送功能">
+		<h4 class="text-truncate oneline">
+				【SSH网上商城】实现<em>邮件发送</em>功能		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					355</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zmh458/article/details/78834120" target="_blank" title="【SSH网上商城】实现邮件发送功能">
+				<span class="desc oneline">目前随着互联网的发展，在项目中通过邮件给用户发通知已经是一个很常见的事情了，给用户发邮件、发短信类似的功能很常见，所以小编今天就在此总结一下如何实现发邮件的功能呢？...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zmh458">来自：	<span class="blog_title"> 张明慧</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-1060","con":",,"}' data-track-click='{"mod":"kp_popu_64-1060","con":",,"}' data-report-view='{"mod":"kp_popu_64-1060","keyword":""}' data-report-click='{"mod":"kp_popu_64-1060","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/235?positionId=64&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/mr_xiaobaicai/10813933","strategy":"BlogCommendFromQuerySearch","index":"29"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/mr_xiaobaicai/10813933","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+		<a href="https://download.csdn.net/download/mr_xiaobaicai/10813933" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>邮件发送</em>java代码					</h4>
+					<span class="data float-right">11-28</span>
+				</div>
+				<div class="desc oneline">
+						后台邮件发送java代码，包含jar包，工具类，邮件服务器客户端				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/yangshangwei/article/details/77662516","strategy":"BlogCommendFromQuerySearch","index":"30"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yangshangwei/article/details/77662516","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yangshangwei/article/details/77662516" target="_blank" title="Java-工具类之发送邮件">
+		<h4 class="text-truncate oneline">
+				Java-<em>工具类</em>之发送邮件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7540</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yangshangwei/article/details/77662516" target="_blank" title="Java-工具类之发送邮件">
+				<span class="desc oneline">步骤实例依赖包不带有附件的邮件工具类一工具类二带有附件的邮件步骤使用properties创建一个Session对象使用Session创建Message对象，然后设置邮件主题和正文，如果需要发送附件，就...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yangshangwei">来自：	<span class="blog_title"> 小工匠</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32967665/article/details/86488080","strategy":"BlogCommendFromQuerySearch","index":"31"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32967665/article/details/86488080","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_32967665/article/details/86488080" target="_blank" title="基于SpringBoot的QQ邮件发送">
+		<h4 class="text-truncate oneline">
+				基于SpringBoot的QQ<em>邮件发送</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					80</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_32967665/article/details/86488080" target="_blank" title="基于SpringBoot的QQ邮件发送">
+				<span class="desc oneline">前言：不管是使用springboot或者ssm，或者是其他框架的时候，总是会有需求要求你去发邮件，比如说当你注册成功之后发一封邮件给用户，告诉他注册成功，或者当用户找回密码的时候也会发邮件验证，因此掌...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_32967665">来自：	<span class="blog_title"> 润青</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34857250/article/details/80489591","strategy":"BlogCommendFromQuerySearch","index":"32"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34857250/article/details/80489591","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34857250/article/details/80489591" target="_blank" title="python2-使用python发送邮件工具">
+		<h4 class="text-truncate oneline">
+				python2-使用python发送邮件工具		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					609</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34857250/article/details/80489591" target="_blank" title="python2-使用python发送邮件工具">
+				<span class="desc oneline">功能：发邮件、多人发送、发附件#!/usr/bin/python#-*-coding:utf-8-*-#python2importsmtplib,os,sysfromemail.mime.textim...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34857250">来自：	<span class="blog_title"> kismile</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_16513911/article/details/82187720","strategy":"BlogCommendFromQuerySearch","index":"33"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_16513911/article/details/82187720","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_16513911/article/details/82187720" target="_blank" title="java实现生成二维码技术发开工具类,  二更:带logo">
+		<h4 class="text-truncate oneline">
+				java实现生成二维码技术发开<em>工具类</em>,  二更:带logo		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					163</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_16513911/article/details/82187720" target="_blank" title="java实现生成二维码技术发开工具类,  二更:带logo">
+				<span class="desc oneline">具体的jar包就自行导入一下,这个小dome就是getUrl方法,传入内容,得到临时路径,至于得到file路径之后,该oos就oos,该inputStream就走IOpackagecom.***.ma...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_16513911">来自：	<span class="blog_title"> Say no to the bugs</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/futao127/article/details/80431005","strategy":"BlogCommendFromQuerySearch","index":"34"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/futao127/article/details/80431005","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/futao127/article/details/80431005" target="_blank" title="smtp协议邮件发送工具MailUtil">
+		<h4 class="text-truncate oneline">
+				smtp协议<em>邮件发送</em>工具MailUtil		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1156</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/futao127/article/details/80431005" target="_blank" title="smtp协议邮件发送工具MailUtil">
+				<span class="desc oneline">/** *邮件工具类 *@authorken * */publicclassMailUtil{privatestaticSessionsession;privatestaticPropertiespr...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/futao127">来自：	<span class="blog_title"> futao127的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/menglinjie/article/details/78652065","strategy":"BlogCommendFromQuerySearch","index":"35"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/menglinjie/article/details/78652065","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/menglinjie/article/details/78652065" target="_blank" title="工具类总结(4)-邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				<em>工具类</em>总结(4)-<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					401</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/menglinjie/article/details/78652065" target="_blank" title="工具类总结(4)-邮件发送工具类">
+				<span class="desc oneline">java发送邮件,以qq邮件示例(注册激活用户)</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/menglinjie">来自：	<span class="blog_title"> menglinjie的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_22465297/article/details/84035252","strategy":"BlogCommendFromQuerySearch","index":"36"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_22465297/article/details/84035252","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_22465297/article/details/84035252" target="_blank" title="SSM 框架整合 spring 发送邮件功能实现！">
+		<h4 class="text-truncate oneline">
+				SSM 框架整合 spring 发送邮件功能实现！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					577</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_22465297/article/details/84035252" target="_blank" title="SSM 框架整合 spring 发送邮件功能实现！">
+				<span class="desc oneline">基于SSM的spring发送邮件的实现由于考虑到项目中需要，如果程序出现异常或其它问题，可以发送邮件来及时提醒后台维护人员处理。所以目前考虑使用JavaMail来实现邮件发送！如下，是我整理的一些内容...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_22465297">来自：	<span class="blog_title"> qq_22465297的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/xlecho/article/details/79711246","strategy":"BlogCommendFromQuerySearch","index":"37"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xlecho/article/details/79711246","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xlecho/article/details/79711246" target="_blank" title="注册发送邮件验证的邮件工具类">
+		<h4 class="text-truncate oneline">
+				注册发送邮件验证的邮件<em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					311</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xlecho/article/details/79711246" target="_blank" title="注册发送邮件验证的邮件工具类">
+				<span class="desc oneline">title:注册发送邮件验证的邮件工具类date:2018-1-1514:18:21categories:mailUtilstags:Utilsxl_echo编辑整理，欢迎转载，转载请声明文章来源。更...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xlecho">来自：	<span class="blog_title"> xlecho的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33835690/article/details/86844106","strategy":"BlogCommendFromQuerySearch","index":"38"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_33835690/article/details/86844106","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33835690/article/details/86844106" target="_blank" title="python发送邮件封装（可直接使用）">
+		<h4 class="text-truncate oneline">
+				python发送邮件封装（可直接使用）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					69</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33835690/article/details/86844106" target="_blank" title="python发送邮件封装（可直接使用）">
+				<span class="desc oneline">封装代码如下：author='damao'importsmtplibfromemail.mime.textimportMIMETextfromemail.mime.multipartimportMIM...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33835690">来自：	<span class="blog_title"> weixin_33835690的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/fxkcsdn/article/details/81015498","strategy":"BlogCommendFromQuerySearch","index":"39"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/fxkcsdn/article/details/81015498","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/fxkcsdn/article/details/81015498" target="_blank" title="[Spring集成]-配置Spring发邮件">
+		<h4 class="text-truncate oneline">
+				[Spring集成]-配置Spring发邮件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					526</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fxkcsdn/article/details/81015498" target="_blank" title="[Spring集成]-配置Spring发邮件">
+				<span class="desc oneline">1.引言：毫无疑问，Email已经成为常见的通信形式，取代了很多传统的通信方式，如邮政邮件、电话，在一定程度上也替代了面对面的交流。Email能够提供了与第17章中所讨论的异步消息相同的收益，只不过发...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/fxkcsdn">来自：	<span class="blog_title"> fxkcsdn的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_39815304/article/details/78194240","strategy":"BlogCommendFromQuerySearch","index":"40"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_39815304/article/details/78194240","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_39815304/article/details/78194240" target="_blank" title="apache下mail 邮件工具类">
+		<h4 class="text-truncate oneline">
+				apache下mail 邮件<em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					417</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_39815304/article/details/78194240" target="_blank" title="apache下mail 邮件工具类">
+				<span class="desc oneline">我采用的qq邮件的发送的，需要导入apache.commons.mail这个jar包，其他种类的邮件大同小异，得换服务器名字和端口号，话不多说，直接上代码，（新手上路，请指教，勿喷）publiccla...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_39815304">来自：	<span class="blog_title"> weixin_39815304的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/wait_for_me/10798003","strategy":"BlogCommendFromQuerySearch","index":"41"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/wait_for_me/10798003","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+		<a href="https://download.csdn.net/download/wait_for_me/10798003" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						腾讯<em>邮件发送</em><em>工具类</em>					</h4>
+					<span class="data float-right">11-21</span>
+				</div>
+				<div class="desc oneline">
+						腾讯邮件发送工具类，本人纯手打，包括部分jar 文件。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_38669628/11043014","strategy":"BlogCommendFromQuerySearch","index":"42"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_38669628/11043014","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+		<a href="https://download.csdn.net/download/weixin_38669628/11043014" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						MailUtil <em>邮件发送</em><em>工具类</em>					</h4>
+					<span class="data float-right">03-21</span>
+				</div>
+				<div class="desc oneline">
+						NULL
+博文链接：https://conkeyn.iteye.com/blog/924126				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/sun2015_07_24/article/details/50467133","strategy":"BlogCommendFromQuerySearch","index":"43"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sun2015_07_24/article/details/50467133","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sun2015_07_24/article/details/50467133" target="_blank" title="java 邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				java <em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4819</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sun2015_07_24/article/details/50467133" target="_blank" title="java 邮件发送工具类">
+				<span class="desc oneline">java邮件发送工具类</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sun2015_07_24">来自：	<span class="blog_title"> 孙振光的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u013087513/article/details/76783347","strategy":"BlogCommendFromQuerySearch","index":"44"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013087513/article/details/76783347","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013087513/article/details/76783347" target="_blank" title="普通邮件发送工具类总结">
+		<h4 class="text-truncate oneline">
+				普通<em>邮件发送</em><em>工具类</em>总结		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					749</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013087513/article/details/76783347" target="_blank" title="普通邮件发送工具类总结">
+				<span class="desc oneline">在Spring中也提供了邮件发送，如果对于不使用Spring框架的项目，邮件发送需要封装工具类导入mail.jar和activation.jar如果想放入web工程需要将javaee.jar中的jav...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_42037525/article/details/88546871","strategy":"BlogCommendFromQuerySearch","index":"45"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_42037525/article/details/88546871","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_42037525/article/details/88546871" target="_blank" title="web项目邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				web项目<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					20</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_42037525/article/details/88546871" target="_blank" title="web项目邮件发送工具类">
+				<span class="desc oneline">首先新建一个邮件配置文件到resources目录下			#远程请求地址配置#发送人邮件地址senderAddress=*#发送人邮件账户senderAccount=*​​​​​​​#密码senderP...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_42037525">来自：	<span class="blog_title"> 孤影的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/Yu_uuuuu/article/details/78497892","strategy":"BlogCommendFromQuerySearch","index":"46"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Yu_uuuuu/article/details/78497892","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Yu_uuuuu/article/details/78497892" target="_blank" title="[JAVA工具类]--邮件发送">
+		<h4 class="text-truncate oneline">
+				[JAVA<em>工具类</em>]--<em>邮件发送</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					442</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Yu_uuuuu/article/details/78497892" target="_blank" title="[JAVA工具类]--邮件发送">
+				<span class="desc oneline">javax.mailjava发送邮件，java发送企业邮件，java发送Exchange。javamailPOM依赖java发送邮件工具类...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Yu_uuuuu">来自：	<span class="blog_title"> Yu_uuuuu的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/crazzy_lp/article/details/84625850","strategy":"BlogCommendFromQuerySearch","index":"47"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/crazzy_lp/article/details/84625850","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/crazzy_lp/article/details/84625850" target="_blank" title="php工具类之【邮件发送类】">
+		<h4 class="text-truncate oneline">
+				php<em>工具类</em>之【<em>邮件发送</em>类】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					24</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/crazzy_lp/article/details/84625850" target="_blank" title="php工具类之【邮件发送类】">
+				<span class="desc oneline">classemail{	var$mail;	var$recipient;	var$title;	var$content;	var$sender;	var$delimiter;	var$header;	...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/crazzy_lp">来自：	<span class="blog_title"> crazzy_lp的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/syt1122334/article/details/79784305","strategy":"BlogCommendFromQuerySearch","index":"48"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/syt1122334/article/details/79784305","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/syt1122334/article/details/79784305" target="_blank" title="Java邮件发送工具类">
+		<h4 class="text-truncate oneline">
+				Java<em>邮件发送</em><em>工具类</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					371</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/syt1122334/article/details/79784305" target="_blank" title="Java邮件发送工具类">
+				<span class="desc oneline">packagecom.xx.common.utils;importjava.io.File;importjava.util.HashMap;importjava.util.Map;importjava...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/syt1122334">来自：	<span class="blog_title"> syt1122334的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-report-view='{"mod":"popu_387","dest":"https://edu.csdn.net/course/detail/7147?utm_source=blogre","strategy":"BlogCommendFromQuerySearch","index":"49"}' data-report-click='{"mod":"popu_387","dest":"https://edu.csdn.net/course/detail/7147?utm_source=blogre","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+	<a href="https://edu.csdn.net/course/detail/7147?utm_source=blogre" target="_blank">
+		<h4 class="text-truncate oneline">
+				06<em>邮件发送</em><em>工具类</em>封装		</h4>
+		<div class="info-box d-flex align-content-center">
+				<span class="date">02-07</span>
+		</div>
+		<p class="content oneline">
+			<span class="desc oneline">90分钟学会使用Python发送垃圾——发送邮件，对是邮件！</span>
+					</p>
+	</a>
+
+</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaQgzsODctZWR1.html" target="_blank">
+                        java工具类如何学习</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtTaQg1sMTgtZWR1.html" target="_blank">
+                        怎么学习互联网大数据</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_42677665">
+              <img src="https://avatar.csdn.net/6/6/A/3_qq_42677665.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/1.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/qq_42677665"  class="" id="uid">王先森鸭</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="10">
+                        <dt><a href="https://blog.csdn.net/qq_42677665?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qq_42677665?t=1"><span class="count">10</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="1">
+            <dt>喜欢</dt>
+            <dd><span class="count">1</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="223">
+                223            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="101">
+                101            </dd>
+        </dl>
+        <dl title="1395523">
+            <dt>排名：</dt>
+            <dd>139万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/qq_42677665">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_42677665/article/details/98784199" target="_blank" >
+                                        linux的常用命令                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_42677665/article/details/98068954" target="_blank" >
+                                        实现上传                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_42677665/article/details/97174995" target="_blank" >
+                                        抽取通用的servlet                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_42677665/article/details/96757380" target="_blank" >
+                                        通用的DAO，运用泛型                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_42677665/article/details/96602462" target="_blank" >
+                                        文件上传代码实现                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_42677665/article/category/8503413">
+                    <span class="title oneline">JavaSE</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_42677665/article/category/9140803">
+                    <span class="title oneline">javaEE</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_42677665/article/category/9141511">
+                    <span class="title oneline">javaWEB</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_42677665/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_42677665/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_42677665/article/month/2018/12">
+                    2018年12月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_42677665/article/details/96561488" >
+                                                分页查询需要封装的PageBean                    </a>
+					<p class="read">阅读数 <span>51</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_42677665/article/details/84849914" >
+                                                Eclipse通过jdbc连接SQLServer数据库                    </a>
+					<p class="read">阅读数 <span>37</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_42677665/article/details/98784199" >
+                                                linux的常用命令                    </a>
+					<p class="read">阅读数 <span>28</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_42677665/article/details/96443010" >
+                                                通用Servlet                    </a>
+					<p class="read">阅读数 <span>25</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_42677665/article/details/96432630" >
+                                                ssh的整合步骤                    </a>
+					<p class="read">阅读数 <span>9</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-77","con":",,"}' data-track-click='{"mod":"kp_popu_57-77","con":",,"}' data-report-view='{"mod":"kp_popu_57-77","keyword":""}' data-report-click='{"mod":"kp_popu_57-77","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_42677665/article/details/98784199" title="linux的常用命令">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_42677665/article/details/98784199" title="linux的常用命令">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+											</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 31;
+    var articleId = "98987673";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_42677665/article/details/98987673";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "邮件发送工具类 - qq_42677665的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["\u90ae\u4ef6\u53d1\u9001","\u5de5\u5177\u7c7b"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

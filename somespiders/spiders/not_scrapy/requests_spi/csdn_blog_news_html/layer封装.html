@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/gfei1234/article/details/98993081"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"layer封装 - gfei1234的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>layer封装 - gfei1234的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "gfei1234";
+        var blog_address = "https://blog.csdn.net/gfei1234";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/gfei1234/article/details/98993081"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "layer封装";
+        var articleDesc = "与同类弹出层组件相比，layer的优势比较明显，它尽可能地在以更少的代码展现出更强健的功能。layer格外注重性能的提升，在多层模式的回调处理中，具备其它多数层组件所没有的“独立不冲突”，您完全可以大可放心地在页面弹出任意数量的层，它们彼此不妨碍。封装layer：define([bootstrap],function(bootstrap){varlayer={...";
+        // 第四范式所需数据
+        var articleTitles = "layer封装 - gfei1234的博客";
+        
+        var nickName = "追光者@";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/gfei1234/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/gfei1234/article/details/98993081";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}' data-report-view='{"mod":"kp_popu_476-923","keyword":""}' data-report-click='{"mod":"kp_popu_476-923","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384140363.png',bigMoveImg:'https://img-bss.csdn.net/1564384127097.png',link:'https://kunyu.csdn.net?p=476&a=923&c=437&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:923});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">layer封装</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 21:51:45</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/gfei1234" target="_blank">追光者@</a>
+                    <span class="read-count">阅读数 42</span>
+                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <p>与同类弹出层组件相比，layer的优势比较明显，它尽可能地在以更少的代码展现出更强健的功能。layer格外注重性能的提升，在多层模式的回调处理中，具备其它多数层组件所没有的“独立不冲突”，您完全可以大可放心地在页面弹出任意数量的层，它们彼此不妨碍。<br>
+封装layer：</p>
+<pre><code>define(['bootstrap'], function(bootstrap) {
+    var layer = {
+        modal: function (params) {
+            //html文档末尾插入
+            var html = $('&lt;div class="modal fade" id="layerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"&gt;\
+                &lt;div class="modal-dialog" role="document"&gt;\
+                    &lt;div class="modal-content"&gt;\
+                        &lt;div class="modal-header"&gt;\
+                            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;\
+                            &lt;h4 class="modal-title" id="myModalLabel"&gt;'+params.title+'&lt;/h4&gt;\
+                        &lt;/div&gt;\
+                        &lt;div class="modal-body"&gt;\
+                            &lt;iframe src="'+params.url+'" width="100%" height="100%" frameborder="0"&gt;&lt;/iframe&gt;\
+                        &lt;/div&gt;\
+                    &lt;/div&gt;\
+                &lt;/div&gt;\
+            &lt;/div&gt;');
+            html.find('iframe').css({width: params.area[0], height: params[1]});
+            $('body').append(html);
+            $('#layerModal').modal();
+        },
+        msg:function(message){
+            var html = $('&lt;div class="modal fade" id="layermsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"&gt;\
+                &lt;div class="modal-dialog modal-sm" role="document"&gt;\
+                    &lt;div class="modal-content"&gt;\
+                        &lt;div class="modal-body"&gt;\
+                            '+message+'\
+                        &lt;/div&gt;\
+                        &lt;div class="modal-footer"&gt;\
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;确定&lt;/button&gt;\
+                        &lt;/div&gt;\
+                    &lt;/div&gt;\
+                &lt;/div&gt;\
+            &lt;/div&gt;');
+            $('body').append(html);
+            $('#layermsg').modal();
+        },
+        confirm:function(message){
+            var html = $('&lt;div class="modal fade" id="layerconfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"&gt;\
+                &lt;div class="modal-dialog modal-sm" role="document"&gt;\
+                    &lt;div class="modal-content"&gt;\
+                        &lt;div class="modal-body"&gt;\
+                            '+message+'\
+                        &lt;/div&gt;\
+                        &lt;div class="modal-footer"&gt;\
+                        &lt;button type="button" class="btn btn-primary"&gt;确定&lt;/button&gt;\
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;取消&lt;/button&gt;\
+                        &lt;/div&gt;\
+                    &lt;/div&gt;\
+                &lt;/div&gt;\
+            &lt;/div&gt;');
+            $('body').append(html);
+            $('#layerconfirm').modal();
+        },
+    }
+  return layer;
+})
+  
+</code></pre>
+<p>引入与调用：</p>
+<pre><code>&lt;script src="../static/js/require.js"&gt;&lt;/script&gt;
+&lt;script src="../static/bootstrap/js/jquery-1.12.2.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+require.config({
+  baseUrl:'../static/bootstrap/',
+  paths:{
+    "bootstrap":"js/bootstrap",
+    "layer":"layer/layer",
+    "tool":"js/tool"
+
+  }
+})
+require(['bootstrap','layer','tool'],function(bootstrap,layer){
+  $('#add').on('click', function () {
+    layer.modal({
+      title:'角色添加',
+      url:'./角色添加.html',
+      area:['100%','300px']
+    });
+  })
+  $('#edit').on('click',function(){
+    if($(':checked').length &gt; 1){
+      layer.msg('只能选择一项');
+      return false;
+    }else if($(':checked').length &lt; 1){
+      layer.msg('请选择要操作的选项');
+      return false;
+    }
+  })
+
+  $('#delete').on('click',function(){
+    if($(':checked').length &lt; 1){
+      layer.msg('请选择要操作的选项');
+      return false;
+    }
+    layer.confirm('确定要删除吗？');
+    
+  });
+
+
+  $('.checkall').checkedAll('.itemcheckbox');
+})
+
+&lt;/script&gt;
+</code></pre>
+
+                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet">
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/gfei1234/article/details/98993081","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/gfei1234/article/details/98993081","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}' data-report-view='{"mod":"kp_popu_58-402","keyword":""}' data-report-click='{"mod":"kp_popu_58-402","keyword":""}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98993081">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/oopts/article/details/81518586","strategy":"BlogCommendFromQuerySearch","index":"0"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/oopts/article/details/81518586","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/oopts/article/details/81518586" target="_blank" title="基于Layer 封装JS">
+		<h4 class="text-truncate oneline">
+				基于<em>Layer</em> <em>封装</em>JS		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					371</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/oopts/article/details/81518586" target="_blank" title="基于Layer 封装JS">
+				<span class="desc oneline">			varZTLayer={tips:function(content,target,time){returnlayer.tips(content,target,{time:time||3000})...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/oopts">来自：	<span class="blog_title"> oopts的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u013086716/article/details/53887976","strategy":"BlogCommendFromQuerySearch","index":"1"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013086716/article/details/53887976","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013086716/article/details/53887976" target="_blank" title="谈层组件layer封装网页消息提示">
+		<h4 class="text-truncate oneline">
+				谈层组件<em>layer</em><em>封装</em>网页消息提示		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					987</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013086716/article/details/53887976" target="_blank" title="谈层组件layer封装网页消息提示">
+				<span class="desc oneline">原来的父层：vareditContactById=function(contactsId){	if(contactsId!=null&amp;&amp;contactsId!=&quot;&quot;&amp;&amp;contactsId!=unde...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u013086716">来自：	<span class="blog_title"> 夜深忽梦少年事</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/u011659172/article/details/53886564","strategy":"BlogCommendFromQuerySearch","index":"2"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u011659172/article/details/53886564","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011659172/article/details/53886564" target="_blank" title="web弹层组件-layer封装的工具类">
+		<h4 class="text-truncate oneline">
+				web弹层组件-<em>layer</em><em>封装</em>的工具类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1079</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011659172/article/details/53886564" target="_blank" title="web弹层组件-layer封装的工具类">
+				<span class="desc oneline">varcolseTime=2000;//2s/***layer是提示消息封装工具类*/varLayer={/***警告框closeBtn:提供了两种风格的关闭按钮，可通过配置1和2来展示，如果不显示，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u011659172">来自：	<span class="blog_title"> 乐于学习、乐于分享、乐于总结</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_22823581/article/details/71425010","strategy":"BlogCommendFromQuerySearch","index":"3"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_22823581/article/details/71425010","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_22823581/article/details/71425010" target="_blank" title="layer.js  封装使用， 运用在thinkphp">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>.js  <em>封装</em>使用， 运用在thinkphp		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1890</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_22823581/article/details/71425010" target="_blank" title="layer.js  封装使用， 运用在thinkphp">
+				<span class="desc oneline">v层：（还没实现功能的）添加教室名称:teacher:{volistname=&quot;teacher&quot;id=&quot;teacher&quot;}getData('id')}&quot;&gt;{$teacher-&gt;getData('nam...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_22823581">来自：	<span class="blog_title"> 廖圣平</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34464414/article/details/53053985","strategy":"BlogCommendFromQuerySearch","index":"4"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34464414/article/details/53053985","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34464414/article/details/53053985" target="_blank" title="layer控件的dialog封装">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>控件的dialog<em>封装</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4511</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34464414/article/details/53053985" target="_blank" title="layer控件的dialog封装">
+				<span class="desc oneline">为什么使用dialog：在实际项目中我们在引用相关控件以后，进行二次dialog封装能够更加方便我们的本项目使用。例如我们在引用http://layer.layui.com/的弹出层控件以后可以再外部...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34464414">来自：	<span class="blog_title"> 平渊渡海的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_39288961/article/details/86517513","strategy":"BlogCommendFromQuerySearch","index":"5"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_39288961/article/details/86517513","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39288961/article/details/86517513" target="_blank" title="把Layer的弹出层封装成Public文件">
+		<h4 class="text-truncate oneline">
+				把<em>Layer</em>的弹出层<em>封装</em>成Public文件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					52</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39288961/article/details/86517513" target="_blank" title="把Layer的弹出层封装成Public文件">
+				<span class="desc oneline"> 目的：把Layer的弹出层封装成Public文件。前提条件：电脑	编程工具	Layui弹出层(官方链接) 写法：直接写。	间接写。 效果图：  一，直接写：$.post('/Main/LogChec...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_39288961">来自：	<span class="blog_title"> 在下GuiChun</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/wt528322480/10388620","strategy":"BlogCommendFromQuerySearch","index":"6"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/wt528322480/10388620","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+		<a href="https://download.csdn.net/download/wt528322480/10388620" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						基于jquery的<em>layer</em>.js增删改查<em>封装</em>					</h4>
+					<span class="data float-right">05-03</span>
+				</div>
+				<div class="desc oneline">
+						基于jquery的layer.js增删改查封装，满足多种操作。。。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_36784628/article/details/86666821","strategy":"BlogCommendFromQuerySearch","index":"7"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_36784628/article/details/86666821","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_36784628/article/details/86666821" target="_blank" title="datagrid表格封装、layui弹窗封装">
+		<h4 class="text-truncate oneline">
+				datagrid表格<em>封装</em>、layui弹窗<em>封装</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					145</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_36784628/article/details/86666821" target="_blank" title="datagrid表格封装、layui弹窗封装">
+				<span class="desc oneline">1、datagrid表格封装与使用，（需要分页的用不封装的）functiondatagrids(obj){	$(obj.id).datagrid({		data:obj.data,		fitColum...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_36784628">来自：	<span class="blog_title"> JHLIN的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/onelogone/11184904","strategy":"BlogCommendFromQuerySearch","index":"8"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/onelogone/11184904","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+		<a href="https://download.csdn.net/download/onelogone/11184904" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						C#对<em>Layer</em>弹出层的<em>封装</em>的MessageBox类					</h4>
+					<span class="data float-right">05-17</span>
+				</div>
+				<div class="desc oneline">
+						此文件为C#的类文件，在Aps.net网页中使用，使用前引入layer的js文件，可以直接通过MessageBox.Show(this,&quot;弹出窗体的内容&quot;);向页面输出弹出层代码。可实现和窗体程序弹窗MessageBo...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/littlewindy520/9860213","strategy":"BlogCommendFromQuerySearch","index":"9"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/littlewindy520/9860213","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+		<a href="https://download.csdn.net/download/littlewindy520/9860213" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						login_ajax_php					</h4>
+					<span class="data float-right">06-04</span>
+				</div>
+				<div class="desc oneline">
+						自己封装的ajax登录 界面，layer漂亮弹出层				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/songdunfa/10217368","strategy":"BlogCommendFromQuerySearch","index":"10"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/songdunfa/10217368","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+		<a href="https://download.csdn.net/download/songdunfa/10217368" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						zTree<em>封装</em>辅助JS（弹出层，弹出层筛选，上下键选择）					</h4>
+					<span class="data float-right">01-22</span>
+				</div>
+				<div class="desc oneline">
+						主要是传统下拉框的优化选择，分单选和多选两种类型，可以是弹出层形式，也可以是平铺的形式展现。
+集成搜索，多选，区段识别功能，内置设置和获取选中的API。
+搜索主要是用于单选时内容较多的情况。
+多选支持全选和反选。
+区段识别是输入多个值，选...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/m0_38018860/10689232","strategy":"BlogCommendFromQuerySearch","index":"11"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/m0_38018860/10689232","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+		<a href="https://download.csdn.net/download/m0_38018860/10689232" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>layer</em>第三方扩展插件					</h4>
+					<span class="data float-right">09-26</span>
+				</div>
+				<div class="desc oneline">
+						layer是一款近年来备受青睐的web弹层组件，她具备全方位的解决方案，致力于服务各水平段的开发人员，您的页面会轻松地拥有丰富友好的操作体验				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/randall_xu/article/details/80808295","strategy":"BlogCommendFromQuerySearch","index":"12"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/randall_xu/article/details/80808295","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/randall_xu/article/details/80808295" target="_blank" title="Allegro问题汇总">
+		<h4 class="text-truncate oneline">
+				Allegro问题汇总		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					259</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/randall_xu/article/details/80808295" target="_blank" title="Allegro问题汇总">
+				<span class="desc oneline">1.约束中Alllayer和Bylayer有什么用？Alllayer是层作为title下拉对应层的所有规则Bylayer是以pcs作为title，下拉pcs对应的层。问题是设定一个规则和这个规则就自动...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/randall_xu">来自：	<span class="blog_title"> Just Do The Right</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/javajiawei/article/details/52708741","strategy":"BlogCommendFromQuerySearch","index":"13"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/javajiawei/article/details/52708741","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/javajiawei/article/details/52708741" target="_blank" title="TLS/SSL报文格式探究">
+		<h4 class="text-truncate oneline">
+				TLS/SSL报文格式探究		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6390</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/javajiawei/article/details/52708741" target="_blank" title="TLS/SSL报文格式探究">
+				<span class="desc oneline">本文简单介绍一下实际通信场景中HTTPS的报文结构。图1 图1出自这里，很好的解释了HTTPS和HTTP在协议栈中的关系。可以看出HTTS总体上是由两部分来构成的，TLSRecordLayerProt...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/javajiawei">来自：	<span class="blog_title"> 村中少年的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_34392843/article/details/87070921","strategy":"BlogCommendFromQuerySearch","index":"14"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_34392843/article/details/87070921","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34392843/article/details/87070921" target="_blank" title="圆点进度的封装（layer画图）">
+		<h4 class="text-truncate oneline">
+				圆点进度的<em>封装</em>（<em>layer</em>画图）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					16</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34392843/article/details/87070921" target="_blank" title="圆点进度的封装（layer画图）">
+				<span class="desc oneline">我又回来啦！！！先给上个图，因为这个东西具体不好描述，可以自己修改修改做成很多东西。本来公司的项目很简单，也用不到这个需求，后来大改版（这里吐槽一下UI！！！），也就有了现在的这个需求。贴一下需求，就...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_34392843">来自：	<span class="blog_title"> weixin_34392843的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_35971258/article/details/79178431","strategy":"BlogCommendFromQuerySearch","index":"15"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_35971258/article/details/79178431","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35971258/article/details/79178431" target="_blank" title="layer组件中使用ajax注意事项">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>组件中使用ajax注意事项		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4441</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35971258/article/details/79178431" target="_blank" title="layer组件中使用ajax注意事项">
+				<span class="desc oneline">              layui.use(['form'],      function(){        //$=layui.jquery;//此$符号会影响ajax的$符号      ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35971258">来自：	<span class="blog_title"> 龚小帅的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/ecitlm/9382291","strategy":"BlogCommendFromQuerySearch","index":"16"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/ecitlm/9382291","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+		<a href="https://download.csdn.net/download/ecitlm/9382291" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>layer</em>模仿alert confirm弹窗效果					</h4>
+					<span class="data float-right">12-29</span>
+				</div>
+				<div class="desc oneline">
+						layer是一款近年来备受青睐的web弹层组件，她具备全方位的解决方案，致力于服务各水平段的开发人员，您的页面会轻松地拥有丰富友好的操作体验。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/yifanSJ/article/details/79272644","strategy":"BlogCommendFromQuerySearch","index":"17"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yifanSJ/article/details/79272644","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yifanSJ/article/details/79272644" target="_blank" title="关于Layui分页及Table展示的封装">
+		<h4 class="text-truncate oneline">
+				关于Layui分页及Table展示的<em>封装</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1427</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yifanSJ/article/details/79272644" target="_blank" title="关于Layui分页及Table展示的封装">
+				<span class="desc oneline">baseschlist.jsp																					序号				市州				区县				管辖机构				驾培机构名称				是否备案				经营许可证编号				经营许可日期			...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yifanSJ">来自：	<span class="blog_title"> yifanSJ的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/keytounix/article/details/90513790","strategy":"BlogCommendFromQuerySearch","index":"18"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/keytounix/article/details/90513790","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/keytounix/article/details/90513790" target="_blank" title="手把手教你封装一款适用自己的golang  web编程框架">
+		<h4 class="text-truncate oneline">
+				手把手教你<em>封装</em>一款适用自己的golang  web编程框架		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					148</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/keytounix/article/details/90513790" target="_blank" title="手把手教你封装一款适用自己的golang  web编程框架">
+				<span class="desc oneline">MVC应用一般结构目录结构说明如下名称			内容		model			模型层目录,类比Java中的entity		view			视图层,存放所有templete模板		ctrl			控制器层,存放全部控...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/keytounix">来自：	<span class="blog_title"> imwinlion && 我是胡文林</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/bianss/10222056","strategy":"BlogCommendFromQuerySearch","index":"19"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/bianss/10222056","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+		<a href="https://download.csdn.net/download/bianss/10222056" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>layer</em>-v3.1.1					</h4>
+					<span class="data float-right">01-24</span>
+				</div>
+				<div class="desc oneline">
+						layer  前台效果，弹框，提示的封装，超级好用，试试就知道				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/wuye4319/5945863","strategy":"BlogCommendFromQuerySearch","index":"20"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/wuye4319/5945863","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+		<a href="https://download.csdn.net/download/wuye4319/5945863" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>layer</em>弹窗插件.js					</h4>
+					<span class="data float-right">08-14</span>
+				</div>
+				<div class="desc oneline">
+						layer是一个不错的弹窗插件，其脚本封装习惯非常好，值得学习。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq224428/10565878","strategy":"BlogCommendFromQuerySearch","index":"21"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq224428/10565878","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+		<a href="https://download.csdn.net/download/qq224428/10565878" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						前台 弹框 提示 超级好用的<em>layer</em>-v3.1.1					</h4>
+					<span class="data float-right">07-26</span>
+				</div>
+				<div class="desc oneline">
+						常用的 layer  前台效果，弹框，提示的封装，超级好用，试试就知道				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/wxqhfut/article/details/80480012","strategy":"BlogCommendFromQuerySearch","index":"22"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wxqhfut/article/details/80480012","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wxqhfut/article/details/80480012" target="_blank" title="百度地图和openlayers融合封装（四）之demo展示">
+		<h4 class="text-truncate oneline">
+				百度地图和open<em>layer</em>s融合<em>封装</em>（四）之demo展示		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3120</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wxqhfut/article/details/80480012" target="_blank" title="百度地图和openlayers融合封装（四）之demo展示">
+				<span class="desc oneline">2018.5.28--11:31wmap的目的是减少地图开发的成本和时间。 如果你需要进行地图开发，觉的百度地图和openlayers的api文档晦涩难懂（主要是openlayers的api很难懂，百...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wxqhfut">来自：	<span class="blog_title"> 一个智障的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_43225030/article/details/83343755","strategy":"BlogCommendFromQuerySearch","index":"23"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_43225030/article/details/83343755","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_43225030/article/details/83343755" target="_blank" title="angular6引入laydate，layer等三方插件">
+		<h4 class="text-truncate oneline">
+				angular6引入laydate，<em>layer</em>等三方插件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					560</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_43225030/article/details/83343755" target="_blank" title="angular6引入laydate，layer等三方插件">
+				<span class="desc oneline">以laydate为例1.官网下载laydate，将整个文件夹放在assets文件夹下2.在angular.json文件中引入laydate.js文件3.写页面html4.ts文件（需定义laydate...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_43225030">来自：	<span class="blog_title"> kksw1121</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}' data-report-view='{"mod":"kp_popu_63-555","keyword":""}' data-report-click='{"mod":"kp_popu_63-555","keyword":""}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/sr_www/article/details/81394340","strategy":"BlogCommendFromQuerySearch","index":"24"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sr_www/article/details/81394340","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sr_www/article/details/81394340" target="_blank" title="layer图片预览">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>图片预览		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2668</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sr_www/article/details/81394340" target="_blank" title="layer图片预览">
+				<span class="desc oneline">layui.use(['jquery','layer','form'],function(){var$=layui.jquery,layer=layui.layer,form=layui.form$(...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sr_www">来自：	<span class="blog_title"> 小马过河</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_34204722/article/details/86830070","strategy":"BlogCommendFromQuerySearch","index":"25"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_34204722/article/details/86830070","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34204722/article/details/86830070" target="_blank" title="【Thinkphp5】结合layer弹窗 定制操作结果页面">
+		<h4 class="text-truncate oneline">
+				【Thinkphp5】结合<em>layer</em>弹窗 定制操作结果页面		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					321</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34204722/article/details/86830070" target="_blank" title="【Thinkphp5】结合layer弹窗 定制操作结果页面">
+				<span class="desc oneline">1打开应用公共文件页面appliction/common.php，编写以下代码注意：成功消息的绿色背景部分是iframe框架写法，如果是普通页面。就吧parent去除，改为：self.location...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_34204722">来自：	<span class="blog_title"> weixin_34204722的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/Mr_YanYan/article/details/80258504","strategy":"BlogCommendFromQuerySearch","index":"26"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Mr_YanYan/article/details/80258504","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Mr_YanYan/article/details/80258504" target="_blank" title="封装弹窗并模拟confirm方法">
+		<h4 class="text-truncate oneline">
+				<em>封装</em>弹窗并模拟confirm方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					625</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Mr_YanYan/article/details/80258504" target="_blank" title="封装弹窗并模拟confirm方法">
+				<span class="desc oneline">代码如下&amp;amp;amp;lt;!DOCTYPEhtml&amp;amp;amp;gt;&amp;amp;amp;lt;htmllang=&amp;amp;amp;quot;en&amp;amp;amp;quot;&amp;amp;amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Mr_YanYan">来自：	<span class="blog_title"> Mr_Yan的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_39402742/article/details/76668382","strategy":"BlogCommendFromQuerySearch","index":"27"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_39402742/article/details/76668382","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39402742/article/details/76668382" target="_blank" title="dialog.JS      异步方式处理dialog封装">
+		<h4 class="text-truncate oneline">
+				dialog.JS      异步方式处理dialog<em>封装</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					538</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39402742/article/details/76668382" target="_blank" title="dialog.JS      异步方式处理dialog封装">
+				<span class="desc oneline">vardialog={//错误弹出层error:function(message){layer.open({content:message,icon:2,title:'错误提示',});},//成功弹...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_39402742">来自：	<span class="blog_title"> qq_39402742的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/huochai770880/9169131","strategy":"BlogCommendFromQuerySearch","index":"28"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/huochai770880/9169131","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+		<a href="https://download.csdn.net/download/huochai770880/9169131" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>layer</em>2.0-web弹层组件，confirm询问，loading加载					</h4>
+					<span class="data float-right">10-10</span>
+				</div>
+				<div class="desc oneline">
+						ayer是一款近年来口碑极佳的web弹层组件，她具备全方位的解决方案，致力于服务各水平段的开发人员，您的页面会轻松地拥有丰富友好的操作体验。
+layer.open({
+    type: 1, 
+    content: '传入任意的文本...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-1060","con":",,"}' data-track-click='{"mod":"kp_popu_64-1060","con":",,"}' data-report-view='{"mod":"kp_popu_64-1060","keyword":""}' data-report-click='{"mod":"kp_popu_64-1060","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/235?positionId=64&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_28254093/article/details/82255923","strategy":"BlogCommendFromQuerySearch","index":"29"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_28254093/article/details/82255923","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_28254093/article/details/82255923" target="_blank" title="JQuery输入验证插件（使用layer的tips做提示）">
+		<h4 class="text-truncate oneline">
+				JQuery输入验证插件（使用<em>layer</em>的tips做提示）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					955</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_28254093/article/details/82255923" target="_blank" title="JQuery输入验证插件（使用layer的tips做提示）">
+				<span class="desc oneline">重大更新     1.优化部分算法     2.支持行内元素校验定义     3.js添加元素，可添加定义事件     下载文件  前往下载  https://download.csdn.net/do...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_28254093">来自：	<span class="blog_title"> 东明之羞的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/hanxintong9/article/details/51541400","strategy":"BlogCommendFromQuerySearch","index":"30"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hanxintong9/article/details/51541400","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hanxintong9/article/details/51541400" target="_blank" title="layer分页的使用">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>分页的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hanxintong9/article/details/51541400" target="_blank" title="layer分页的使用">
+				<span class="desc oneline">由于界面美观程度要求较高，所以在网上找了一个分页相对来说比较好看的，layer分页，内置封装了很多方法，使用相对来说比较简单，下面给大家具体介绍下： 简单实现一个小例子：      这是一个界面，每条...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/hanxintong9">来自：	<span class="blog_title"> 遇见未来的自己</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/mengxiangxingdong/article/details/87252394","strategy":"BlogCommendFromQuerySearch","index":"31"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/mengxiangxingdong/article/details/87252394","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/mengxiangxingdong/article/details/87252394" target="_blank" title="layui 封装集成到 jquery 的工具类">
+		<h4 class="text-truncate oneline">
+				layui <em>封装</em>集成到 jquery 的工具类		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					367</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/mengxiangxingdong/article/details/87252394" target="_blank" title="layui 封装集成到 jquery 的工具类">
+				<span class="desc oneline">分享一个自己写的方便操作layui的jquery工具类文档jquery.layui.util.js1.tableGetCheckIds	简介		获取layuitable所有选中的id	参数		tabl...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/mengxiangxingdong">来自：	<span class="blog_title"> xmind果果</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/suxuelian/article/details/48439269","strategy":"BlogCommendFromQuerySearch","index":"32"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/suxuelian/article/details/48439269","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/suxuelian/article/details/48439269" target="_blank" title="Asp.Net中后台弹出Layer浮动框以及传值">
+		<h4 class="text-truncate oneline">
+				Asp.Net中后台弹出<em>Layer</em>浮动框以及传值		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2955</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/suxuelian/article/details/48439269" target="_blank" title="Asp.Net中后台弹出Layer浮动框以及传值">
+				<span class="desc oneline">publicvoidJSPrompt(){stringid=11;ClientScript.RegisterStartupScript(this.GetType(),&quot;&quot;,@&quot;            ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/suxuelian">来自：	<span class="blog_title"> suxuelian的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/Function_JX_/article/details/82497376","strategy":"BlogCommendFromQuerySearch","index":"33"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Function_JX_/article/details/82497376","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Function_JX_/article/details/82497376" target="_blank" title="layer ui的select组件有时候不出来">
+		<h4 class="text-truncate oneline">
+				<em>layer</em> ui的select组件有时候不出来		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					625</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Function_JX_/article/details/82497376" target="_blank" title="layer ui的select组件有时候不出来">
+				<span class="desc oneline">window.form.render();如果有在form里面使用select这些组件，需要显示声明下。</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Function_JX_">来自：	<span class="blog_title"> 博客不一定要自己做</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-1061","con":",,"}' data-track-click='{"mod":"kp_popu_65-1061","con":",,"}' data-report-view='{"mod":"kp_popu_65-1061","keyword":""}' data-report-click='{"mod":"kp_popu_65-1061","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/236?positionId=65&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42242440/article/details/83893442","strategy":"BlogCommendFromQuerySearch","index":"34"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42242440/article/details/83893442","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42242440/article/details/83893442" target="_blank" title="Thinkphp结合layer弹窗加ajax完成增删改查方法">
+		<h4 class="text-truncate oneline">
+				Thinkphp结合<em>layer</em>弹窗加ajax完成增删改查方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					557</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42242440/article/details/83893442" target="_blank" title="Thinkphp结合layer弹窗加ajax完成增删改查方法">
+				<span class="desc oneline">Thinkphp结合layer弹窗加ajax完成增删改查方法给每个input框绑定id就行了这是前端页面&amp;amp;amp;lt;!DOCTYPEhtml&amp;amp;amp;gt;&amp;amp;amp;lt;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42242440">来自：	<span class="blog_title"> LHP的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32786873/article/details/79727326","strategy":"BlogCommendFromQuerySearch","index":"35"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_32786873/article/details/79727326","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_32786873/article/details/79727326" target="_blank" title="layer框架中自定义ajax验证">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>框架中自定义ajax验证		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1346</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_32786873/article/details/79727326" target="_blank" title="layer框架中自定义ajax验证">
+				<span class="desc oneline">利用layui的form.verify实现自定义验证规则//自定义验证规则form.verify({	name:function(value,item){//value：表单的值、item：表单的DO...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_32786873">来自：	<span class="blog_title"> 勿忘初心的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/zhangxiaoyang0/article/details/77994882","strategy":"BlogCommendFromQuerySearch","index":"36"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhangxiaoyang0/article/details/77994882","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhangxiaoyang0/article/details/77994882" target="_blank" title="jquery、layer 实现弹出层的打开、关闭">
+		<h4 class="text-truncate oneline">
+				jquery、<em>layer</em> 实现弹出层的打开、关闭		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1862</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhangxiaoyang0/article/details/77994882" target="_blank" title="jquery、layer 实现弹出层的打开、关闭">
+				<span class="desc oneline">父页面js：//$that为要绑定事件的jquery变量$that.on('click',function(){layer.open({title:'医生认证审核',...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhangxiaoyang0">来自：	<span class="blog_title"> zhangxiaoyang0的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_38986609/article/details/86526635","strategy":"BlogCommendFromQuerySearch","index":"37"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_38986609/article/details/86526635","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_38986609/article/details/86526635" target="_blank" title="springboot使用layui封装的js进行数据传输">
+		<h4 class="text-truncate oneline">
+				springboot使用layui<em>封装</em>的js进行数据传输		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					344</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_38986609/article/details/86526635" target="_blank" title="springboot使用layui封装的js进行数据传输">
+				<span class="desc oneline">一，前端js页面layui.use(['laypage','layer','table','element'],function(){				varlaypage=layui.layPage,				...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_38986609">来自：	<span class="blog_title"> 呵呵喝何何</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/cddcj/article/details/54021572","strategy":"BlogCommendFromQuerySearch","index":"38"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/cddcj/article/details/54021572","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/cddcj/article/details/54021572" target="_blank" title="Layer.js——强大的弹出框">
+		<h4 class="text-truncate oneline">
+				<em>Layer</em>.js——强大的弹出框		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/cddcj/article/details/54021572" target="_blank" title="Layer.js——强大的弹出框">
+				<span class="desc oneline">简介layer是一款近年来备受青睐的web弹层组件，她具备全方位的解决方案，致力于服务各水平段的开发人员，您的页面会轻松地拥有丰富友好的操作体验。在与同类组件的比较中，layer总是能轻易获胜。她尽可...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/cddcj">来自：	<span class="blog_title"> cc蒲公英的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34107571/article/details/86608670","strategy":"BlogCommendFromQuerySearch","index":"39"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_34107571/article/details/86608670","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34107571/article/details/86608670" target="_blank" title="layer 弹出相册层 (图片展示方式)">
+		<h4 class="text-truncate oneline">
+				<em>layer</em> 弹出相册层 (图片展示方式)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					370</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34107571/article/details/86608670" target="_blank" title="layer 弹出相册层 (图片展示方式)">
+				<span class="desc oneline">如果想要制作一个简单的相册，可以采用这个插件的方法。如果你的图片是从后台传过来的json格式里，可以通过ajax加载让图片显示在页面上，然后在使用layer插件，做出点击以后就可以查看大图的效果。一、...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34107571">来自：	<span class="blog_title"> Kevinvcc200的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/maple980326/article/details/51992328","strategy":"BlogCommendFromQuerySearch","index":"40"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/maple980326/article/details/51992328","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/maple980326/article/details/51992328" target="_blank" title="layer弹窗">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>弹窗		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5376</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/maple980326/article/details/51992328" target="_blank" title="layer弹窗">
+				<span class="desc oneline">一、导入layer插件文件（我的下载里面有资源）如图： 二、引入资源三、Freemarker页面代码删除			确定要删除吗？			四、js代码：functionconfirmDelete(id,par...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/maple980326">来自：	<span class="blog_title"> 个人笔记</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/juligang320/article/details/78574595","strategy":"BlogCommendFromQuerySearch","index":"41"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/juligang320/article/details/78574595","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/juligang320/article/details/78574595" target="_blank" title="使用iframe和layer实现弹框">
+		<h4 class="text-truncate oneline">
+				使用iframe和<em>layer</em>实现弹框		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2552</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/juligang320/article/details/78574595" target="_blank" title="使用iframe和layer实现弹框">
+				<span class="desc oneline">使用iframe和layer实现弹框</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/juligang320">来自：	<span class="blog_title"> 一码归一码</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_41356456/article/details/88626276","strategy":"BlogCommendFromQuerySearch","index":"42"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_41356456/article/details/88626276","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_41356456/article/details/88626276" target="_blank" title="keras使用Lambda和Reshape自定义层、改动output、修改loss值">
+		<h4 class="text-truncate oneline">
+				keras使用Lambda和Reshape自定义层、改动output、修改loss值		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					337</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_41356456/article/details/88626276" target="_blank" title="keras使用Lambda和Reshape自定义层、改动output、修改loss值">
+				<span class="desc oneline">keras使用Lambda和Reshape自定义层、改动output、修改loss值新版keras有一个Lambda工具可以帮助自定义层，同时可能会用到Reshape函数。关于Lambda，它的作用就...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_41356456">来自：	<span class="blog_title"> qq_41356456的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/chouzizi/article/details/87092319","strategy":"BlogCommendFromQuerySearch","index":"43"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/chouzizi/article/details/87092319","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/chouzizi/article/details/87092319" target="_blank" title="layer和select2一起使用，导致select2下拉框无法显示的问题">
+		<h4 class="text-truncate oneline">
+				<em>layer</em>和select2一起使用，导致select2下拉框无法显示的问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1321</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/chouzizi/article/details/87092319" target="_blank" title="layer和select2一起使用，导致select2下拉框无法显示的问题">
+				<span class="desc oneline">今天使用layer插件做的弹出框中，使用了select2插件，但是select2插件的下拉框无法正常显示，很显然这是由于layer弹出层z-index值比较大，导致了select2的下拉框被遮住了。解...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/chouzizi">来自：	<span class="blog_title"> chouzizi的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/gh1205/article/details/78963653","strategy":"BlogCommendFromQuerySearch","index":"44"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/gh1205/article/details/78963653","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/gh1205/article/details/78963653" target="_blank" title="vue 弹出层组件">
+		<h4 class="text-truncate oneline">
+				vue 弹出层组件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/gh1205/article/details/78963653" target="_blank" title="vue 弹出层组件">
+				<span class="desc oneline">vue弹出层</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/gh1205">来自：	<span class="blog_title"> 威武霸气你会姐的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/open404/article/details/84018457","strategy":"BlogCommendFromQuerySearch","index":"45"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/open404/article/details/84018457","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/open404/article/details/84018457" target="_blank" title="jquery 对form提交进行封装">
+		<h4 class="text-truncate oneline">
+				jquery 对form提交进行<em>封装</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					42</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/open404/article/details/84018457" target="_blank" title="jquery 对form提交进行封装">
+				<span class="desc oneline">我给您一个解决方案吧,网上的例子大多可以找到一些用jquery库的$.ajax方法来实现ajax提交,但您所说的,页面会有很多数据,如果使用未封装过的ajax代码会显得很长,在之前的开发中我发现一个j...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/open404">来自：	<span class="blog_title"> open404的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/nkitten88/3610832","strategy":"BlogCommendFromQuerySearch","index":"46"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/nkitten88/3610832","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+		<a href="https://download.csdn.net/download/nkitten88/3610832" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						OSI7层模型与网络协议					</h4>
+					<span class="data float-right">09-17</span>
+				</div>
+				<div class="desc oneline">
+						OSI7层模型与网络协议
+
+应用层(Application layer)
+　　表示层(Presentation layer)
+　　会话层(Session layer)
+　　传输层(Transport layer)
+　　网络层(Networ...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_387","dest":"https://blog.csdn.net/alone_map/article/details/51854578","strategy":"BlogCommendFromQuerySearch","index":"47"}' data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/alone_map/article/details/51854578","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/alone_map/article/details/51854578" target="_blank" title="Layer2-2 交换机转发原理">
+		<h4 class="text-truncate oneline">
+				<em>Layer</em>2-2 交换机转发原理		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2051</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/alone_map/article/details/51854578" target="_blank" title="Layer2-2 交换机转发原理">
+				<span class="desc oneline">session1Layer2专题课第三天一、交换机端口MAC地址的作用：1、区分L2转发和L3转发，当交换机收到主机发来的电信号后，将这串电信号（数据包）串行化成交换机能识别的二进制数（0101010...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/alone_map">来自：	<span class="blog_title"> alone_map的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/lcdaomeixiong/10258299","strategy":"BlogCommendFromQuerySearch","index":"48"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/lcdaomeixiong/10258299","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+		<a href="https://download.csdn.net/download/lcdaomeixiong/10258299" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						Computer Networks (5th Edition)					</h4>
+					<span class="data float-right">02-25</span>
+				</div>
+				<div class="desc oneline">
+						The physical layer -- The data link layer -- The medium access control sublayer -- The network layer -- The transportat...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-report-view='{"mod":"popu_387","dest":"https://download.csdn.net/download/airun_zou/3592498","strategy":"BlogCommendFromQuerySearch","index":"49"}' data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/airun_zou/3592498","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+		<a href="https://download.csdn.net/download/airun_zou/3592498" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						GSM SPEC打包下载					</h4>
+					<span class="data float-right">09-11</span>
+				</div>
+				<div class="desc oneline">
+						GSM SPEC打包下载，包括：
+ATCommand，DataComm，FTA，Layer 1 - Physical Layer，Layer 2 - Data Link Layer，Layer 3 - Supplementary Serv...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaMgysNjUtZWR1.html" target="_blank">
+                        java学习封装</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaMgysNDItZWR1.html" target="_blank">
+                        java 封装学习</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/gfei1234">
+              <img src="https://avatar.csdn.net/B/D/C/3_gfei1234.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/0.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/gfei1234"  class="" id="uid">追光者@</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="3">
+                        <dt><a href="https://blog.csdn.net/gfei1234?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/gfei1234?t=1"><span class="count">3</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>喜欢</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="1级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-1"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="98">
+                98            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="30">
+                30            </dd>
+        </dl>
+        <dl title="2247272">
+            <dt>排名：</dt>
+            <dd>224万+</dd>
+        </dl>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/gfei1234">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/gfei1234/article/details/98883814" target="_blank" >
+                                        requireJS加载和bootstrap第三方组件                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/gfei1234/article/details/98789521" target="_blank" >
+                                        js                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/gfei1234/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/gfei1234/article/details/98883814" >
+                                                requireJS加载和bootstrap第三方组件                    </a>
+					<p class="read">阅读数 <span>11</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/gfei1234/article/details/98789521" >
+                                                js                    </a>
+					<p class="read">阅读数 <span>10</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/gfei1234/article/details/98993081" >
+                                                layer封装                    </a>
+					<p class="read">阅读数 <span>0</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/gfei1234/article/details/98883814" title="requireJS加载和bootstrap第三方组件">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/gfei1234/article/details/98883814" title="requireJS加载和bootstrap第三方组件">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+											</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 14;
+    var articleId = "98993081";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/gfei1234/article/details/98993081";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "layer封装 - gfei1234的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["layer","\u5c01\u88c5"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

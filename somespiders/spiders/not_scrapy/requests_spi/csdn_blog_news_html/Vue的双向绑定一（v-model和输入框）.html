@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_39913441/article/details/98986700"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"Vue的双向绑定一（v-model和输入框） - 小白的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>Vue的双向绑定一（v-model和输入框） - 小白的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-technology/skin-technology-c445da603f.min.css">
+        <script type="text/javascript">
+        var username = "qq_39913441";
+        var blog_address = "https://blog.csdn.net/qq_39913441";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_39913441/article/details/98986700"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin-technology";
+        // 收藏所需数据
+        var articleTitle = "Vue的双向绑定一（v-model和输入框）";
+        var articleDesc = "Vue的双向绑定一（v-model和输入框）vue.js提供了v-model指令，用于在表单类元素上双向绑定数据。比如：在输入框上使用时，输入框的内容会实时映射到绑定的数据上。&lt;divid=app9&gt;	&lt;inputtype=textv-model=message/&gt;	&lt;p&gt;输入的数据是:{{message}}&lt;/p&gt;&...";
+        // 第四范式所需数据
+        var articleTitles = "Vue的双向绑定一（v-model和输入框） - 小白的博客";
+        
+        var nickName = "qq_39913441";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_39913441/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_39913441/article/details/98986700";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}' data-report-view='{"mod":"kp_popu_476-923","keyword":""}' data-report-click='{"mod":"kp_popu_476-923","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384140363.png',bigMoveImg:'https://img-bss.csdn.net/1564384127097.png',link:'https://kunyu.csdn.net?p=476&a=923&c=437&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:923});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">Vue的双向绑定一（v-model和输入框）</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 20:33:51</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_39913441" target="_blank">qq_39913441</a>
+                    <span class="read-count">阅读数 32</span>
+                                                                                                <div class="tags-box space">
+                                <span class="label">个人分类：</span>
+                                                                <a class="tag-link" href="https://blog.csdn.net/qq_39913441/article/category/9123109" target="_blank">html                                                                    <a class="tag-link" href="https://blog.csdn.net/qq_39913441/article/category/9206545" target="_blank">vue                                                                    </a>
+                            </div>
+                                                                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                                <div class="article-copyright">
+                <span class="creativecommons">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="知识共享许可协议" style="border-width:0"
+                         src="https://csdnimg.cn/release/phoenix/images/creativecommons/80x15.png"/></a>
+            <span>版权声明：署名，允许他人基于本文进行创作，且必须基于与原先许可协议相同的许可协议分发本文 （</span><a
+                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>）
+            </span>
+                    </div>
+                                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <div id="content_views" class="markdown_views prism-dracula">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <h2><a id="Vuevmodel_0"></a>Vue的双向绑定一（v-model和输入框）</h2>
+<p>vue.js提供了v-model指令，用于在表单类元素上双向绑定数据。<br>
+比如：在输入框上使用时，输入框的内容会实时映射到绑定的数据上。</p>
+<pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>输入的数据是:{{message}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">var</span> app9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		el<span class="token punctuation">:</span><span class="token string">"#app9"</span><span class="token punctuation">,</span>
+		data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+			message<span class="token punctuation">:</span><span class="token string">''</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<ol>
+<li>在输入框输入的同时{{message}}也会实时将内容渲染在视图中。对文本与textarea也是同样的用法。</li>
+<li><mark>注意</mark>：使用v-model后，表单控件显示的值<mark>只依赖</mark>所绑定的数据，不再关心初始化时的value值，对于在之间插入的值也会生效。</li>
+<li>使用v-model时，如果是用中文输入法输入中文，一般在没有选定词之前，也就是拼音阶段，Vue是不会更新数据的，当敲下时才会触发更新。如果希望总是实时更新，可以用==@input==来代替v-model。<br>
+事实上，v-model也是一个特殊的语法糖，只不过他会在不同的表单上智能处理。</li>
+</ol>
+<pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">@input</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handInput<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>输入的数据是:{{message}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">var</span> app9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		el<span class="token punctuation">:</span><span class="token string">"#app10"</span><span class="token punctuation">,</span>
+		data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+			message<span class="token punctuation">:</span><span class="token string">''</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		methods<span class="token punctuation">:</span><span class="token punctuation">{</span>	
+			handInput<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span>		
+				<span class="token comment">//方法里的this ---&gt; #app10</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value		
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet">
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_39913441/article/details/98986700","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_39913441/article/details/98986700","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}' data-report-view='{"mod":"kp_popu_58-402","keyword":""}' data-report-click='{"mod":"kp_popu_58-402","keyword":""}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98986700">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/shellyao/article/details/82346317","strategy":"BlogCommendFromQuerySearch","index":"0"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/shellyao/article/details/82346317","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/shellyao/article/details/82346317" target="_blank" title="vue自定义v-model实现 表单数据双向绑定【超级简单】">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>自定义<em>v-model</em>实现 表单数据<em>双向绑定</em>【超级简单】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					833</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shellyao/article/details/82346317" target="_blank" title="vue自定义v-model实现 表单数据双向绑定【超级简单】">
+				<span class="desc oneline">父组件代码如下子组件代码如下</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/shellyao">来自：	<span class="blog_title"> shellyao的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_17757973/article/details/78699237","strategy":"BlogCommendFromQuerySearch","index":"1"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_17757973/article/details/78699237","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_17757973/article/details/78699237" target="_blank" title="vue div contenteditable属性，模拟v-model双向数据绑定功能">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> div contenteditable属性，模拟<em>v-model</em>双向数据绑定功能		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7084</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_17757973/article/details/78699237" target="_blank" title="vue div contenteditable属性，模拟v-model双向数据绑定功能">
+				<span class="desc oneline">在一些特殊的请款下需要用div的contenteditable属性来模拟v-model的功能，但是直接在div上写v-model是不起作用的，首先来看一下v-model是怎么实现的:value=&quot;co...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_17757973">来自：	<span class="blog_title"> 金大光</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/zbw18297786698/article/details/60466657","strategy":"BlogCommendFromQuerySearch","index":"2"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zbw18297786698/article/details/60466657","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zbw18297786698/article/details/60466657" target="_blank" title="Vue.js之视图和数据的双向绑定(v-model)">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>.js之视图和数据的<em>双向绑定</em>(<em>v-model</em>)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6130</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zbw18297786698/article/details/60466657" target="_blank" title="Vue.js之视图和数据的双向绑定(v-model)">
+				<span class="desc oneline">1、使用v-model指令,使得视图和数据实现双向绑定。v-model主要用在表单的input输入框，完成视图和数据的双向绑定。2、JavaScript代码					window.onload=fun...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zbw18297786698">来自：	<span class="blog_title"> Learning</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41350225/article/details/89192089","strategy":"BlogCommendFromQuerySearch","index":"3"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41350225/article/details/89192089","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41350225/article/details/89192089" target="_blank" title="VUE：自定义组件中v-model以及父子组件的双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>VUE</em>：自定义组件中<em>v-model</em>以及父子组件的<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					124</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41350225/article/details/89192089" target="_blank" title="VUE：自定义组件中v-model以及父子组件的双向绑定">
+				<span class="desc oneline">日常我们使用v-model&amp;lt;divid=&quot;app&quot;&amp;gt;&amp;lt;p&amp;gt;{{message}}&amp;lt;/p&amp;gt;&amp;lt;inputtype=&quot;text&quot;v-model='message'&amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_41350225">来自：	<span class="blog_title"> weixin_41350225的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41796631/article/details/82818279","strategy":"BlogCommendFromQuerySearch","index":"4"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41796631/article/details/82818279","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41796631/article/details/82818279" target="_blank" title="v-model 表单元素input 和应用效果的双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>v-model</em> 表单元素input 和应用效果的<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					198</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41796631/article/details/82818279" target="_blank" title="v-model 表单元素input 和应用效果的双向绑定">
+				<span class="desc oneline">&amp;amp;lt;pid=&amp;quot;inpChange&amp;quot;&amp;amp;gt;{{message}}&amp;amp;lt;inputv-model=&amp;quot;message&amp;quot;&amp;amp;gt;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_41796631">来自：	<span class="blog_title"> weixin_41796631的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/WinSolstice/article/details/75172253","strategy":"BlogCommendFromQuerySearch","index":"5"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/WinSolstice/article/details/75172253","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/WinSolstice/article/details/75172253" target="_blank" title="5-Vue指令之双向数据绑定 V-model">
+		<h4 class="text-truncate oneline">
+				5-<em>Vue</em>指令之双向数据绑定 <em>V-model</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5905</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/WinSolstice/article/details/75172253" target="_blank" title="5-Vue指令之双向数据绑定 V-model">
+				<span class="desc oneline">喂你吃一口v-model的语法糖v-model指令用来在、、text、checkbox、radio等表单控件元素上创建双向数据绑定它会根据控件类型自动选取正确的方法来更新元素这样说有些神奇，但v-mo...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/WinSolstice">来自：	<span class="blog_title"> WinSolstice的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/nuli888/article/details/70920172","strategy":"BlogCommendFromQuerySearch","index":"6"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/nuli888/article/details/70920172","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/nuli888/article/details/70920172" target="_blank" title="vue.js v-model数据双向绑定实例">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>.js <em>v-model</em>数据<em>双向绑定</em>实例		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4594</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/nuli888/article/details/70920172" target="_blank" title="vue.js v-model数据双向绑定实例">
+				<span class="desc oneline">vue.js的一大功能便是实现数据的双向绑定，本文就表单处理时运用v-model指令实现双向绑定做一个介绍：v-model这个指令只能用在,,这些表单元素上，所谓双向绑定，指的就是我们在js中的vue...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/nuli888">来自：	<span class="blog_title"> 爱代码也爱生活</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/liub37/article/details/83382205","strategy":"BlogCommendFromQuerySearch","index":"7"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/liub37/article/details/83382205","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liub37/article/details/83382205" target="_blank" title="vue自定义组件实现v-model双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>自定义组件实现<em>v-model</em><em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4639</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liub37/article/details/83382205" target="_blank" title="vue自定义组件实现v-model双向绑定">
+				<span class="desc oneline">vue中父子组件通信，都是单项的，直接在子组件中修改prop传的值vue也会给出一个警告，接下来就用一个小列子一步一步实现了vue自定义的组件实现v-model双向绑定，父组件值变了子组件也会跟着变，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liub37">来自：	<span class="blog_title"> 寻梦无痕</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_29329037/article/details/79119054","strategy":"BlogCommendFromQuerySearch","index":"8"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_29329037/article/details/79119054","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_29329037/article/details/79119054" target="_blank" title="Vue学习之路（四）---v-model（双向数据绑定）与表单">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>学习之路（四）---<em>v-model</em>（双向数据绑定）与表单		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5456</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_29329037/article/details/79119054" target="_blank" title="Vue学习之路（四）---v-model（双向数据绑定）与表单">
+				<span class="desc oneline">v-model具有双向数据绑定的功能，可以绑定数组和字符串，不过，在绑定之前，需要将我们需要绑定的数据进行初始化。1.当输入框的值改变时，{{value}}中的值会跟着改变//html&quot;text&quot;v-...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_29329037">来自：	<span class="blog_title"> Young的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_34414994/article/details/82688159","strategy":"BlogCommendFromQuerySearch","index":"9"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_34414994/article/details/82688159","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34414994/article/details/82688159" target="_blank" title="vue中v-model使用计算属性，双向绑定失效">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>中<em>v-model</em>使用计算属性，<em>双向绑定</em>失效		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5292</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34414994/article/details/82688159" target="_blank" title="vue中v-model使用计算属性，双向绑定失效">
+				<span class="desc oneline">在vue中v-model绑定了一个值到val中，用到了计算属性监测val的变化，但是使用了computed之后，v-model的双向绑定失效&amp;amp;lt;divclass=&amp;quot;flexf7&amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34414994">来自：	<span class="blog_title"> 茶荼</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/LanChongQiChuang/article/details/80758455","strategy":"BlogCommendFromQuerySearch","index":"10"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/LanChongQiChuang/article/details/80758455","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/LanChongQiChuang/article/details/80758455" target="_blank" title="Vue自定义组件实现v-model双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>自定义组件实现<em>v-model</em><em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					423</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/LanChongQiChuang/article/details/80758455" target="_blank" title="Vue自定义组件实现v-model双向绑定">
+				<span class="desc oneline">exportdefault{model:{event:'cc'},created(){this.$emit('cc',data（绑定反馈的数据）)}}</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/LanChongQiChuang">来自：	<span class="blog_title"> 虫_X的学习经历分享</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/xukongjing1/article/details/81511825","strategy":"BlogCommendFromQuerySearch","index":"11"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/xukongjing1/article/details/81511825","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xukongjing1/article/details/81511825" target="_blank" title="Vue之v-model指令实现数据双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>之<em>v-model</em>指令实现数据<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					663</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xukongjing1/article/details/81511825" target="_blank" title="Vue之v-model指令实现数据双向绑定">
+				<span class="desc oneline">v-bind指令只能实现数据的单向绑定，从M绑定到V，无法实现双向绑定。使用v-model指令，可以实现表单元素和Model中数据的双向绑定，并且v-model指令只能运用在表单元素中。&amp;amp;lt...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xukongjing1">来自：	<span class="blog_title"> 北海之灵的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/halo1416/article/details/83309650","strategy":"BlogCommendFromQuerySearch","index":"12"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/halo1416/article/details/83309650","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/halo1416/article/details/83309650" target="_blank" title="vue指令v-model(双向数据绑定)自动收集数据">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>指令<em>v-model</em>(双向数据绑定)自动收集数据		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					744</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/halo1416/article/details/83309650" target="_blank" title="vue指令v-model(双向数据绑定)自动收集数据">
+				<span class="desc oneline">前言：表单提交数据在网站页面中是十分常见的，而这个表单数据的获取在原生写法甚至于JQ都是比较麻烦的（首先需要获取DOM，然后获取值）。但是，在vue的项目环境下，表单数据的收集又该怎么办呢？（这种自己...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/halo1416">来自：	<span class="blog_title"> halo1416的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/gao_xu_520/article/details/76512382","strategy":"BlogCommendFromQuerySearch","index":"13"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/gao_xu_520/article/details/76512382","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/gao_xu_520/article/details/76512382" target="_blank" title="Vue.js学习笔记：v-model双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>.js学习笔记：<em>v-model</em><em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3005</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/gao_xu_520/article/details/76512382" target="_blank" title="Vue.js学习笔记：v-model双向绑定">
+				<span class="desc oneline">v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。但是Vue是单项数据流，v-model只是语法糖而已。   v-model这个指令只能用在,,这些表...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/gao_xu_520">来自：	<span class="blog_title"> 汉堡请不要欺负面条</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_40447539/article/details/87504679","strategy":"BlogCommendFromQuerySearch","index":"14"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_40447539/article/details/87504679","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40447539/article/details/87504679" target="_blank" title="vue  v-model双向绑定 原理（简陋版）">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>  <em>v-model</em><em>双向绑定</em> 原理（简陋版）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					127</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40447539/article/details/87504679" target="_blank" title="vue  v-model双向绑定 原理（简陋版）">
+				<span class="desc oneline">&amp;amp;lt;!DOCTYPEhtml&amp;amp;gt;&amp;amp;lt;htmllang=&amp;quot;en&amp;quot;&amp;amp;gt;&amp;amp;lt;head&amp;amp;gt;	&amp;amp;lt;meta...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_40447539">来自：	<span class="blog_title"> qq_40447539的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_31885421/article/details/82771484","strategy":"BlogCommendFromQuerySearch","index":"15"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_31885421/article/details/82771484","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_31885421/article/details/82771484" target="_blank" title="Vue属性绑定v-bind:和双向数据绑定v-model">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>属性绑定v-bind:和双向数据绑定<em>v-model</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1596</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_31885421/article/details/82771484" target="_blank" title="Vue属性绑定v-bind:和双向数据绑定v-model">
+				<span class="desc oneline">&amp;amp;lt;body&amp;amp;gt;&amp;amp;lt;!--属性绑定v-bind:可以直接省略为:--&amp;amp;gt;&amp;amp;lt;!--一旦使用模版指令等号之后的就是一个js表达式，所以里面可以...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_31885421">来自：	<span class="blog_title"> 璐璐璐</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/yang450712123/article/details/79235826","strategy":"BlogCommendFromQuerySearch","index":"16"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/yang450712123/article/details/79235826","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yang450712123/article/details/79235826" target="_blank" title="vue 双向绑定数据限制长度">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> <em>双向绑定</em>数据限制长度		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2858</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yang450712123/article/details/79235826" target="_blank" title="vue 双向绑定数据限制长度">
+				<span class="desc oneline">vue双向绑定数据限制长度问题描述vue中输入框v-modle双向绑定的数据；在需要的业务场景下需要对其进行字数长度限制；解决方案可以使用以下方法：1.方法一：//方法一：输入框添加keypress方...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yang450712123">来自：	<span class="blog_title"> FE-阿阳的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/Beauty_zhang666/article/details/80051048","strategy":"BlogCommendFromQuerySearch","index":"17"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Beauty_zhang666/article/details/80051048","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Beauty_zhang666/article/details/80051048" target="_blank" title="vue项目input输入框双向绑定数据不实事生效">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>项目input<em>输入框</em><em>双向绑定</em>数据不实事生效		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2219</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Beauty_zhang666/article/details/80051048" target="_blank" title="vue项目input输入框双向绑定数据不实事生效">
+				<span class="desc oneline">&amp;amp;lt;inputtype=&amp;quot;text&amp;quot;maxlength=&amp;quot;11&amp;quot;placeholder=&amp;quot;请输入联系人电话&amp;quot;v-model=&amp;q...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Beauty_zhang666">来自：	<span class="blog_title"> Beauty_zhang666的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/Cai_975520397/article/details/87601593","strategy":"BlogCommendFromQuerySearch","index":"18"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Cai_975520397/article/details/87601593","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Cai_975520397/article/details/87601593" target="_blank" title="v-model涉及和computed计算属性双向绑定失效的问题">
+		<h4 class="text-truncate oneline">
+				<em>v-model</em>涉及和computed计算属性<em>双向绑定</em>失效的问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					867</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Cai_975520397/article/details/87601593" target="_blank" title="v-model涉及和computed计算属性双向绑定失效的问题">
+				<span class="desc oneline">今天在使用v-model和计算属性时，发现双向绑定失效问题，浏览器警告如下计算属性部分代码：computed:{editable(){returnthis.type.power==0?true:fal...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Cai_975520397">来自：	<span class="blog_title"> Cai_975520397的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}' data-report-view='{"mod":"kp_popu_62-556","keyword":""}' data-report-click='{"mod":"kp_popu_62-556","keyword":""}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/zhouziyu2011/article/details/71576677","strategy":"BlogCommendFromQuerySearch","index":"19"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zhouziyu2011/article/details/71576677","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhouziyu2011/article/details/71576677" target="_blank" title="浅谈Vue的单向绑定和双向绑定">
+		<h4 class="text-truncate oneline">
+				浅谈<em>Vue</em>的单向绑定和<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhouziyu2011/article/details/71576677" target="_blank" title="浅谈Vue的单向绑定和双向绑定">
+				<span class="desc oneline">1、单向绑定单向数据绑定的实现思路：①　所有数据只有一份②　一旦数据变化，就去更新页面(只有data--&gt;DOM，没有DOM--&gt;data)③　若用户在页面上做了更新，就手动收集(双向绑定是自动收集)...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhouziyu2011">来自：	<span class="blog_title"> 筱葭的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_43636289/article/details/90371321","strategy":"BlogCommendFromQuerySearch","index":"20"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_43636289/article/details/90371321","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_43636289/article/details/90371321" target="_blank" title="Vue.js -- 解决表单元素使用v-modal双向绑定时间戳改日期格式">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>.js -- 解决表单元素使用v-modal<em>双向绑定</em>时间戳改日期格式		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					117</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_43636289/article/details/90371321" target="_blank" title="Vue.js -- 解决表单元素使用v-modal双向绑定时间戳改日期格式">
+				<span class="desc oneline">问题分析:新版本的vue当我们用v-modal双向绑定时会发现date类型的数据传出的是一个时间戳,也用不了过滤器,只能定义计算规则去得出正确的时间格式.1.先建立一个格式化时间的date.js文件:...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_43636289">来自：	<span class="blog_title"> 偷琴的花生</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41796631/article/details/82945210","strategy":"BlogCommendFromQuerySearch","index":"21"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_41796631/article/details/82945210","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41796631/article/details/82945210" target="_blank" title="vue v-model 双向绑定表单元素的数据：实质是绑定了value、checked、selected属性">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> <em>v-model</em> <em>双向绑定</em>表单元素的数据：实质是绑定了value、checked、selected属性		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2228</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41796631/article/details/82945210" target="_blank" title="vue v-model 双向绑定表单元素的数据：实质是绑定了value、checked、selected属性">
+				<span class="desc oneline">用法：可以用 v-model 指令在表单 &amp;amp;lt;input&amp;amp;gt;、&amp;amp;lt;textarea&amp;amp;gt; 及 &amp;amp;lt;select&amp;amp;gt; 元素上创建双向...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_41796631">来自：	<span class="blog_title"> weixin_41796631的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/liuyuhua666/article/details/92831215","strategy":"BlogCommendFromQuerySearch","index":"22"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/liuyuhua666/article/details/92831215","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liuyuhua666/article/details/92831215" target="_blank" title="vue中双向数据绑定(v-model)的原理">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>中双向数据绑定(<em>v-model</em>)的原理		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					70</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liuyuhua666/article/details/92831215" target="_blank" title="vue中双向数据绑定(v-model)的原理">
+				<span class="desc oneline">vue中实现双向数据绑定其实用的就是Object.defineProperty方法Object.defineProperty这个方法在js高程上面有详细的讲解通常我们如何给对象添加一个属性呢？leto...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liuyuhua666">来自：	<span class="blog_title"> liuyuhua666的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/panhuanqin/article/details/83753227","strategy":"BlogCommendFromQuerySearch","index":"23"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/panhuanqin/article/details/83753227","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/panhuanqin/article/details/83753227" target="_blank" title="vue  的 v-for 循环 v-if 判断 v-model 双向绑定 的一些列基础">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>  的 v-for 循环 v-if 判断 <em>v-model</em> <em>双向绑定</em> 的一些列基础		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1030</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/panhuanqin/article/details/83753227" target="_blank" title="vue  的 v-for 循环 v-if 判断 v-model 双向绑定 的一些列基础">
+				<span class="desc oneline">&amp;amp;lt;!DOCTYPEhtml&amp;amp;gt;&amp;amp;lt;html&amp;amp;gt;&amp;amp;lt;head&amp;amp;gt;&amp;amp;lt;metacharset=&amp;quot;utf-8&amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/panhuanqin">来自：	<span class="blog_title"> panhuanqin的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}' data-report-view='{"mod":"kp_popu_63-555","keyword":""}' data-report-click='{"mod":"kp_popu_63-555","keyword":""}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/time__flies_/article/details/78039191","strategy":"BlogCommendFromQuerySearch","index":"24"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/time__flies_/article/details/78039191","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/time__flies_/article/details/78039191" target="_blank" title="为什么 vue.js存在某些情况下 v-model绑定数据不实时更新呢?">
+		<h4 class="text-truncate oneline">
+				为什么 <em>vue</em>.js存在某些情况下 <em>v-model</em>绑定数据不实时更新呢?		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/time__flies_/article/details/78039191" target="_blank" title="为什么 vue.js存在某些情况下 v-model绑定数据不实时更新呢?">
+				<span class="desc oneline">最近做项目多次出现这个问题，尝试多次解决了，浪费挺多时间，写出来给有这类问题的朋友一个参考。问题再给vuedata中object类型数据赋值时存在不实时显示的情况解决方法：见Vue.js中文官网-&amp;g...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/time__flies_">来自：	<span class="blog_title"> 时光从指尖划过的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_43387238/article/details/85145035","strategy":"BlogCommendFromQuerySearch","index":"25"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_43387238/article/details/85145035","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_43387238/article/details/85145035" target="_blank" title="【mpvue】input组件 v-model绑定">
+		<h4 class="text-truncate oneline">
+				【mp<em>vue</em>】input组件 <em>v-model</em>绑定		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2210</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_43387238/article/details/85145035" target="_blank" title="【mpvue】input组件 v-model绑定">
+				<span class="desc oneline">【官方文档】在组件上使用v-modelhttps://cn.vuejs.org/v2/guide/components.html#在组件上使用-v-model注意：mpvue上使用input组件会有光...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_43387238">来自：	<span class="blog_title"> Kamen_Yip的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/Qin_Shuo/article/details/82693919","strategy":"BlogCommendFromQuerySearch","index":"26"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Qin_Shuo/article/details/82693919","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Qin_Shuo/article/details/82693919" target="_blank" title="Vue中从v-model，model，.sync到双向数据传递，再到双向数据绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>中从<em>v-model</em>，model，.sync到双向数据传递，再到双向数据绑定		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3807</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Qin_Shuo/article/details/82693919" target="_blank" title="Vue中从v-model，model，.sync到双向数据传递，再到双向数据绑定">
+				<span class="desc oneline">前面的话虽然v-model和.sync之间的区别，是非常明显的，但是通过这个去研究下去，就有点意思了。首先说明v-model是.sync的一种特殊情况，也就是当prop是value，vm.$emit(...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Qin_Shuo">来自：	<span class="blog_title"> 爪哇犀牛</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/lizhen_software/article/details/81632229","strategy":"BlogCommendFromQuerySearch","index":"27"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/lizhen_software/article/details/81632229","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lizhen_software/article/details/81632229" target="_blank" title="小程序记：input双向数据绑定">
+		<h4 class="text-truncate oneline">
+				小程序记：input双向数据绑定		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lizhen_software/article/details/81632229" target="_blank" title="小程序记：input双向数据绑定">
+				<span class="desc oneline">长时间使用VUE，发现v-model确实很好用，用了小程序之后，才发现小程序的双向绑定那么难用，必须有个bindinput来触发改变值。经过研究发现，小程序的双向绑定也可以实现，但是稍复杂点，思路和大...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/lizhen_software">来自：	<span class="blog_title"> lizhen_software的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/ColourfulTiger/article/details/80891284","strategy":"BlogCommendFromQuerySearch","index":"28"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/ColourfulTiger/article/details/80891284","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ColourfulTiger/article/details/80891284" target="_blank" title="vue 解决input内值的双向绑定问题">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> 解决input内值的<em>双向绑定</em>问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ColourfulTiger/article/details/80891284" target="_blank" title="vue 解决input内值的双向绑定问题">
+				<span class="desc oneline">在使用vue进行双向绑定的时候，第一想到的肯定是官方语法｛｛msg｝｝，但是在input中如果这样想，那就错啦。错误的写法如下：&amp;amp;lt;inputtype=&amp;quot;text&amp;quot;va...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ColourfulTiger">来自：	<span class="blog_title"> ColourfulTiger的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}' data-report-view='{"mod":"kp_popu_64-81","keyword":""}' data-report-click='{"mod":"kp_popu_64-81","keyword":""}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/u010320804/article/details/79486034","strategy":"BlogCommendFromQuerySearch","index":"29"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/u010320804/article/details/79486034","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010320804/article/details/79486034" target="_blank" title="vue v-model语法糖解析">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> <em>v-model</em>语法糖解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2610</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010320804/article/details/79486034" target="_blank" title="vue v-model语法糖解析">
+				<span class="desc oneline">我们知道，在vue中，使用v-model可以实现双向绑定，但是其中的原理是如何的呢？今天我们就来一探究竟。其实在vue中，在使用v-model绑定数据之后，既绑定了数据，又添加了事件监听，这个事件就是...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010320804">来自：	<span class="blog_title"> u010320804的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/song_mou_xia/article/details/51883449","strategy":"BlogCommendFromQuerySearch","index":"30"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/song_mou_xia/article/details/51883449","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/song_mou_xia/article/details/51883449" target="_blank" title="初探Vue原理之view-model的数据动态双向绑定">
+		<h4 class="text-truncate oneline">
+				初探<em>Vue</em>原理之view-model的数据动态<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9273</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/song_mou_xia/article/details/51883449" target="_blank" title="初探Vue原理之view-model的数据动态双向绑定">
+				<span class="desc oneline">Vue应用的是mvvm框架，view和model分离，然后通过vm双向数据绑定，`{{msg}}//原生对象即数据vardata={msg:'hello!'}//创建一个ViewModel实例varv...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/song_mou_xia">来自：	<span class="blog_title"> smx</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/shshanling/article/details/89737439","strategy":"BlogCommendFromQuerySearch","index":"31"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/shshanling/article/details/89737439","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/shshanling/article/details/89737439" target="_blank" title="vue渲染函数使用createElement创建可双向绑定的input">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>渲染函数使用createElement创建可<em>双向绑定</em>的input		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					264</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shshanling/article/details/89737439" target="_blank" title="vue渲染函数使用createElement创建可双向绑定的input">
+				<span class="desc oneline">昨天晚上开始看官方文档的渲染函数这一节。看完后，对createElement的使用还是懵懵懂懂的，只好动动手，再查查资料，总算有些收获。一、前言对于createElement这个函数的第二个参数，一定...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/shshanling">来自：	<span class="blog_title"> IT学霸</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/suprezheng/article/details/84933221","strategy":"BlogCommendFromQuerySearch","index":"32"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/suprezheng/article/details/84933221","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/suprezheng/article/details/84933221" target="_blank" title="vue之v-model数据双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>之<em>v-model</em>数据<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					98</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/suprezheng/article/details/84933221" target="_blank" title="vue之v-model数据双向绑定">
+				<span class="desc oneline">以下是vue.js中v-model数据的双向绑定demo:&amp;amp;lt;!DOCTYPEhtml&amp;amp;gt;&amp;amp;lt;htmllang=&amp;quot;en&amp;quot;&amp;amp;gt;&amp;amp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/suprezheng">来自：	<span class="blog_title"> 野草</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/animatecat/article/details/81533761","strategy":"BlogCommendFromQuerySearch","index":"33"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/animatecat/article/details/81533761","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/animatecat/article/details/81533761" target="_blank" title="Vue.js学习笔记（五）--------双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>.js学习笔记（五）--------<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1151</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/animatecat/article/details/81533761" target="_blank" title="Vue.js学习笔记（五）--------双向绑定">
+				<span class="desc oneline">双向绑定1.v-model将视图上的数据绑定到Vue对象上。效果图：  代码：&amp;amp;lt;divid=&amp;quot;div1&amp;quot;&amp;amp;gt;			你叫啥：&amp;amp;lt;inputtyp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/animatecat">来自：	<span class="blog_title"> 别告诉我有Bug</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/sunshine1990916/article/details/84997619","strategy":"BlogCommendFromQuerySearch","index":"34"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/sunshine1990916/article/details/84997619","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sunshine1990916/article/details/84997619" target="_blank" title="vue.js表单与v-model（一）----输入框">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>.js表单与<em>v-model</em>（一）----<em>输入框</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					291</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sunshine1990916/article/details/84997619" target="_blank" title="vue.js表单与v-model（一）----输入框">
+				<span class="desc oneline">一、input与v-model碰撞起来的火花input元素结合v-model指令来实现双向绑定，当输入框输入内容变化时，绑定的变量的值发生变化；同样，当绑定变量的值发生变化，视图中输入框的值也会发生变...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sunshine1990916">来自：	<span class="blog_title"> sunshine1990916的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_35713827/article/details/89074128","strategy":"BlogCommendFromQuerySearch","index":"35"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_35713827/article/details/89074128","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35713827/article/details/89074128" target="_blank" title="vue render函数实现数据的双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>vue</em> render函数实现数据的<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					316</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35713827/article/details/89074128" target="_blank" title="vue render函数实现数据的双向绑定">
+				<span class="desc oneline">一般情况下vue通过v-model即可实现双向绑定功能，但是有时候我们的遇到的通过：column来设置列表的：这时如何使用v-model呢，官方API给出了答案，但是有由于鄙人能力有限，未能按照官方给...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35713827">来自：	<span class="blog_title"> 编程界的一名小学生</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/willard_cui/article/details/81988266","strategy":"BlogCommendFromQuerySearch","index":"36"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/willard_cui/article/details/81988266","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/willard_cui/article/details/81988266" target="_blank" title="vue中的属性绑定和双向数据绑定、计算属性和侦听器">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>中的属性绑定和双向数据绑定、计算属性和侦听器		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2071</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/willard_cui/article/details/81988266" target="_blank" title="vue中的属性绑定和双向数据绑定、计算属性和侦听器">
+				<span class="desc oneline">1、属性绑定v-bind：例如&amp;amp;lt;divid=&amp;quot;root&amp;quot;&amp;amp;gt;&amp;amp;lt;divv-bind:title=&amp;quot;title&amp;quot;&amp;amp;g...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/willard_cui">来自：	<span class="blog_title"> willard_cui的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/AllenWalker1936/article/details/89378961","strategy":"BlogCommendFromQuerySearch","index":"37"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/AllenWalker1936/article/details/89378961","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/AllenWalker1936/article/details/89378961" target="_blank" title="Vue v-model双向数据绑定和一个简单的整数计算器">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em> <em>v-model</em>双向数据绑定和一个简单的整数计算器		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					46</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/AllenWalker1936/article/details/89378961" target="_blank" title="Vue v-model双向数据绑定和一个简单的整数计算器">
+				<span class="desc oneline">一、v-model双向数据绑定方法v-bind-单向数据绑定（从M到V）v-model-双向数据绑定例子&amp;lt;inputtype=&quot;text&quot;v-bind:value=&quot;msg&quot;style=&quot;wid...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/AllenWalker1936">来自：	<span class="blog_title"> AllenWalker1936的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/jiandan1127/article/details/78357552","strategy":"BlogCommendFromQuerySearch","index":"38"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/jiandan1127/article/details/78357552","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jiandan1127/article/details/78357552" target="_blank" title="Vue框架的使用-v-model">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>框架的使用-<em>v-model</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					203</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jiandan1127/article/details/78357552" target="_blank" title="Vue框架的使用-v-model">
+				<span class="desc oneline">html&gt;htmllang=&quot;zh-CN&quot;&gt;head&gt;metacharset=&quot;utf-8&quot;&gt;metahttp-equiv=&quot;X-UA-Compatible&quot;content=&quot;IE=edge&quot;&gt;met...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/jiandan1127">来自：	<span class="blog_title"> jiandan1127的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_38378596/article/details/84643311","strategy":"BlogCommendFromQuerySearch","index":"39"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_38378596/article/details/84643311","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_38378596/article/details/84643311" target="_blank" title="手动实现Vue的数据双向绑定v-model">
+		<h4 class="text-truncate oneline">
+				手动实现<em>Vue</em>的数据<em>双向绑定</em><em>v-model</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					73</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_38378596/article/details/84643311" target="_blank" title="手动实现Vue的数据双向绑定v-model">
+				<span class="desc oneline">  所需构造函数：myVue和Watcher  myVue中有_init&amp;amp;lt;!DOCTYPEhtml&amp;amp;gt;&amp;amp;lt;htmllang=&amp;quot;en&amp;quot;&amp;amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_38378596">来自：	<span class="blog_title"> weixin_38378596的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/badmoonc/article/details/80914447","strategy":"BlogCommendFromQuerySearch","index":"40"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/badmoonc/article/details/80914447","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/badmoonc/article/details/80914447" target="_blank" title="vue双向绑定原理解析">
+		<h4 class="text-truncate oneline">
+				<em>vue</em><em>双向绑定</em>原理解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					479</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/badmoonc/article/details/80914447" target="_blank" title="vue双向绑定原理解析">
+				<span class="desc oneline">vue通过使用数据劫持+发布订阅实现数据的双向绑定。首先，先要搞懂两个问题：1、什么是数据劫持(Object.defineProperty)。2、什么是发布/订阅模式。1、什么是数据劫持：举个例子，现...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/badmoonc">来自：	<span class="blog_title"> badmoonc的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_33769914/article/details/84875451","strategy":"BlogCommendFromQuerySearch","index":"41"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_33769914/article/details/84875451","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_33769914/article/details/84875451" target="_blank" title="vue怎么使用v-html来实现双向数据绑定的功能呢？">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>怎么使用v-html来实现双向数据绑定的功能呢？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					792</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_33769914/article/details/84875451" target="_blank" title="vue怎么使用v-html来实现双向数据绑定的功能呢？">
+				<span class="desc oneline">contenteditable是html5的新功能，contenteditable属性规定元素内容是否可编辑。所有主流浏览器都支持 都是支持的可以放心使用 &amp;amp;lt;divcontentedit...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_33769914">来自：	<span class="blog_title"> 肖肖肖丽珠的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/suchaiyishengtui/article/details/82112511","strategy":"BlogCommendFromQuerySearch","index":"42"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/suchaiyishengtui/article/details/82112511","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/suchaiyishengtui/article/details/82112511" target="_blank" title="vue与ueditor，双向绑定，实例">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>与ueditor，<em>双向绑定</em>，实例		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1748</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/suchaiyishengtui/article/details/82112511" target="_blank" title="vue与ueditor，双向绑定，实例">
+				<span class="desc oneline">一般情况下，不是前后端分离的项目，或者是传统的jquery导向的网站开发，使用到百度编辑器的功能，直接在html,跟随ueditor官网文档即可非常快速的引入开发引用，但在前后端分离的项目中，跟前一种...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/suchaiyishengtui">来自：	<span class="blog_title"> 素钗一生推</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/sir1241/article/details/76723952","strategy":"BlogCommendFromQuerySearch","index":"43"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/sir1241/article/details/76723952","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sir1241/article/details/76723952" target="_blank" title="vue.js学习笔记（六）--利用v-model实现父子组件间的双向通信">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>.js学习笔记（六）--利用<em>v-model</em>实现父子组件间的双向通信		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5214</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sir1241/article/details/76723952" target="_blank" title="vue.js学习笔记（六）--利用v-model实现父子组件间的双向通信">
+				<span class="desc oneline">作者：张飞翔博客：https://fisher-zh.github.io/在Vue中，我们可以使用prop属性来进行父子组件间的通信，在之前的文章Vue踩坑之路–父子组件通信总结中有介绍过。但是pro...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sir1241">来自：	<span class="blog_title"> fisher</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/Alai_programmer/article/details/79170002","strategy":"BlogCommendFromQuerySearch","index":"44"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Alai_programmer/article/details/79170002","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Alai_programmer/article/details/79170002" target="_blank" title="关于VUE双向绑定失效的问题">
+		<h4 class="text-truncate oneline">
+				关于<em>VUE</em><em>双向绑定</em>失效的问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2132</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Alai_programmer/article/details/79170002" target="_blank" title="关于VUE双向绑定失效的问题">
+				<span class="desc oneline">双向绑定失效的原因有很多。lz就说最近遇到的。是的，单价下的那个输入框我用了双向绑定（比如叫price，比如100）。然后ipnut键入中文时，（即使我做了输入验证）。回车时虽然框中不会保留中文，但事...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Alai_programmer">来自：	<span class="blog_title"> Alai_programmer的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_24691413/article/details/84526412","strategy":"BlogCommendFromQuerySearch","index":"45"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_24691413/article/details/84526412","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_24691413/article/details/84526412" target="_blank" title="vue，laydata日期变化后，无法绑定到v-model。选择日期后，点击别的输入框就日期就变空">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>，laydata日期变化后，无法绑定到<em>v-model</em>。选择日期后，点击别的<em>输入框</em>就日期就变空		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					854</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_24691413/article/details/84526412" target="_blank" title="vue，laydata日期变化后，无法绑定到v-model。选择日期后，点击别的输入框就日期就变空">
+				<span class="desc oneline">日期插件的操作是无法触发vue的绑定事件的，所以应该自己绑定事件。一般日期插件都是由回调函数的。这就是vue的在mounted方法中设置mounted(){varmountedSelf=this;//...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_24691413">来自：	<span class="blog_title"> 马一文</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/halo1416/article/details/83270891","strategy":"BlogCommendFromQuerySearch","index":"46"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/halo1416/article/details/83270891","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/halo1416/article/details/83270891" target="_blank" title="vue中用computed简单实现数据的双向绑定（getter 和 setter）">
+		<h4 class="text-truncate oneline">
+				<em>vue</em>中用computed简单实现数据的<em>双向绑定</em>（getter 和 setter）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					977</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/halo1416/article/details/83270891" target="_blank" title="vue中用computed简单实现数据的双向绑定（getter 和 setter）">
+				<span class="desc oneline">vue是号称实现了数据双向绑定的框架，但事实上在日常开发中我们用的最多的就是v-model将data（vue实例中）里面的是数据和view相关联，实现data更新，view自动刷新的效果。但是，在移动...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/halo1416">来自：	<span class="blog_title"> halo1416的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/SugaryoTT/article/details/78764235","strategy":"BlogCommendFromQuerySearch","index":"47"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/SugaryoTT/article/details/78764235","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/SugaryoTT/article/details/78764235" target="_blank" title="【VUE】IView.js下拉框数据双向绑定">
+		<h4 class="text-truncate oneline">
+				【<em>VUE</em>】IView.js下拉框数据<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8686</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/SugaryoTT/article/details/78764235" target="_blank" title="【VUE】IView.js下拉框数据双向绑定">
+				<span class="desc oneline">写在前面的   在Iview.js的众多组件中，dropselection也是使用比较频繁的组件之一，下面就用最为简单的方法来实现下拉框中数据的动态绑定。SelectOption组件静态数据绑定首先，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/SugaryoTT">来自：	<span class="blog_title"> Ubisoft-One kid's Dream</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/qq244724408/article/details/79988003","strategy":"BlogCommendFromQuerySearch","index":"48"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq244724408/article/details/79988003","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq244724408/article/details/79988003" target="_blank" title="Vue.js render函数的数据双向绑定">
+		<h4 class="text-truncate oneline">
+				<em>Vue</em>.js render函数的数据<em>双向绑定</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1077</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq244724408/article/details/79988003" target="_blank" title="Vue.js render函数的数据双向绑定">
+				<span class="desc oneline">在Vue.jsrender函数中数据双向绑定较为复杂。</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq244724408">来自：	<span class="blog_title"> _雄鹿的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"mod":"popu_614","dest":"https://blog.csdn.net/Smile_ping/article/details/79121000","strategy":"BlogCommendFromQuerySearch","index":"49"}' data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Smile_ping/article/details/79121000","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Smile_ping/article/details/79121000" target="_blank" title="v-model双向绑定获取单选按钮值《计算评分》">
+		<h4 class="text-truncate oneline">
+				<em>v-model</em><em>双向绑定</em>获取单选按钮值《计算评分》		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					912</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Smile_ping/article/details/79121000" target="_blank" title="v-model双向绑定获取单选按钮值《计算评分》">
+				<span class="desc oneline">####项目需求：根据选题测评用户体质类别有九类体质，每一类有（7，8）道选择题每一道选择题答案有5个，对应分数（1分，2分，3分，4分，5分）最后一类平和质，比较特殊，带*号题是（5分，4分，3分，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Smile_ping">来自：	<span class="blog_title"> Smile_ping的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtDakg0sNzQtZWR1.html" target="_blank">
+                        大数据爬虫基础(一)</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaMg4sMzEtZWR1.html" target="_blank">
+                        java培训一年半</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_39913441">
+              <img src="https://avatar.csdn.net/6/A/F/3_qq_39913441.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/qq_39913441"  class="" id="uid">qq_39913441</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="28">
+                        <dt><a href="https://blog.csdn.net/qq_39913441?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qq_39913441?t=1"><span class="count">28</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>喜欢</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="528">
+                528            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="280">
+                280            </dd>
+        </dl>
+        <dl title="351379">
+            <dt>排名：</dt>
+            <dd>35万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/qq_39913441">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_39913441/article/details/99076701" target="_blank" >
+                                        v-show与v-if的区别                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_39913441/article/details/99074615" target="_blank" >
+                                        vue基础之v-model与选择列表                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_39913441/article/details/99059126" target="_blank" >
+                                        vue基础（v-model与复选框）                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_39913441/article/details/99052035" target="_blank" >
+                                        Vue双向绑定二（v-model与单选按钮）                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_39913441/article/details/98884466" target="_blank" >
+                                        Vue计算器案例                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9123109">
+                    <span class="title oneline">html</span>
+                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9198812">
+                    <span class="title oneline">Bootstrap</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9198813">
+                    <span class="title oneline">模态弹出框</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9199211">
+                    <span class="title oneline">选项卡</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9199212">
+                    <span class="title oneline">nav-tabs</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9199290">
+                    <span class="title oneline">提示框tooltip</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9206545">
+                    <span class="title oneline">vue</span>
+                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9206546">
+                    <span class="title oneline">走马灯</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_39913441/article/category/9215006">
+                    <span class="title oneline">下拉菜单</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_39913441/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_39913441/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">17篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_39913441/article/details/98883952" >
+                                                品牌管理案例                    </a>
+					<p class="read">阅读数 <span>57</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_39913441/article/details/97145481" >
+                                                “document_write()”方法会覆盖页面的问题                    </a>
+					<p class="read">阅读数 <span>50</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_39913441/article/details/97140886" >
+                                                HTML DOM----改变HTML样式                    </a>
+					<p class="read">阅读数 <span>40</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_39913441/article/details/95941168" >
+                                                行内块元素上下错位问题                    </a>
+					<p class="read">阅读数 <span>34</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_39913441/article/details/98884466" >
+                                                Vue计算器案例                    </a>
+					<p class="read">阅读数 <span>34</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-77","con":",,"}' data-track-click='{"mod":"kp_popu_57-77","con":",,"}' data-report-view='{"mod":"kp_popu_57-77","keyword":""}' data-report-click='{"mod":"kp_popu_57-77","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_39913441/article/details/98884466" title="Vue计算器案例">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/qq_39913441/article/details/99052035" title="Vue双向绑定二（v-model与单选按钮）">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_39913441/article/details/98884466" title="Vue计算器案例">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_39913441/article/details/99052035" title="Vue双向绑定二（v-model与单选按钮）">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 14;
+    var articleId = "98986700";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_39913441/article/details/98986700";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "Vue的双向绑定一（v-model和输入框） - 小白的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = 'dracula';
+	var highlight = ["vue","\u53cc\u5411\u7ed1\u5b9a","v-model","\u8f93\u5165\u6846"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/dracula.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

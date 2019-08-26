@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_40694145/article/details/98988489"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"初学MongoDB - youshang520i"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>初学MongoDB - youshang520i - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "qq_40694145";
+        var blog_address = "https://blog.csdn.net/qq_40694145";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_40694145/article/details/98988489"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "初学MongoDB";
+        var articleDesc = "1.排序+模糊查询Aggregationaggregation1=Aggregation.newAggregation(Aggregation.match(Criteria.where(shopName).regex(^.*+1号+.*$)),Aggregation.sort(newSort(Sort.Direction.DESC,eventTime)...";
+        // 第四范式所需数据
+        var articleTitles = "初学MongoDB - youshang520i";
+        
+        var nickName = "youshang520i";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_40694145/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_40694145/article/details/98988489";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}' data-report-view='{"mod":"kp_popu_476-923","keyword":""}' data-report-click='{"mod":"kp_popu_476-923","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384140363.png',bigMoveImg:'https://img-bss.csdn.net/1564384127097.png',link:'https://kunyu.csdn.net?p=476&a=923&c=437&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:923});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">初学MongoDB</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 20:40:06</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_40694145" target="_blank">youshang520i</a>
+                    <span class="read-count">阅读数 43</span>
+                                                                        <span class="tags-box artic-tag-box">
+                <span class="label">标签：</span>
+                                                                <a data-report-click='{"mod":"popu_626","strategy":"mongoDB"}' data-report-view='{"mod":"popu_626","strategy":"mongoDB"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=mongoDB&t=blog" target="_blank">mongoDB                                                    </a>
+              </span>
+                                                                            <div class="tags-box space">
+                                <span class="label">个人分类：</span>
+                                                                <a class="tag-link" href="https://blog.csdn.net/qq_40694145/article/category/9213630" target="_blank">mongoDB                                                                    </a>
+                            </div>
+                                                                                    </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <blockquote>
+<p>1.排序+模糊查询</p>
+</blockquote>
+
+<pre class="has">
+<code class="language-java">Aggregation aggregation1 = Aggregation.newAggregation(Aggregation.match(Criteria.where("shopName").regex("^.*" + "1号" + ".*$")),Aggregation.sort(new Sort(Sort.Direction.DESC,"eventTime")));
+        List&lt;Map&gt; mappedResults = mongoTemplate.aggregate(aggregation1, "ADD_TO_CART", Map.class).getMappedResults();
+        mappedResults.stream().forEach(System.out::println);</code></pre>
+
+<blockquote>
+<p>2.分组+统计</p>
+</blockquote>
+
+<pre class="has">
+<code class="language-java">       Criteria criteria = Criteria.where("eventTime").regex(date);
+        // dau uv
+        Aggregation agg = Aggregation.newAggregation(Aggregation.match(criteria),
+                Aggregation.group("channel", "deviceId"),
+                Aggregation.group("channel").count().as("dau"));
+        List&lt;Map&gt; map = mongoTemplate.aggregate(agg, "APP_BOOTSTRAP", Map.class).getMappedResults();
+        map.Stream.forEach(System.out::println)</code></pre>
+
+<p> </p>
+                                    </div>
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_40694145/article/details/98988489","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_40694145/article/details/98988489","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}' data-report-view='{"mod":"kp_popu_58-402","keyword":""}' data-report-click='{"mod":"kp_popu_58-402","keyword":""}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="98988489">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_36174184/article/details/80533828","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_36174184/article/details/80533828" target="_blank" title="mongodb学习笔记">
+		<h4 class="text-truncate oneline">
+				<em>mongodb</em>学习笔记		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					427</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_36174184/article/details/80533828" target="_blank" title="mongodb学习笔记">
+				<span class="desc oneline">  首先附上mongodb的安装包下载地址，其中包括windows和linux的两个安装包：https://pan.baidu.com/s/1aZpgDIXCAG-voMZY9uMMSw 安装步骤  ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_36174184">来自：	<span class="blog_title"> qq_36174184的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/super_master_sean/article/details/83011408","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/super_master_sean/article/details/83011408" target="_blank" title="Centeos7 系统下安装Mongodb数据库">
+		<h4 class="text-truncate oneline">
+				Centeos7 系统下安装<em>Mongodb</em>数据库		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					169</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/super_master_sean/article/details/83011408" target="_blank" title="Centeos7 系统下安装Mongodb数据库">
+				<span class="desc oneline">1下载MongoDB数据库下载地址:https://www.mongodb.com/2在Centos中创建指定的文件夹,将下载好的压缩包上传到该文件夹下并解压:mkdir/usr/mongodb上传压...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/super_master_sean">来自：	<span class="blog_title"> 廉少的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/mjzhang1993/article/details/79876827","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/mjzhang1993/article/details/79876827" target="_blank" title="mongoDB 入门使用">
+		<h4 class="text-truncate oneline">
+				<em>mongoDB</em> 入门使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1232</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/mjzhang1993/article/details/79876827" target="_blank" title="mongoDB 入门使用">
+				<span class="desc oneline">MongoDB入门使用说明MongoDB是一个基于分布式文件存储的数据库，目的是为WEB应用提供可扩展的高性能的数据存储解决方案，它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/mjzhang1993">来自：	<span class="blog_title"> mjzhang1993的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/jing0611/4213880","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+		<a href="https://download.csdn.net/download/jing0611/4213880" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>学习手册.pdf					</h4>
+					<span class="data float-right">04-10</span>
+				</div>
+				<div class="desc oneline">
+						初学Mongodb的好帮手，简要清晰，希望对大家有帮助				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/u014043878/9903839","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+		<a href="https://download.csdn.net/download/u014043878/9903839" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>+maven+spring+springmvc项目源码					</h4>
+					<span class="data float-right">07-19</span>
+				</div>
+				<div class="desc oneline">
+						mongodb+maven+spring+springmvc项目源码，导入eclipse可运行
+mongodb单独操作源码
+初学的同学可以查阅http://www.runoob.com/mongodb/mongodb-java.html				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/zhang342789912/6709893","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+		<a href="https://download.csdn.net/download/zhang342789912/6709893" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						php+<em>mongodb</em>小型留言板					</h4>
+					<span class="data float-right">12-13</span>
+				</div>
+				<div class="desc oneline">
+						初学mongodb，用php+mongodb写了一个小练习，主要是练习mongodb的增删改查，供大家学习参考，不喜勿下。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Lin9977/article/details/80100321","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Lin9977/article/details/80100321" target="_blank" title="mongo 初学mongodb增删改查">
+		<h4 class="text-truncate oneline">
+				mongo <em>初学</em><em>mongodb</em>增删改查		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					61</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Lin9977/article/details/80100321" target="_blank" title="mongo 初学mongodb增删改查">
+				<span class="desc oneline">1.切换/创建数据库   use数据库名  usemydb2.查询所有数据库    showdbs3.删除当前使用的数据库db.dropDatabase()4.使用/创建集合db.集合名  db.my...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Lin9977">来自：	<span class="blog_title"> Lin9977的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/dapenghehe/article/details/51547218","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/dapenghehe/article/details/51547218" target="_blank" title="MongoDB初学之环境的搭建">
+		<h4 class="text-truncate oneline">
+				<em>MongoDB</em><em>初学</em>之环境的搭建		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					622</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/dapenghehe/article/details/51547218" target="_blank" title="MongoDB初学之环境的搭建">
+				<span class="desc oneline">第一次折腾MongoDB是在15年的4月份了，转眼一年多过去了。现在重新拾起来。首先去下载软件。下载地址：https://www.mongodb.org/dl/win32/i386，我下载的是这个版本...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_37347705/article/details/76977627","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_37347705/article/details/76977627" target="_blank" title="初学MongoDB的笔记">
+		<h4 class="text-truncate oneline">
+				<em>初学</em><em>MongoDB</em>的笔记		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					93</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_37347705/article/details/76977627" target="_blank" title="初学MongoDB的笔记">
+				<span class="desc oneline">MongoDB</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_37347705">来自：	<span class="blog_title"> qq_37347705的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u012540337/article/details/47320401","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012540337/article/details/47320401" target="_blank" title="mongodb初学-常用基本命令">
+		<h4 class="text-truncate oneline">
+				<em>mongodb</em><em>初学</em>-常用基本命令		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					376</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012540337/article/details/47320401" target="_blank" title="mongodb初学-常用基本命令">
+				<span class="desc oneline">1、mongodb官网下载：https://www.mongodb.org/downloads 可以下载安装版和解压版；暂时选择解压安装2、cmd进入mongodb安装目录的bin下，启动mongod...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012540337">来自：	<span class="blog_title"> 为梦想而飞</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/kkliu201210/article/details/47664273","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kkliu201210/article/details/47664273" target="_blank" title="AngularJs 保存人员信息的方法">
+		<h4 class="text-truncate oneline">
+				AngularJs 保存人员信息的方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2118</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kkliu201210/article/details/47664273" target="_blank" title="AngularJs 保存人员信息的方法">
+				<span class="desc oneline">1、LocalStorage保存在本地存储中，可以被利用作为自动登录2、SessionStorage保存在浏览器中，浏览器关闭，信息清除3、$rootscope应用的根作用域，所有controller...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/kkliu201210">来自：	<span class="blog_title"> kkliu201210的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/ycxjeremy/10753573","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+		<a href="https://download.csdn.net/download/ycxjeremy/10753573" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>数据库学习笔记					</h4>
+					<span class="data float-right">10-30</span>
+				</div>
+				<div class="desc oneline">
+						本文是自己初学MongoDB时做的笔记，比较简单易懂，也可说是傻瓜式的记录				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/hurrcane/3609723","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+		<a href="https://download.csdn.net/download/hurrcane/3609723" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						MongoVUE 0.9.7.2 免费免安装版					</h4>
+					<span class="data float-right">09-17</span>
+				</div>
+				<div class="desc oneline">
+						很适用的一款Mongodb管理工具，关键是他是免费的，1.0版以后就开始收费了，对于初学Mongodb的人来说完全够用。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/mikyz/11214039","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+		<a href="https://download.csdn.net/download/mikyz/11214039" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						mongo官方文档v4.0					</h4>
+					<span class="data float-right">05-29</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB官方文档4.0版，个人看了，照着上面的示例学习了，不错的文档，适合初学和进阶的同学，分享快乐 :)				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/yaooch/7671555","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+		<a href="https://download.csdn.net/download/yaooch/7671555" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>基础语句大全					</h4>
+					<span class="data float-right">07-24</span>
+				</div>
+				<div class="desc oneline">
+						初学mongodb时做的笔记,上面记录了一些基本常用的命令,希望对初学者有帮助.				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wgs_93/article/details/83069729","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wgs_93/article/details/83069729" target="_blank" title="初学mongodb的一些相关记录">
+		<h4 class="text-truncate oneline">
+				<em>初学</em><em>mongodb</em>的一些相关记录		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					33</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wgs_93/article/details/83069729" target="_blank" title="初学mongodb的一些相关记录">
+				<span class="desc oneline">下载安装好mongodb，官网上可以下载。在安装目录中与bin目录同级的目录下手动创建data目录。在bin目录下打开命令行终端。执行：C:\ProgramFiles\MongoDB\Server\3...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wgs_93">来自：	<span class="blog_title"> Scott</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xxhdcblogzh888/article/details/75386391","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xxhdcblogzh888/article/details/75386391" target="_blank" title="初学：nodejs有关Mongodb的使用">
+		<h4 class="text-truncate oneline">
+				<em>初学</em>：nodejs有关<em>Mongodb</em>的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					223</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xxhdcblogzh888/article/details/75386391" target="_blank" title="初学：nodejs有关Mongodb的使用">
+				<span class="desc oneline">Mongodb的使用关于如何配置MongoDB数据库：首先找到安装目录在bin里面在bin下的命令窗cmd操作，输入mongod.exe–dbpathD:\DB注意:数据库存放的地址文件夹为D:\DB...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xxhdcblogzh888">来自：	<span class="blog_title"> 些许就好丶的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/liuchengxi520/9968007","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+		<a href="https://download.csdn.net/download/liuchengxi520/9968007" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>安装包					</h4>
+					<span class="data float-right">09-07</span>
+				</div>
+				<div class="desc oneline">
+						mongodb，下载mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，mongodb，				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/e98123/10150729","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+		<a href="https://download.csdn.net/download/e98123/10150729" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						Servlet JSP和Spring MVC<em>初学</em>指南_带书签_超清完整版					</h4>
+					<span class="data float-right">12-08</span>
+				</div>
+				<div class="desc oneline">
+						[加] Budi Kurniawan 著；林仪明 译；
+
+ISBN：9787115429742
+
+《Spring MVC 初学指南》姐妹篇				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/liuyinghui523/9719359","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+		<a href="https://download.csdn.net/download/liuyinghui523/9719359" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						Servlet,JSP和Spring MVC <em>初学</em>指南源码					</h4>
+					<span class="data float-right">12-23</span>
+				</div>
+				<div class="desc oneline">
+						Servlet,JSP和Spring MVC 初学指南源码				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/hong114127/10703598","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+		<a href="https://download.csdn.net/download/hong114127/10703598" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						Servlet+JSP和Spring+MVC<em>初学</em>指南 书籍配套源码					</h4>
+					<span class="data float-right">10-06</span>
+				</div>
+				<div class="desc oneline">
+						Servlet+JSP和Spring+MVC初学指南 书籍配套源码 这套源码是 真正的源代码				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/rzhzhz/3403415","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+		<a href="https://download.csdn.net/download/rzhzhz/3403415" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>资料shard，oplog等					</h4>
+					<span class="data float-right">06-29</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB资料MongoDB资料MongoDB资料MongoDB资料MongoDB资料MongoDB资料MongoDB资料MongoDB资料				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/daizhongwei1983/3252611","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+		<a href="https://download.csdn.net/download/daizhongwei1983/3252611" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em> 学习					</h4>
+					<span class="data float-right">05-06</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB 学习MongoDB 学习MongoDB 学习MongoDB 学习MongoDB 学习MongoDB 学习MongoDB 学习MongoDB 学习				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sinat_33582628/article/details/86521539","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sinat_33582628/article/details/86521539" target="_blank" title="读《Servlet,Jsp和SpringMvc初学指南》（3）">
+		<h4 class="text-truncate oneline">
+				读《Servlet,Jsp和SpringMvc<em>初学</em>指南》（3）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					204</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sinat_33582628/article/details/86521539" target="_blank" title="读《Servlet,Jsp和SpringMvc初学指南》（3）">
+				<span class="desc oneline">今天又一次如约的完成本日的阅读任务，本次阅读的是本书的第三章内容即JSP部分的内容因为在校期间已经学习过jsp相关知识的原因，所以学习起来效率是非常快的，但是因为在校期间的学习，除了老师念PPT，急着...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sinat_33582628">来自：	<span class="blog_title"> sinat_33582628的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-1059","con":",,"}' data-track-click='{"mod":"kp_popu_63-1059","con":",,"}' data-report-view='{"mod":"kp_popu_63-1059","keyword":""}' data-report-click='{"mod":"kp_popu_63-1059","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/234?positionId=63&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/lhwork/3344872","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+		<a href="https://download.csdn.net/download/lhwork/3344872" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>开发应用实践					</h4>
+					<span class="data float-right">06-07</span>
+				</div>
+				<div class="desc oneline">
+						mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践，mongodb实践。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/tomatoandwahaha/10224208","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+		<a href="https://download.csdn.net/download/tomatoandwahaha/10224208" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						ServletJSPSpringMVC<em>初学</em>者指南的pdf扫描版					</h4>
+					<span class="data float-right">01-25</span>
+				</div>
+				<div class="desc oneline">
+						目录
+第一部分　Servlets和SP
+第2章　会话管理　25
+第3章　JavaServer Pages(JSP)　50
+第4章　表达式语言　69
+4．3．3　param　73
+4．3．4　paramValues　734．6　如何在JSP...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/sightboy/3505520","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+		<a href="https://download.csdn.net/download/sightboy/3505520" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>使用手册					</h4>
+					<span class="data float-right">08-09</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB使用手册MongoDB使用手册MongoDB使用手册MongoDB使用手册MongoDB使用手册MongoDB使用手册MongoDB使用手册				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/u010414921/10307500","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+		<a href="https://download.csdn.net/download/u010414921/10307500" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>权威指南					</h4>
+					<span class="data float-right">03-25</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB权威指南MongoDB权威指南MongoDB权威指南MongoDB权威指南MongoDB权威指南MongoDB权威指南MongoDB权威指南				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xjpdf10/article/details/84982251","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xjpdf10/article/details/84982251" target="_blank" title="CAD制图初学入门 零基础学CAD要掌握技能精选">
+		<h4 class="text-truncate oneline">
+				CAD制图<em>初学</em>入门 零基础学CAD要掌握技能精选		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3988</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xjpdf10/article/details/84982251" target="_blank" title="CAD制图初学入门 零基础学CAD要掌握技能精选">
+				<span class="desc oneline">第一步：选择CAD制图的种类和对象大家应该都知道CAD有很多种类，比如机械设计、电气设计、建筑设计、管道设计和服装设计等，那么如果你想要自学CAD，需要确定自己要画什么。第二步：学习CAD绘图基本功1...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xjpdf10">来自：	<span class="blog_title"> 教程大咖的CSDN创作中心</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}' data-report-view='{"mod":"kp_popu_64-81","keyword":""}' data-report-click='{"mod":"kp_popu_64-81","keyword":""}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ProvenceLi/article/details/80961038","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ProvenceLi/article/details/80961038" target="_blank" title="初学Python的心得体会">
+		<h4 class="text-truncate oneline">
+				<em>初学</em>Python的心得体会		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1523</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ProvenceLi/article/details/80961038" target="_blank" title="初学Python的心得体会">
+				<span class="desc oneline">    本人是一位大三计算机专业的学生，学习过Java，C/C++等语言，刚接触Python语言，就发现Python比其他语言更加简单，今天就简单说一下学习Python的心得。            ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ProvenceLi">来自：	<span class="blog_title"> ProvenceLi的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/cxf128/10153323","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+		<a href="https://download.csdn.net/download/cxf128/10153323" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>权威指南第二版					</h4>
+					<span class="data float-right">12-10</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB权威指南
+MongoDB权威指南
+MongoDB权威指南
+MongoDB权威指南				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/lyz053a/10546620","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+		<a href="https://download.csdn.net/download/lyz053a/10546620" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>初体验					</h4>
+					<span class="data float-right">07-17</span>
+				</div>
+				<div class="desc oneline">
+						mongodb初体验,mongodb初体验,mongodb初体验,mongodb初体验				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/s200591124/3736055","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+		<a href="https://download.csdn.net/download/s200591124/3736055" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongoDB</em>简介.doc					</h4>
+					<span class="data float-right">10-30</span>
+				</div>
+				<div class="desc oneline">
+						mongoDB简介mongoDB简介mongoDB简介mongoDB简介				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/feng86gang/8688405","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+		<a href="https://download.csdn.net/download/feng86gang/8688405" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						spring relase  jar					</h4>
+					<span class="data float-right">05-11</span>
+				</div>
+				<div class="desc oneline">
+						spring data mongodb,spring data mongodb,spring data mongodb,spring data mongodb,spring data mongodb,spring data mongodb,				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qing_16601/10327024","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+		<a href="https://download.csdn.net/download/qing_16601/10327024" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>下载地址 3.6					</h4>
+					<span class="data float-right">04-04</span>
+				</div>
+				<div class="desc oneline">
+						mongodb下载地址。。mongodb下载地址。。mongodb下载地址。。mongodb下载地址。。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/lingfeng19900808/10248705","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+		<a href="https://download.csdn.net/download/lingfeng19900808/10248705" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>教程					</h4>
+					<span class="data float-right">02-10</span>
+				</div>
+				<div class="desc oneline">
+						mongodb教程，mongodb权威指南，mongodb详解，mongodb入门到精通				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_42346188/article/details/80675954","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_42346188/article/details/80675954" target="_blank" title="初学编程（4）">
+		<h4 class="text-truncate oneline">
+				<em>初学</em>编程（4）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					942</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_42346188/article/details/80675954" target="_blank" title="初学编程（4）">
+				<span class="desc oneline">学习的语言：C编译环境：visualStudio2013选择的书籍：CPrimerPlus(作者：StephenPrata)--------------------------------------...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_42346188">来自：	<span class="blog_title"> weixin_42346188的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Urlli/article/details/80258755","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Urlli/article/details/80258755" target="_blank" title="初学python心得">
+		<h4 class="text-truncate oneline">
+				<em>初学</em>python心得		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					463</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Urlli/article/details/80258755" target="_blank" title="初学python心得">
+				<span class="desc oneline">首次接触编程语言C语言之后学了c++,觉得c++好用的呀批，然而指针让我这个逻辑思维需要很好锻炼的人很头大。学了JAVA之后感觉这个玩意儿又好用的呀批，掌握了面向对象的编程原则后，编程变得有趣了起来，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Urlli">来自：	<span class="blog_title"> Urlli的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_43240527/10676812","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+		<a href="https://download.csdn.net/download/qq_43240527/10676812" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						JAVA<em>初学</em>小程序					</h4>
+					<span class="data float-right">09-19</span>
+				</div>
+				<div class="desc oneline">
+						我们使用了两个命令 javac 和 java。
+javac 后面跟着的是java文件的文件名，例如 HelloWorld.java。 该命令用于将 java 源文件编译为 class 字节码文件，如： javac HelloWorld.j...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/zhangyuank/10029717","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+		<a href="https://download.csdn.net/download/zhangyuank/10029717" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>集群搭建					</h4>
+					<span class="data float-right">10-19</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB MongoDB集群搭建 环境集群搭建 MongoDB MongoDB集群搭建 环境集群搭建				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/mcy_1994/10532996","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+		<a href="https://download.csdn.net/download/mcy_1994/10532996" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongoDB</em>可视化工具					</h4>
+					<span class="data float-right">07-10</span>
+				</div>
+				<div class="desc oneline">
+						mongoDB可视化工具，mongoDB可视化工具，mongoDB可视化工具				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/sinat_33582628/article/details/86499728","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sinat_33582628/article/details/86499728" target="_blank" title="读《servlet,jsp和spring mvc初学者指南》(1)">
+		<h4 class="text-truncate oneline">
+				读《servlet,jsp和spring mvc<em>初学</em>者指南》(1)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					424</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sinat_33582628/article/details/86499728" target="_blank" title="读《servlet,jsp和spring mvc初学者指南》(1)">
+				<span class="desc oneline">放寒假了，在家也是没事干，前段时间刚好买了本javaweb方向的书，于是打算在寒假期间把之前学过的servlet，jsp复习一遍以及自学下很火的spring框架进程：两天时间摸完了第一章的内容这个容器...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sinat_33582628">来自：	<span class="blog_title"> sinat_33582628的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/weixin_40664892/10436546","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+		<a href="https://download.csdn.net/download/weixin_40664892/10436546" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>权威指南第2版					</h4>
+					<span class="data float-right">05-25</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB权威指南第2版MongoDB...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_41659714/10216871","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+		<a href="https://download.csdn.net/download/qq_41659714/10216871" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>与内存.pdf					</h4>
+					<span class="data float-right">01-21</span>
+				</div>
+				<div class="desc oneline">
+						MongoDB与内存.pdf MongoDB与内存.pdf MongoDB与内存.pdf MongoDB与内存.pdf MongoDB与内存.pdf MongoDB与内存.pdf MongoDB与内存.pdf				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/qq_41950696/10836427","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+		<a href="https://download.csdn.net/download/qq_41950696/10836427" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						R语言<em>初学</em>者指南(高清)pdf					</h4>
+					<span class="data float-right">12-08</span>
+				</div>
+				<div class="desc oneline">
+						作者阿兰·F·祖尔等的基于他们对应用科学家讲授统计与R的丰富经验，为读者献上了《R语言初学者指南》这本书。为了避免同时讲授R与统计的困难，统计方法保持在最低限度。《R语言初学者指南》包括如何下载与安装R，载入和处理数据，基本绘图，函数简介...				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/thesecret1/3043940","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+		<a href="https://download.csdn.net/download/thesecret1/3043940" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						java<em>初学</em>者练习题					</h4>
+					<span class="data float-right">02-26</span>
+				</div>
+				<div class="desc oneline">
+						java初学练习题
+可以锻炼你的逻辑思维能力
+我在培训班的练习题，与你分享。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qiumengmeng/article/details/77676032","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qiumengmeng/article/details/77676032" target="_blank" title="CAD制图初学入门学习了解教程">
+		<h4 class="text-truncate oneline">
+				CAD制图<em>初学</em>入门学习了解教程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2168</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qiumengmeng/article/details/77676032" target="_blank" title="CAD制图初学入门学习了解教程">
+				<span class="desc oneline">我们在公司工作的时候，很很多同事使用的软件各不一样，但是大家都有在找个很好用的擦做方法，这里我就来告诉大家。最好的方法就是能够将文件进行浏览、编辑、转换格式等操作作为简单的操作目标。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qiumengmeng">来自：	<span class="blog_title"> qiumengmeng的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_43908950/article/details/88046256","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_43908950/article/details/88046256" target="_blank" title="初学spring">
+		<h4 class="text-truncate oneline">
+				<em>初学</em>spring		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					89</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_43908950/article/details/88046256" target="_blank" title="初学spring">
+				<span class="desc oneline">案例：使用xml和注解实现数据库的CRUDservice代码packagecom.xiong.dao.impl;importcom.xiong.dao.IAccountDao;importcom.xi...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_43908950">来自：	<span class="blog_title"> weixin_43908950的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/z2949365/3930986","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+		<a href="https://download.csdn.net/download/z2949365/3930986" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>MongoDB</em>底层类生成器					</h4>
+					<span class="data float-right">12-16</span>
+				</div>
+				<div class="desc oneline">
+						今天闲着自己做了一个可以根据主键名称生成DBHelper类的小工具，现在把源码上传，适合初学Mongodb的朋友学习。				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+	<div class="recommend-item-box  recommend-download-box clearfix"  data-report-click='{"mod":"popu_387","dest":"https://download.csdn.net/download/hsp1990/7701927","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+		<a href="https://download.csdn.net/download/hsp1990/7701927" target="_blank">
+			<div class="content clearfix">
+				<div class="">
+					<h4 class="text-truncate oneline clearfix">
+						<em>mongodb</em>在java中的使用					</h4>
+					<span class="data float-right">08-01</span>
+				</div>
+				<div class="desc oneline">
+						mongodb在java中的入门使用、加入了详细注解，有利于初学理解；包含了分组操作、模糊查询等；只有一个简单的java类；				</div>
+				<span class="type-show type-show-download">下载</span>
+			</div>
+		</a>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/MtTaQg2sMjUtZWR1.html" target="_blank">
+                        大数据初学</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/MtzaEg3sMDYtZWR1.html" target="_blank">
+                        云计算初学</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_40694145">
+              <img src="https://avatar.csdn.net/9/5/C/3_qq_40694145.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/qq_40694145"  class="" id="uid">youshang520i</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="56">
+                        <dt><a href="https://blog.csdn.net/qq_40694145?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qq_40694145?t=1"><span class="count">56</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="17">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">17</span></dd>
+        </dl>
+        <dl class="text-center" title="8">
+            <dt>喜欢</dt>
+            <dd><span class="count">8</span></dd>
+        </dl>
+        <dl class="text-center" title="10">
+            <dt>评论</dt>
+            <dd><span class="count">10</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="3级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-3"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="13906">
+                1万+            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="703">
+                703            </dd>
+        </dl>
+        <dl title="106443">
+            <dt>排名：</dt>
+            <dd>10万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="1024勋章">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/1024huodong.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/1024huodong.svg" alt="">
+                                   <p>1024勋章</p>
+                               </div>
+                               <div class="right-box">
+                                   #1024程序员节#活动勋章，当日发布原创博客即可获得                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="勤写标兵Lv1">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t2.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t2.svg" alt="">
+                                   <p>勤写标兵Lv1</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周周三上午根据用户上周的博文发布情况由系统自动颁发。                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/qq_40694145">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_40694145/article/details/98253454" target="_blank" >
+                                        Excel中为每个单元拼接双引号                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_40694145/article/details/97923359" target="_blank" >
+                                        Spring Boot配置多数据源                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_40694145/article/details/95196152" target="_blank" >
+                                        通过Java代码调用web接口                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_40694145/article/details/90668941" target="_blank" >
+                                        MySQL单表操作面试题（朋友的SQL面试题以及自己的）                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_40694145/article/details/90237151" target="_blank" >
+                                        Git分支的处理                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7401106">
+                    <span class="title oneline">游标</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7513309">
+                    <span class="title oneline">JSP</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7789643">
+                    <span class="title oneline">JQuery</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7817907">
+                    <span class="title oneline">ContOS</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7905823">
+                    <span class="title oneline">MySQL</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7906573">
+                    <span class="title oneline">java</span>
+                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7956222">
+                    <span class="title oneline">SSH5.0整合</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/7960347">
+                    <span class="title oneline">maven</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8059693">
+                    <span class="title oneline">SSH</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8074118">
+                    <span class="title oneline">Linux</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8075433">
+                    <span class="title oneline">Python</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8077582">
+                    <span class="title oneline">Linux静态ip</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8241600">
+                    <span class="title oneline">JS</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8292871">
+                    <span class="title oneline">集合</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8323869">
+                    <span class="title oneline">Spring boot</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8323981">
+                    <span class="title oneline">Mybatis</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8348091">
+                    <span class="title oneline">XML</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8348239">
+                    <span class="title oneline">C3P9连接数据库</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8348252">
+                    <span class="title oneline">EasyUI</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8348269">
+                    <span class="title oneline">Ajax</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8348270">
+                    <span class="title oneline">Json</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8353653">
+                    <span class="title oneline">Oracle</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8594037">
+                    <span class="title oneline">Struts2</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8653238">
+                    <span class="title oneline">javaScript</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8663926">
+                    <span class="title oneline">Apache</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8663927">
+                    <span class="title oneline">poi</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8707339">
+                    <span class="title oneline">Spring MVC</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8752582">
+                    <span class="title oneline">SSM报错</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/8950448">
+                    <span class="title oneline">Git</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/9191763">
+                    <span class="title oneline">Excel</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_40694145/article/category/9213630">
+                    <span class="title oneline">mongoDB</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/05">
+                    2019年5月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/04">
+                    2019年4月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/03">
+                    2019年3月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/02">
+                    2019年2月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2019/01">
+                    2019年1月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/11">
+                    2018年11月                    <span class="count float-right">21篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/10">
+                    2018年10月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/09">
+                    2018年9月                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/08">
+                    2018年8月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/07">
+                    2018年7月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/04">
+                    2018年4月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40694145/article/month/2018/01">
+                    2018年1月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_40694145/article/details/83867145#comments">Spring Boot中启动Tom...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_40694145" class="user-name" target="_blank">qq_40694145：</a>[reply]qq_43404630[/reply]
+加了                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_40694145/article/details/83867145#comments">Spring Boot中启动Tom...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_43404630" class="user-name" target="_blank">qq_43404630：</a>[reply]qq_40694145[/reply]
+你有问题加不了，你加我Q：2928608974                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_40694145/article/details/83867145#comments">Spring Boot中启动Tom...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_40694145" class="user-name" target="_blank">qq_40694145：</a>[reply]qq_36513457[/reply]
+忘记了。。前天刚刚加的。。验证是我的心事！                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_40694145/article/details/83867145#comments">Spring Boot中启动Tom...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_36513457" class="user-name" target="_blank">qq_36513457：</a>[reply]qq_40694145[/reply]
+你Q有问题加不了                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_40694145/article/details/83867145#comments">Spring Boot中启动Tom...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_40694145" class="user-name" target="_blank">qq_40694145：</a>[reply]Asuevey[/reply]
+???现在还没好吗？？加我qq：304808680                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box long-width">
+			<button class=" long-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">1</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_40694145/article/details/98253454" title="Excel中为每个单元拼接双引号">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_40694145/article/details/98253454" title="Excel中为每个单元拼接双引号">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+											</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 31;
+    var articleId = "98988489";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_40694145/article/details/98988489";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "初学MongoDB - youshang520i";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["\u521d\u5b66","mongodb"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>

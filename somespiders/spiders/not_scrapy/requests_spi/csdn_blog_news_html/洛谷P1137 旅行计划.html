@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_41741964/article/details/99026003"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"洛谷P1137 旅行计划 - kma_093"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>洛谷P1137 旅行计划 - kma_093 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-03125ef237.min.css">
+            
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-shirtblue/skin-shirtblue-48b4f9f954.min.css">
+        <script type="text/javascript">
+        var username = "qq_41741964";
+        var blog_address = "https://blog.csdn.net/qq_41741964";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_41741964/article/details/99026003"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin-shirtblue";
+        // 收藏所需数据
+        var articleTitle = "洛谷P1137 旅行计划";
+        var articleDesc = "题目链接：kma题目分析：其实不需要dp的，直接拓扑排序就可以了代码：#include&lt;bits/stdc++.h&gt;#defineN(500000+50)usingnamespacestd;inlineintread(){intcnt=0,f=1;charc=getchar();while(!isd...";
+        // 第四范式所需数据
+        var articleTitles = "洛谷P1137 旅行计划 - kma_093";
+        
+        var nickName = "kma_093";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_41741964/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_41741964/article/details/99026003";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,report/1.0.4/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-845","con":",,"}' data-track-click='{"mod":"kp_popu_476-845","con":",,"}' data-report-view='{"mod":"kp_popu_476-845","keyword":""}' data-report-click='{"mod":"kp_popu_476-845","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1564384060213.png',bigMoveImg:'https://img-bss.csdn.net/1564384050975.png',link:'https://kunyu.csdn.net?p=476&a=845&c=394&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fpython115%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:845});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">洛谷P1137 旅行计划</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                                            <span class="time">2019年08月09日 17:12:00</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_41741964" target="_blank">kma_093</a>
+                    <span class="read-count">阅读数 40</span>
+                                                                                                                                </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                                <div class="article-copyright">
+                <span class="creativecommons">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="知识共享许可协议" style="border-width:0"
+                         src="https://csdnimg.cn/release/phoenix/images/creativecommons/80x15.png"/></a>
+            <span>版权声明：署名，允许他人基于本文进行创作，且必须基于与原先许可协议相同的许可协议分发本文 （</span><a
+                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>）
+            </span>
+                    </div>
+                                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                                        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h2 id="题目链接">题目链接：</h2>
+<p><a href="https://www.luogu.org/problem/P1137" rel="nofollow" data-token="9b88ba3fa2bcf2ca3a911caedff7ab1c">kma</a></p>
+<h2 id="题目分析">题目分析：</h2>
+<p>其实不需要dp的，直接拓扑排序就可以了</p>
+<h2 id="代码">代码：</h2>
+<pre><code class="language-cpp"><code>#include &lt;bits/stdc++.h&gt;
+#define N (500000 + 50)
+using namespace std;
+inline int read() {
+    int cnt = 0, f = 1; char c = getchar();
+    while (!isdigit(c)) {if (c == '-') f = -f; c = getchar();}
+    while (isdigit(c)) {cnt = (cnt &lt;&lt; 3) + (cnt &lt;&lt; 1) + c - '0'; c = getchar();}
+    return cnt * f;
+}
+int nxt[N], to[N], first[N], tot, p;
+int topo[N];
+int in[N], a[N];
+queue &lt;int&gt; q;
+int n, m, u, v;
+void Add(int x, int y) {
+    nxt[++tot] = first[x];
+    first[x] = tot;
+    to[tot] = y;
+}
+void bfs() {
+    for (int i = 1; i &lt;= n; i++) {
+        if (!in[i]) q.push(i), topo[i] = 1;
+    }
+    while (!q.empty()) {
+        int v = q.front(); q.pop();
+        for (register int i = first[v]; i; i = nxt[i]) {
+            int vv = to[i];--in[vv];
+            if (!in[vv]) q.push(vv), topo[vv] = max(topo[vv], topo[v] + 1);
+        }
+    }
+}
+
+int main() {
+    n = read(), m = read();
+    for (register int i = 1; i &lt;= m; i++) {
+        u = read(), v = read();
+        ++in[v];
+        Add(u, v);
+    }
+    bfs();
+    for (register int i = 1; i &lt;= n; i++) printf("%d\n", topo[i]);
+    return 0;
+}</code></code></pre>
+
+</div>                                    </div>
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_41741964/article/details/99026003","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_41741964/article/details/99026003","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-386","con":",,"}' data-track-click='{"mod":"kp_popu_58-386","con":",,"}' data-report-view='{"mod":"kp_popu_58-386","keyword":""}' data-report-click='{"mod":"kp_popu_58-386","keyword":""}'><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="99026003">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/ye_xingyu/article/details/79045153","strategy":"BlogCommendFromQuerySearch","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ye_xingyu/article/details/79045153" target="_blank" title="洛谷 P1137 旅行计划">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> <em>P1137</em> <em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					370</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ye_xingyu/article/details/79045153" target="_blank" title="洛谷 P1137 旅行计划">
+				<span class="desc oneline">先进行拓扑排序得到拓扑序之后按拓扑序dp求最大值#include#includeusingnamespacestd;constintMAX=100005;intn,m,cnt;inthead[MAX]...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ye_xingyu">来自：	<span class="blog_title"> Tricksterism</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/cherish_k/article/details/77247589","strategy":"BlogCommendFromQuerySearch","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/cherish_k/article/details/77247589" target="_blank" title="bzoj4562: [Haoi2016]食物链">
+		<h4 class="text-truncate oneline">
+				bzoj4562: [Haoi2016]食物链		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					162</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/cherish_k/article/details/77247589" target="_blank" title="bzoj4562: [Haoi2016]食物链">
+				<span class="desc oneline">Description如图所示为某生态系统的食物网示意图，据图回答第1小题现在给你n个物种和m条能量流动关系，求其中的食物链条数。物种的名称为从1到n编号M条能量流动关系形如a1b1a2b2a3b3…...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/cherish_k">来自：	<span class="blog_title"> Loi_whales 的坑</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_35850147/article/details/90554247","strategy":"BlogCommendFromQuerySearch","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35850147/article/details/90554247" target="_blank" title="洛谷P1137 旅行计划 #拓扑排序#">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em><em>P1137</em> <em>旅行</em><em>计划</em> #拓扑排序#		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					13</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35850147/article/details/90554247" target="_blank" title="洛谷P1137 旅行计划 #拓扑排序#">
+				<span class="desc oneline">题目描述小明要去一个国家旅游。这个国家有#N个城市，编号为1至N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为终点...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35850147">来自：	<span class="blog_title"> Singularity</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Mizersy/article/details/79435045","strategy":"BlogCommendFromQuerySearch","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Mizersy/article/details/79435045" target="_blank" title="洛谷p1137 旅行计划 （拓扑排序）">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em><em>p1137</em> <em>旅行</em><em>计划</em> （拓扑排序）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					199</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Mizersy/article/details/79435045" target="_blank" title="洛谷p1137 旅行计划 （拓扑排序）">
+				<span class="desc oneline">题目描述小明要去一个国家旅游。这个国家有N个城市，编号为1～N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为终点，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Mizersy">来自：	<span class="blog_title"> Mizersy的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/ice_word/article/details/53200587","strategy":"BlogCommendFromQuerySearch","index":"4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ice_word/article/details/53200587" target="_blank" title="C++ P1137 旅行计划">
+		<h4 class="text-truncate oneline">
+				C++ <em>P1137</em> <em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					402</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ice_word/article/details/53200587" target="_blank" title="C++ P1137 旅行计划">
+				<span class="desc oneline">题目：https://www.luogu.org/problem/show?pid=1137一开始做法是从入度为0的点开始DFS找最长路，但不知道哪错了（还有超时），然后用了一下拓扑排序。因为它走的路...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ice_word">来自：	<span class="blog_title"> ice_word的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/m0_38083668/article/details/83050646","strategy":"BlogCommendFromQuerySearch","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_38083668/article/details/83050646" target="_blank" title="【洛谷P1173】旅行计划">
+		<h4 class="text-truncate oneline">
+				【<em>洛谷</em>P1173】<em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					63</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_38083668/article/details/83050646" target="_blank" title="【洛谷P1173】旅行计划">
+				<span class="desc oneline">题目：旅行计划解析：    复习一下拓扑排序 代码： #include&amp;amp;lt;bits/stdc++.h&amp;amp;gt;usingnamespacestd;constintMax=100010...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_38083668">来自：	<span class="blog_title"> ETO的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_40400202/article/details/82355309","strategy":"BlogCommendFromQuerySearch","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40400202/article/details/82355309" target="_blank" title="洛谷 P1137 旅行计划（拓扑排序） 题解">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> <em>P1137</em> <em>旅行</em><em>计划</em>（拓扑排序） 题解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					94</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40400202/article/details/82355309" target="_blank" title="洛谷 P1137 旅行计划（拓扑排序） 题解">
+				<span class="desc oneline">题目来源：https://www.luogu.org/problemnew/show/P1137题目描述：题目描述小明要去一个国家旅游。这个国家有#NN个城市，编号为11至NN，并且有MM条道路连接着...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_40400202">来自：	<span class="blog_title"> 摇摇乐的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/forget_yu/article/details/74191496","strategy":"BlogCommendFromQuerySearch","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/forget_yu/article/details/74191496" target="_blank" title="P1137 旅行计划">
+		<h4 class="text-truncate oneline">
+				<em>P1137</em> <em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					106</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/forget_yu/article/details/74191496" target="_blank" title="P1137 旅行计划">
+				<span class="desc oneline">题目描述小明要去一个国家旅游。这个国家有N个城市，编号为1～N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为终点，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/forget_yu">来自：	<span class="blog_title"> forget_yu的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zhanghaoxian1/article/details/73880702","strategy":"BlogCommendFromQuerySearch","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhanghaoxian1/article/details/73880702" target="_blank" title="洛谷P1137 旅行计划（拓扑排序+dp）">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em><em>P1137</em> <em>旅行</em><em>计划</em>（拓扑排序+dp）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1003</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhanghaoxian1/article/details/73880702" target="_blank" title="洛谷P1137 旅行计划（拓扑排序+dp）">
+				<span class="desc oneline">旅行计划题目描述小明要去一个国家旅游。这个国家有N个城市，编号为1～N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhanghaoxian1">来自：	<span class="blog_title"> zhanghaoxian1的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}' data-report-view='{"mod":"kp_popu_60-43","keyword":""}' data-report-click='{"mod":"kp_popu_60-43","keyword":""}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/DT_Kang/article/details/77447080","strategy":"BlogCommendFromQuerySearch","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/DT_Kang/article/details/77447080" target="_blank" title="【洛谷 P1137】旅行计划——spfa拓展">
+		<h4 class="text-truncate oneline">
+				【<em>洛谷</em> <em>P1137</em>】<em>旅行</em><em>计划</em>——spfa拓展		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					147</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/DT_Kang/article/details/77447080" target="_blank" title="【洛谷 P1137】旅行计划——spfa拓展">
+				<span class="desc oneline">题目描述小明要去一个国家旅游。这个国家有N个城市，编号为1～N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为终点，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/DT_Kang">来自：	<span class="blog_title"> DT_Kang的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/brucehb/article/details/80153427","strategy":"BlogCommendFromQuerySearch","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/brucehb/article/details/80153427" target="_blank" title="旅行计划">
+		<h4 class="text-truncate oneline">
+				<em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					336</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/brucehb/article/details/80153427" target="_blank" title="旅行计划">
+				<span class="desc oneline">某个国家有N个城市，编号0至N-1，他们之间用N-1条道路连接，道路是双向行驶的，沿着道路你可以到达任何一个城市。你有一个旅行计划，这个计划是从编号K的城市出发，每天到达一个你没有去过的城市，并且旅途...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/brucehb">来自：	<span class="blog_title"> brucehb的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_34238633/article/details/89540827","strategy":"BlogCommendFromQuerySearch","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34238633/article/details/89540827" target="_blank" title="
+                                洛谷 P1137 旅行计划
+    ">
+		<h4 class="text-truncate oneline">
+				
+                                <em>洛谷</em> <em>P1137</em> <em>旅行</em><em>计划</em>
+    		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34238633/article/details/89540827" target="_blank" title="
+                                洛谷 P1137 旅行计划
+    ">
+				<span class="desc oneline">题目描述小明要去一个国家旅游。这个国家有N个城市，编号为1～N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为终点，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_34238633">来自：	<span class="blog_title"> weixin_34238633的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_37517391/article/details/79590843","strategy":"BlogCommendFromQuerySearch","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_37517391/article/details/79590843" target="_blank" title="P1081 开车旅行 倍增 洛谷">
+		<h4 class="text-truncate oneline">
+				P1081 开车<em>旅行</em> 倍增 <em>洛谷</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					243</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_37517391/article/details/79590843" target="_blank" title="P1081 开车旅行 倍增 洛谷">
+				<span class="desc oneline">题目连接题意题目已经说的hin明确了。题解我们要求出从每个点出发，小A要走的城市和小B要走的城市。我们把iii以后的所有点的海拔加入到setsetset，然后拿H[i]H[i]H[i]到set里面去l...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_37517391">来自：	<span class="blog_title"> SUNSET</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_33953384/article/details/87744926","strategy":"BlogCommendFromQuerySearch","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33953384/article/details/87744926" target="_blank" title="如何制定旅行计划（1）">
+		<h4 class="text-truncate oneline">
+				如何制定<em>旅行</em><em>计划</em>（1）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					245</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33953384/article/details/87744926" target="_blank" title="如何制定旅行计划（1）">
+				<span class="desc oneline">还有三周就到圣诞节了，本来想在家宅着，这两天老公突然决定要去玩。一想很快也就到两个宝宝的生日了，生日时上班就没有时间出去玩了，那就直接去硅谷游一下吧，参观一下我最喜欢的斯坦福大学，给她们当周岁游啦。这...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33953384">来自：	<span class="blog_title"> weixin_33953384的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Liukairui/article/details/81177508","strategy":"BlogCommendFromQuerySearch","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Liukairui/article/details/81177508" target="_blank" title="洛谷P1137-旅行计划">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em><em>P1137</em>-<em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					109</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Liukairui/article/details/81177508" target="_blank" title="洛谷P1137-旅行计划">
+				<span class="desc oneline">在洛谷上搜NOIP2014的运输计划，结果点成了这道题，做完才发现不对…问题描述小明要去一个国家旅游。这个国家有#N个城市，编号为1至N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Liukairui">来自：	<span class="blog_title"> LiuKairui的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_35649707/article/details/79821658","strategy":"BlogCommendFromQuerySearch","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35649707/article/details/79821658" target="_blank" title="BZOJ3141: [Hnoi2013]旅行（单调队列）">
+		<h4 class="text-truncate oneline">
+				BZOJ3141: [Hnoi2013]<em>旅行</em>（单调队列）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					225</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35649707/article/details/79821658" target="_blank" title="BZOJ3141: [Hnoi2013]旅行（单调队列）">
+				<span class="desc oneline">传送门题解：相当于给一个ai={1,−1}ai={1,−1}a_i=\{1,-1\}的序列，划分为mmm段使得每段绝对值最小。记sumsumsum为序列之和。容易发现答案为|sum|m|sum|m\f...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35649707">来自：	<span class="blog_title"> DZYO的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/sunnysong525/article/details/56014479","strategy":"BlogCommendFromQuerySearch","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sunnysong525/article/details/56014479" target="_blank" title="用xmind写旅游计划">
+		<h4 class="text-truncate oneline">
+				用xmind写旅游<em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					620</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sunnysong525/article/details/56014479" target="_blank" title="用xmind写旅游计划">
+				<span class="desc oneline">作为一个有强迫症的人，不止工作需要计划，生活也同样需要。    这个时候xmind的可以利用起来了，虽然做的不是很好，主要作为参考；...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sunnysong525">来自：	<span class="blog_title"> 足舞天下   </span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Zeolim/article/details/82828146","strategy":"BlogCommendFromQuerySearch","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Zeolim/article/details/82828146" target="_blank" title="[洛谷] P1515 旅行">
+		<h4 class="text-truncate oneline">
+				[<em>洛谷</em>] P1515 <em>旅行</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					115</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Zeolim/article/details/82828146" target="_blank" title="[洛谷] P1515 旅行">
+				<span class="desc oneline">dfs递推都是15ms递推://#pragmaGCCoptimize(2)#include&amp;amp;lt;cstdio&amp;amp;gt;#include&amp;amp;lt;iostream&amp;amp;gt;#...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Zeolim">来自：	<span class="blog_title"> Zeolim的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/xiaoyatou123321/article/details/89385800","strategy":"BlogCommendFromQuerySearch","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xiaoyatou123321/article/details/89385800" target="_blank" title="MindManager个性化旅行计划表制作详解">
+		<h4 class="text-truncate oneline">
+				MindManager个性化<em>旅行</em><em>计划</em>表制作详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					68</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xiaoyatou123321/article/details/89385800" target="_blank" title="MindManager个性化旅行计划表制作详解">
+				<span class="desc oneline">MindManager个性化旅行计划表制作详解计划表MindManager里就有一份非常专业的差旅计划模板，懒得自己构思的话可以在这份模板的基础上进行增添或删改。只需打开MindManager后，在【...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xiaoyatou123321">来自：	<span class="blog_title"> xiaoyatou123321的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}' data-report-view='{"mod":"kp_popu_62-556","keyword":""}' data-report-click='{"mod":"kp_popu_62-556","keyword":""}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/ice_word/article/details/53433524","strategy":"BlogCommendFromQuerySearch","index":"19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ice_word/article/details/53433524" target="_blank" title="C++ P0002 旅行计划">
+		<h4 class="text-truncate oneline">
+				C++ P0002 <em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					340</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ice_word/article/details/53433524" target="_blank" title="C++ P0002 旅行计划">
+				<span class="desc oneline">题目：旅行计划第一次搞输出多个最短路径，搞了有一会儿，方法不太好，有更好的方法可以教me！#include#include#includeusingnamespacestd;constintinf=0...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ice_word">来自：	<span class="blog_title"> ice_word的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zhe_ge_sha_shou/article/details/70342035","strategy":"BlogCommendFromQuerySearch","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhe_ge_sha_shou/article/details/70342035" target="_blank" title="C++ 省略 std:: 前缀">
+		<h4 class="text-truncate oneline">
+				C++ 省略 std:: 前缀		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1756</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhe_ge_sha_shou/article/details/70342035" target="_blank" title="C++ 省略 std:: 前缀">
+				<span class="desc oneline">第一种方法是在程序中添加一条语句usingnamespacestd#include&amp;lt;iostram&amp;gt;usingnamespacestd;intmain(){cout&amp;lt;&amp;lt;&amp;quo...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhe_ge_sha_shou">来自：	<span class="blog_title"> 这个杀手不太累的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/SSL_ZYC/article/details/84992227","strategy":"BlogCommendFromQuerySearch","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/SSL_ZYC/article/details/84992227" target="_blank" title="【NOIP2018】【洛谷P5022】旅行【基环树】">
+		<h4 class="text-truncate oneline">
+				【NOIP2018】【<em>洛谷</em>P5022】<em>旅行</em>【基环树】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					276</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/SSL_ZYC/article/details/84992227" target="_blank" title="【NOIP2018】【洛谷P5022】旅行【基环树】">
+				<span class="desc oneline">基环树的第一道题。NOIP2018DAY2T1</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/SSL_ZYC">来自：	<span class="blog_title"> stoorz</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_39662197/article/details/80065233","strategy":"BlogCommendFromQuerySearch","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39662197/article/details/80065233" target="_blank" title="洛谷P2502 [HAOI2006]旅行——题解">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>P2502 [HAOI2006]<em>旅行</em>——题解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					65</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39662197/article/details/80065233" target="_blank" title="洛谷P2502 [HAOI2006]旅行——题解">
+				<span class="desc oneline">题目传送门题目大意：有n个点m条边，每条边有权值，试问两个点之间的所有路径中，权值最大和权值最小的比最小是多少。思考过程：题目询问的是权值最大和权值最小的比值，直接求比值很难拿下手，我们不妨先固定权值...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_39662197">来自：	<span class="blog_title"> CleverLarry的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/KsCla/article/details/79606841","strategy":"BlogCommendFromQuerySearch","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/KsCla/article/details/79606841" target="_blank" title="洛谷P4155：[SCOI2015]国旗计划 （贪心+倍增）">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>P4155：[SCOI2015]国旗<em>计划</em> （贪心+倍增）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					349</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/KsCla/article/details/79606841" target="_blank" title="洛谷P4155：[SCOI2015]国旗计划 （贪心+倍增）">
+				<span class="desc oneline">题目传送门：https://www.luogu.org/problemnew/show/P4155题目分析：考模拟赛的时候以为是个DP，结果一直没想出来，写了个O(n2)O(n2)O(n^2)的区间D...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/KsCla">来自：	<span class="blog_title"> KsCla</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}' data-report-view='{"mod":"kp_popu_63-555","keyword":""}' data-report-click='{"mod":"kp_popu_63-555","keyword":""}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/g21glf/article/details/83014715","strategy":"BlogCommendFromQuerySearch","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/g21glf/article/details/83014715" target="_blank" title="洛谷1137 旅行计划（拓扑排序）">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>1137 <em>旅行</em><em>计划</em>（拓扑排序）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					51</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/g21glf/article/details/83014715" target="_blank" title="洛谷1137 旅行计划（拓扑排序）">
+				<span class="desc oneline">【题目描述】小明要去一个国家旅游。这个国家有#N个城市，编号为1至N，并且有M条道路连接着，小明准备从其中一个城市出发，并只往东走到城市i停止。所以他就需要选择最先到达的城市，并制定一条路线以城市i为...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/g21glf">来自：	<span class="blog_title"> Michael_GLF的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/hyj542682306/article/details/71728162","strategy":"BlogCommendFromQuerySearch","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hyj542682306/article/details/71728162" target="_blank" title="【最短路径】洛谷 P1522 牛的旅行 Cow Tours">
+		<h4 class="text-truncate oneline">
+				【最短路径】<em>洛谷</em> P1522 牛的<em>旅行</em> Cow Tours		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					628</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hyj542682306/article/details/71728162" target="_blank" title="【最短路径】洛谷 P1522 牛的旅行 Cow Tours">
+				<span class="desc oneline">题目描述农民John的农场里有很多牧区。有的路径连接一些特定的牧区。一片所有连通的牧区称为一个牧场。但是就目前而言，你能看到至少有两个牧区通过任何路径都不连通。这样，FarmerJohn就有多个牧场了...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/hyj542682306">来自：	<span class="blog_title"> 。。。。</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Ab_Ever/article/details/78136194","strategy":"BlogCommendFromQuerySearch","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Ab_Ever/article/details/78136194" target="_blank" title="洛谷 P1081 [NOIP提高组 2012] 开车旅行(线段树+离散化+树上倍增)">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> P1081 [NOIP提高组 2012] 开车<em>旅行</em>(线段树+离散化+树上倍增)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					299</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Ab_Ever/article/details/78136194" target="_blank" title="洛谷 P1081 [NOIP提高组 2012] 开车旅行(线段树+离散化+树上倍增)">
+				<span class="desc oneline">洛谷P1081[NOIP提高组2012]开车旅行线段树离散化树上倍增</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Ab_Ever">来自：	<span class="blog_title"> Ab.Ever</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/wddwjlss/article/details/81810252","strategy":"BlogCommendFromQuerySearch","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wddwjlss/article/details/81810252" target="_blank" title="树形dp 没有上司的舞会">
+		<h4 class="text-truncate oneline">
+				树形dp 没有上司的舞会		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					27</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wddwjlss/article/details/81810252" target="_blank" title="树形dp 没有上司的舞会">
+				<span class="desc oneline">题意：给定一棵树，每个点有权值，对于每一个点，它和它的父节点不能同时被选，求权值最大值。定义dp[x][0]dp[x][0]dp[x][0]表示不选择x号点时的最大值，dp[x][1]dp[x][1]...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wddwjlss">来自：	<span class="blog_title"> 小蒟蒻wddwjlss的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/u011815404/article/details/79244327","strategy":"BlogCommendFromQuerySearch","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011815404/article/details/79244327" target="_blank" title="津津的储蓄计划（洛谷-P1089）">
+		<h4 class="text-truncate oneline">
+				津津的储蓄<em>计划</em>（<em>洛谷</em>-P1089）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					872</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011815404/article/details/79244327" target="_blank" title="津津的储蓄计划（洛谷-P1089）">
+				<span class="desc oneline">题目描述津津的零花钱一直都是自己管理。每个月的月初妈妈给津津300元钱，津津会预算这个月的花销，并且总能做到实际花销和预算的相同。为了让津津学习如何储蓄，妈妈提出，津津可以随时把整百的钱存在她那里，到...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u011815404">来自：	<span class="blog_title"> Alex_McAvoy的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}' data-report-view='{"mod":"kp_popu_64-81","keyword":""}' data-report-click='{"mod":"kp_popu_64-81","keyword":""}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Geeksongs/article/details/89879381","strategy":"BlogCommendFromQuerySearch","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Geeksongs/article/details/89879381" target="_blank" title="我们的旅行计划">
+		<h4 class="text-truncate oneline">
+				我们的<em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Geeksongs/article/details/89879381" target="_blank" title="我们的旅行计划">
+				<span class="desc oneline">我们的旅行计划									南京，杭州，苏州旅行概要需要提前预定的景点：苏州博物馆第一天：从重庆到杭州火车票：每人565元，预计十一小时到达，坐票。飞机票：每人1000元左右，特价票预计凌晨到达杭...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Geeksongs">来自：	<span class="blog_title"> Geeksongs的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zhhx2001/article/details/51694110","strategy":"BlogCommendFromQuerySearch","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhhx2001/article/details/51694110" target="_blank" title="旅游计划（树形dp）">
+		<h4 class="text-truncate oneline">
+				旅游<em>计划</em>（树形dp）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					477</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhhx2001/article/details/51694110" target="_blank" title="旅游计划（树形dp）">
+				<span class="desc oneline">实际上是求，树上所有在最长路径上的点，因为最长路径有很多，所以这是一个“题”换一种思路，求最长路径上的点，实际上就是求所有点，它最大和第二长的分叉总和是最长路径那么，就用树形dpdp【i】【0】 dp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhhx2001">来自：	<span class="blog_title"> zhhx2001的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_40448823/article/details/78996026","strategy":"BlogCommendFromQuerySearch","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40448823/article/details/78996026" target="_blank" title="洛谷1123  取数游戏">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>1123  取数游戏		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					161</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40448823/article/details/78996026" target="_blank" title="洛谷1123  取数游戏">
+				<span class="desc oneline">题目描述一个N×M的由非负整数构成的数字矩阵，你需要在其中取出若干个数字，使得取出的任意两个数字不相邻（若一个数字在另外一个数字相邻8个格子中的一个即认为这两个数字相邻），求取出数字和最大是多少。输入...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_40448823">来自：	<span class="blog_title"> sdfzsyq的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_30214115/article/details/98295766","strategy":"BlogCommendFromQuerySearch","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_30214115/article/details/98295766" target="_blank" title="[NOIP2001提高组]CODEVS1014 Car的旅行路线(最短路)">
+		<h4 class="text-truncate oneline">
+				[NOIP2001提高组]CODEVS1014 Car的<em>旅行</em>路线(最短路)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_30214115/article/details/98295766" target="_blank" title="[NOIP2001提高组]CODEVS1014 Car的旅行路线(最短路)">
+				<span class="desc oneline">最短路,这个不难想,但是要为它加边就有点麻烦..还好写完就过了(虽然WA了一次,因为我调试用的输出没删了..),不然实在是觉得挺难调的..-------------------------------...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_30214115">来自：	<span class="blog_title"> weixin_30214115的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Hi_KER/article/details/82820861","strategy":"BlogCommendFromQuerySearch","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Hi_KER/article/details/82820861" target="_blank" title="【洛谷】NOIP2018原创模拟赛DAY2题解">
+		<h4 class="text-truncate oneline">
+				【<em>洛谷</em>】NOIP2018原创模拟赛DAY2题解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2919</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Hi_KER/article/details/82820861" target="_blank" title="【洛谷】NOIP2018原创模拟赛DAY2题解">
+				<span class="desc oneline">前言：我相信大家可以感觉到DAY2题目的难度明显比DAY1大很多，这也是近年NOIP考试的趋势，从目前NOIP考察的知识来看这次的T3知识可能对NOIP选手来说略难，但说不定今年NOIP还会考更高级的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Hi_KER">来自：	<span class="blog_title"> Hi_KER的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_38530880/article/details/78131658","strategy":"BlogCommendFromQuerySearch","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_38530880/article/details/78131658" target="_blank" title="[日推荐]『旅行云清单』列好清单，准备出发！">
+		<h4 class="text-truncate oneline">
+				[日推荐]『<em>旅行</em>云清单』列好清单，准备出发！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					719</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_38530880/article/details/78131658" target="_blank" title="[日推荐]『旅行云清单』列好清单，准备出发！">
+				<span class="desc oneline">国庆长假倒计时啦，再上两天班，就可以出去浪罗！，听说有的小伙伴今天下班就可以开启度假模式了，那么，你的行李收拾得怎么样了？可别落下什么东西哦！不如列个旅行清单吧。旅行云清单简介：“旅行云清单”——一款...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_38530880">来自：	<span class="blog_title"> 小程序社区</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/Rose_max/article/details/79417257","strategy":"BlogCommendFromQuerySearch","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Rose_max/article/details/79417257" target="_blank" title="[bzoj3207][可持久化线段树][哈希表]花神的嘲讽计划Ⅰ">
+		<h4 class="text-truncate oneline">
+				[bzoj3207][可持久化线段树][哈希表]花神的嘲讽<em>计划</em>Ⅰ		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					108</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Rose_max/article/details/79417257" target="_blank" title="[bzoj3207][可持久化线段树][哈希表]花神的嘲讽计划Ⅰ">
+				<span class="desc oneline">Description背景花神是神，一大癖好就是嘲讽大J，举例如下：“哎你傻不傻的！【hqz：大笨J】”“这道题又被J屎过了！！”“J这程序怎么跑这么快！J要逆袭了！”……描述这一天DJ在给吾等众蒟蒻...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Rose_max">来自：	<span class="blog_title"> Rose_max的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/fearlessxjdx/article/details/54932556","strategy":"BlogCommendFromQuerySearch","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/fearlessxjdx/article/details/54932556" target="_blank" title="NOIP2012提高组 开车旅行 题解">
+		<h4 class="text-truncate oneline">
+				NOIP2012提高组 开车<em>旅行</em> 题解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					358</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fearlessxjdx/article/details/54932556" target="_blank" title="NOIP2012提高组 开车旅行 题解">
+				<span class="desc oneline">题目连接：https://www.luogu.org/problem/show?pid=1081题目描述：小A和小B决定利用假期外出旅行，他们将想去的城市从1到N编号，且编号较小的城市在编号较大的城市...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/fearlessxjdx">来自：	<span class="blog_title"> fearlessxjdx的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_39921637/article/details/88045757","strategy":"BlogCommendFromQuerySearch","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39921637/article/details/88045757" target="_blank" title="[Wc2008]游览计划【斯坦纳树】">
+		<h4 class="text-truncate oneline">
+				[Wc2008]游览<em>计划</em>【斯坦纳树】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					23</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39921637/article/details/88045757" target="_blank" title="[Wc2008]游览计划【斯坦纳树】">
+				<span class="desc oneline">斯坦纳树的问题模型是：有一个图，要求保留图中最少的边/最小的边权和使得某k个点相互连通。最小生成树是斯坦纳树的一种特殊情况。我们用f[i]][j][s]表示方格中i,j位置与各个景点之间的联通情况。如...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_39921637">来自：	<span class="blog_title"> qq_39921637的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/naipp/article/details/55194340","strategy":"BlogCommendFromQuerySearch","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/naipp/article/details/55194340" target="_blank" title="洛谷 P1440 单调队列">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> P1440 单调队列		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					540</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/naipp/article/details/55194340" target="_blank" title="洛谷 P1440 单调队列">
+				<span class="desc oneline">维护一个递增的队列，每次队首进，队尾出，取队尾元素（下标相差在m之内的）#include#include#include#include#includeusingnamespacestd;typede...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/naipp">来自：	<span class="blog_title"> naipp的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/guleileo/article/details/82920013","strategy":"BlogCommendFromQuerySearch","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/guleileo/article/details/82920013" target="_blank" title="原来早就被安排了，旅行社用机器学习给你推个性化定制游">
+		<h4 class="text-truncate oneline">
+				原来早就被安排了，<em>旅行</em>社用机器学习给你推个性化定制游		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					241</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/guleileo/article/details/82920013" target="_blank" title="原来早就被安排了，旅行社用机器学习给你推个性化定制游">
+				<span class="desc oneline">大家好，我是为人造的智能操碎了心的智能禅师。全文大约1700字。读完可能需要好几首下面这首歌的时间...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/guleileo">来自：	<span class="blog_title"> CSDN人工智能头条</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/nwpu2017300135/article/details/81512787","strategy":"BlogCommendFromQuerySearch","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/nwpu2017300135/article/details/81512787" target="_blank" title="洛谷 2672 推销员 贪心">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> 2672 推销员 贪心		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					135</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/nwpu2017300135/article/details/81512787" target="_blank" title="洛谷 2672 推销员 贪心">
+				<span class="desc oneline">https://www.luogu.org/problemnew/show/P2672题意：中文题解：这题被学姐放在DP里了，然鹅我实在想不到O（n）的转移，想了半天，发现可以直接贪心。把住户按照推销...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/nwpu2017300135">来自：	<span class="blog_title"> 编程路漫漫</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/zhouzhenchina/article/details/77752915","strategy":"BlogCommendFromQuerySearch","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhouzhenchina/article/details/77752915" target="_blank" title="精品旅游项目第1天-项目搭建">
+		<h4 class="text-truncate oneline">
+				精品旅游项目第1天-项目搭建		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					376</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhouzhenchina/article/details/77752915" target="_blank" title="精品旅游项目第1天-项目搭建">
+				<span class="desc oneline"></span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/zhouzhenchina">来自：	<span class="blog_title"> 越前的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/u011385186/article/details/79318641","strategy":"BlogCommendFromQuerySearch","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011385186/article/details/79318641" target="_blank" title="旅游准备 思维导图">
+		<h4 class="text-truncate oneline">
+				旅游准备 思维导图		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1505</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011385186/article/details/79318641" target="_blank" title="旅游准备 思维导图">
+				<span class="desc oneline"></span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u011385186">来自：	<span class="blog_title"> u011385186的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/weixin_33719619/article/details/85832125","strategy":"BlogCommendFromQuerySearch","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_33719619/article/details/85832125" target="_blank" title="洛谷P1782 旅行商的背包[多重背包]">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>P1782 <em>旅行</em>商的背包[多重背包]		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					28</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_33719619/article/details/85832125" target="_blank" title="洛谷P1782 旅行商的背包[多重背包]">
+				<span class="desc oneline">题目描述小S坚信任何问题都可以在多项式时间内解决，于是他准备亲自去当一回旅行商。在出发之前，他购进了一些物品。这些物品共有n种，第i种体积为Vi，价值为Wi，共有Di件。他的背包体积是C。怎样装才能获...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_33719619">来自：	<span class="blog_title"> weixin_33719619的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-658","con":",,"}' data-track-click='{"mod":"kp_popu_67-658","con":",,"}' data-report-view='{"mod":"kp_popu_67-658","keyword":""}' data-report-click='{"mod":"kp_popu_67-658","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3573058",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_43346903/article/details/86576207","strategy":"BlogCommendFromQuerySearch","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_43346903/article/details/86576207" target="_blank" title="[分块][凸包]旅行计划">
+		<h4 class="text-truncate oneline">
+				[分块][凸包]<em>旅行</em><em>计划</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					49</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_43346903/article/details/86576207" target="_blank" title="[分块][凸包]旅行计划">
+				<span class="desc oneline">BZOJ2388维护区间加，前缀和最大值如果把下标看做x，前缀和看做y，就变成了找凸包上最高点的问题修改整块：维护斜率，首项修改散块：暴力重构对最后一个散块后面的影响：整体加上一个数，用标记Code：...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_43346903">来自：	<span class="blog_title"> romiqi</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/liangzihao1/article/details/79884803","strategy":"BlogCommendFromQuerySearch","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liangzihao1/article/details/79884803" target="_blank" title="洛谷 P4294 [WC2008]游览计划 斯坦纳树">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> P4294 [WC2008]游览<em>计划</em> 斯坦纳树		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					117</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liangzihao1/article/details/79884803" target="_blank" title="洛谷 P4294 [WC2008]游览计划 斯坦纳树">
+				<span class="desc oneline">题目描述从未来过绍兴的小D有幸参加了WinterCamp2008，他被这座历史名城的秀丽风景所吸引，强烈要求游览绍兴及其周边的所有景点。主办者将绍兴划分为N行M列(N×M)个分块，如下图(8×8)：景...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liangzihao1">来自：	<span class="blog_title"> liangzihao1的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/sdxtcqs/article/details/52305367","strategy":"BlogCommendFromQuerySearch","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sdxtcqs/article/details/52305367" target="_blank" title="洛谷 1576 最小花费 (最短路)">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em> 1576 最小花费 (最短路)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					540</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sdxtcqs/article/details/52305367" target="_blank" title="洛谷 1576 最小花费 (最短路)">
+				<span class="desc oneline">http://www.luogu.org/problem/show?pid=1576把每次扣除的百分数z换成1-z%的样子作边权，即每次要乘的数值，找个乘积最长路最后用100除这个最长路即可。Dijk...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sdxtcqs">来自：	<span class="blog_title"> sdxtcqs的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/WOW875620051/article/details/80954200","strategy":"BlogCommendFromQuerySearch","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/WOW875620051/article/details/80954200" target="_blank" title="人生就像一场旅行，前进的过程也在不断的完善自我，现列出自己的缺点，今后用来反思自我。">
+		<h4 class="text-truncate oneline">
+				人生就像一场<em>旅行</em>，前进的过程也在不断的完善自我，现列出自己的缺点，今后用来反思自我。		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					593</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/WOW875620051/article/details/80954200" target="_blank" title="人生就像一场旅行，前进的过程也在不断的完善自我，现列出自己的缺点，今后用来反思自我。">
+				<span class="desc oneline">人生就像一场旅行，前进的过程也在不断的完善自我。想自己26岁半的年龄，毕业已经整整两年了，依旧一事无成，并且工作也不是那么让人满意，不免感到彷徨。并且20多年过去了，自己身上的缺点依然醒目可见。现列出...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/WOW875620051">来自：	<span class="blog_title"> 为了追求卓越，敢于犯错，敢于失败。</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/qq_42920122/article/details/89713228","strategy":"BlogCommendFromQuerySearch","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42920122/article/details/89713228" target="_blank" title="洛谷P1068 分数线划定【排序】">
+		<h4 class="text-truncate oneline">
+				<em>洛谷</em>P1068 分数线划定【排序】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					154</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42920122/article/details/89713228" target="_blank" title="洛谷P1068 分数线划定【排序】">
+				<span class="desc oneline">题目描述https://www.luogu.org/problemnew/show/P1068跟分数线相同分的人都能录取#include&amp;lt;iostream&amp;gt;#include&amp;lt;cstd...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42920122">来自：	<span class="blog_title"> ETwinner的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-654","con":",,"}' data-track-click='{"mod":"kp_popu_68-654","con":",,"}' data-report-view='{"mod":"kp_popu_68-654","keyword":""}' data-report-click='{"mod":"kp_popu_68-654","keyword":""}'><div id="three_ad48" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad48",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_614","dest":"https://blog.csdn.net/brucehb/article/details/68949209","strategy":"BlogCommendFromQuerySearch","index":"49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/brucehb/article/details/68949209" target="_blank" title="独木舟">
+		<h4 class="text-truncate oneline">
+				独木舟		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					572</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/brucehb/article/details/68949209" target="_blank" title="独木舟">
+				<span class="desc oneline">n个人，已知每个人体重。独木舟承重固定，每只独木舟最多坐两个人，可以坐一个人或者两个人。显然要求总重量不超过独木舟承重，假设每个人体重也不超过独木舟承重，问最少需要几只独木舟？#include#inc...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/brucehb">来自：	<span class="blog_title"> brucehb的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtTakgwsNDYtZWR1.html" target="_blank">
+                        java课程设计计划</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaIgxsODItZWR1.html" target="_blank">
+                        java源码学习计划</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_41741964">
+              <img src="https://avatar.csdn.net/D/C/3/3_qq_41741964.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/1.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                <a href="https://blog.csdn.net/qq_41741964"  class="" id="uid">kma_093</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="83">
+                        <dt><a href="https://blog.csdn.net/qq_41741964?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qq_41741964?t=1"><span class="count">83</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="1">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">1</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>喜欢</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="1级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-1"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="375">
+                375            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="18">
+                18            </dd>
+        </dl>
+        <dl title="2555332">
+            <dt>排名：</dt>
+            <dd>255万+</dd>
+        </dl>
+    </div>
+        <div class="personal-home-page"><a target="_blank"  href="https://me.csdn.net/qq_41741964">TA的个人主页 ></a></div>
+</div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-76","con":",,"}' data-track-click='{"mod":"kp_popu_56-76","con":",,"}' data-report-view='{"mod":"kp_popu_56-76","keyword":""}' data-report-click='{"mod":"kp_popu_56-76","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41741964/article/details/99149392" target="_blank" >
+                                        洛谷P3388 【模板】割点（割顶）                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41741964/article/details/99149388" target="_blank" >
+                                        洛谷P3387 【模板】缩点                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41741964/article/details/98916716" target="_blank" >
+                                        洛谷P2324 [SCOI2005]骑士精神                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41741964/article/details/98818057" target="_blank" >
+                                        洛谷P2571 [SCOI2010]传送带                </a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41741964/article/details/98563900" target="_blank" >
+                                        BZOJ4300: 绝世好题                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199989">
+                    <span class="title oneline">==========类别==========</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199961">
+                    <span class="title oneline">解题报告</span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199976">
+                    <span class="title oneline">算法笔记</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199994">
+                    <span class="title oneline">OI历程</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199968">
+                    <span class="title oneline">==========动态规划==========</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201822">
+                    <span class="title oneline">期望/概率DP</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201961">
+                    <span class="title oneline">记忆化搜索</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200000">
+                    <span class="title oneline">==========分治==========</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199973">
+                    <span class="title oneline">归并排序</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199977">
+                    <span class="title oneline">线段树分治</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200001">
+                    <span class="title oneline">==========数据结构==========</span>
+                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201997">
+                    <span class="title oneline">单调队列/单调栈</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201897">
+                    <span class="title oneline">线段树</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201863">
+                    <span class="title oneline">主席树</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9202012">
+                    <span class="title oneline">并查集</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9201814">
+                    <span class="title oneline">分块</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200008">
+                    <span class="title oneline">==========计算几何==========</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200019">
+                    <span class="title oneline">二维凸包</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200024">
+                    <span class="title oneline">==========图论==========</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9200025">
+                    <span class="title oneline">网络流</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9202003">
+                    <span class="title oneline">二分图匹配/匈牙利</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_41741964/article/category/9199975">
+                    <span class="title oneline">树链剖分</span>
+                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/08">
+                    2019年8月                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/06">
+                    2019年6月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/05">
+                    2019年5月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/04">
+                    2019年4月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/03">
+                    2019年3月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/02">
+                    2019年2月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2019/01">
+                    2019年1月                    <span class="count float-right">28篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2018/12">
+                    2018年12月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2018/11">
+                    2018年11月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_41741964/article/month/2018/10">
+                    2018年10月                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_41741964/article/details/98563877" >
+                                                [洛谷P2472] [SCOI2007]蜥蜴                    </a>
+					<p class="read">阅读数 <span>42</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_41741964/article/details/99026003" >
+                                                洛谷P1137 旅行计划                    </a>
+					<p class="read">阅读数 <span>33</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_41741964/article/details/98818057" >
+                                                洛谷P2571 [SCOI2010]传送带                    </a>
+					<p class="read">阅读数 <span>32</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_41741964/article/details/82950885" >
+                                                博客指路                    </a>
+					<p class="read">阅读数 <span>32</span></p>
+				</li>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_41741964/article/details/98916716" >
+                                                洛谷P2324 [SCOI2005]骑士精神                    </a>
+					<p class="read">阅读数 <span>25</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-77","con":",,"}' data-track-click='{"mod":"kp_popu_57-77","con":",,"}' data-report-view='{"mod":"kp_popu_57-77","keyword":""}' data-report-click='{"mod":"kp_popu_57-77","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">0</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_41741964/article/details/98916716" title="洛谷P2324 [SCOI2005]骑士精神">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/qq_41741964/article/details/99149388" title="洛谷P3387 【模板】缩点">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_41741964/article/details/98916716" title="洛谷P2324 [SCOI2005]骑士精神">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_41741964/article/details/99149388" title="洛谷P3387 【模板】缩点">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script><script>
+    var recommendCount = 50;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 0;
+    var articleId = "99026003";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_41741964/article/details/99026003";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "洛谷P1137 旅行计划 - kma_093";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = 'atelier-sulphurpool-light';
+	var highlight = ["\u6d1b\u8c37","p1137","\u65c5\u884c","\u8ba1\u5212"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.4.3/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-sulphurpool-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f868939e52.js" /></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.4/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.4/side-toolbar.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-2c5f1af91b.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-b6674debea.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-fc7383b956.min.js"></script>
+
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>
